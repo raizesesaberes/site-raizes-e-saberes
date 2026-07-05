@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Biblioteca Digital demonstrativa do Ecossistema Educacional Raizes e Saberes, com acervo de Educacao Infantil e Laboratorio Sensorial."
+    />
+    <meta name="theme-color" content="#2E7D32" />
+    <meta property="og:title" content="Biblioteca Digital | Raizes e Saberes" />
+    <meta
+      property="og:description"
+      content="Ambiente demonstrativo da Biblioteca Digital com capas oficiais e estrutura preparada para Book Viewer."
+    />
+    <title>Biblioteca Digital | Raizes e Saberes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="library-page">
+    <header class="site-header library-header" data-header>
+      <a class="brand" href="index.html#inicio" aria-label="Raizes e Saberes">
+        <img src="logo-raizes-e-saberes.png" alt="Raizes e Saberes Digital" />
+      </a>
+
+      <button class="menu-button" type="button" aria-label="Abrir menu" data-menu-button>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" data-nav aria-label="Menu principal">
+        <a href="index.html#ecossistema">Ecossistema</a>
+        <a href="index.html#infantil">Educacao Infantil</a>
+        <a href="index.html#plataforma">Plataforma</a>
+        <a href="biblioteca.html" aria-current="page">Biblioteca</a>
+        <a href="index.html#universidade">Universidade</a>
+        <a href="index.html#contato">Contato</a>
+      </nav>
+
+      <a class="button primary nav-cta" href="index.html#contato">Solicitar Demonstracao</a>
+    </header>
+
+    <main>
+      <section class="library-hero">
+        <div class="library-hero-copy">
+          <div class="trust-badge">
+            <span>Biblioteca demonstrativa do ecossistema</span>
+          </div>
+          <p class="eyebrow">Biblioteca Digital</p>
+          <h1>Acervo organizado para apresentar as colecoes oficiais Raizes e Saberes.</h1>
+          <p>
+            Um ambiente visual e funcional para demonstrar livros, guias, colecoes e a futura
+            integracao com o Book Viewer da plataforma.
+          </p>
+        </div>
+
+        <div class="library-hero-panel" aria-label="Resumo do acervo">
+          <div>
+            <strong>16</strong>
+            <span>itens estruturados</span>
+          </div>
+          <div>
+            <strong>4</strong>
+            <span>capas oficiais integradas</span>
+          </div>
+          <div>
+            <strong>2</strong>
+            <span>colecoes iniciais</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="library-tools" aria-label="Ferramentas da biblioteca">
+        <label class="library-search">
+          <span>Pesquisar no acervo</span>
+          <input
+            type="search"
+            placeholder="Buscar por etapa, volume, guia ou colecao"
+            data-library-search
+          />
+        </label>
+
+        <div class="library-filters" aria-label="Filtros da biblioteca">
+          <button class="library-filter is-active" type="button" data-filter="all">Todos</button>
+          <button class="library-filter" type="button" data-filter="infantil">Educacao Infantil</button>
+          <button class="library-filter" type="button" data-filter="sensorial">Laboratorio Sensorial</button>
+          <button class="library-filter" type="button" data-filter="oficial">Com capa oficial</button>
+          <button class="library-filter" type="button" data-filter="preparacao">Capas em preparacao</button>
+        </div>
+      </section>
+
+      <section class="library-section" aria-labelledby="educacao-infantil-title">
+        <div class="library-section-heading">
+          <p class="eyebrow">Educacao Infantil</p>
+          <h2 id="educacao-infantil-title">Colecoes por etapa</h2>
+          <p>
+            As capas oficiais disponiveis foram integradas como referencia visual principal de cada
+            etapa. Os volumes e guias ficam prontos para receber suas capas individuais.
+          </p>
+        </div>
+
+        <div class="library-grid" data-library-grid>
+          <article
+            class="library-card is-featured"
+            data-category="infantil oficial"
+            data-title="Infantil 2 anos colecao oficial"
+          >
+            <div class="library-cover has-cover">
+              <img src="assets/RS-010-CapaInfantil2.webp" alt="Capa oficial Infantil 2 anos" loading="lazy" />
+            </div>
+            <div class="library-card-body">
+              <span class="library-tag">Infantil 2 anos</span>
+              <h3>Colecao Infantil 2 anos</h3>
+              <p>Capa oficial integrada para apresentacao da etapa.</p>
+              <button class="button primary book-open-button" type="button" data-book-viewer>Ver colecao</button>
+            </div>
+          </article>
+
+          <article class="library-card" data-category="infantil preparacao" data-title="Infantil 2 anos Livro do Aluno Volume 1">
+            <div class="library-cover pending-cover"><span>Capa oficial em preparacao</span></div>
+            <div class="library-card-body">
+              <span class="library-tag">Infantil 2 anos</span>
+              <h3>Livro do Aluno - Volume 1</h3>
+              <p>Estrutura pronta para receber capa e arquivo do livro.</p>
+              <button class="button secondary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
+            </div>
+          </article>
+
+          <article class="library-card" data-category="infantil preparacao" data-title="Infantil 2 anos Livro do Aluno Volume 2">
+            <div class="library-cover pending-cover"><span>Capa oficial em preparacao</span></div>
+            <div class="library-card-body">
+              <span class="library-tag">Infantil 2 anos</span>
+              <h3>Livro do Aluno - Volume 2</h3>
+              <p>Estrutura pronta para receber capa e arquivo do livro.</p>
+              <button class="button secondary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
+            </div>
+          </article>
+
+          <article class="library-card" data-category="infantil preparacao" data-title="Infantil 2 anos Guia do Alfabetizador">
+            <div class="library-cover pending-cover"><span>Capa oficial em preparacao</span></div>
+            <div class="library-card-body">
+              <span class="library-tag">Infantil 2 anos</span>
+              <h3>Guia do Alfabetizador</h3>
+              <p>Area preparada para o guia oficial da etapa.</p>
+              <button class="button secondary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
+            </div>
+          </article>
+
+          <article
+            class="library-card is-featured"
+            data-category="infantil oficial"
+            data-title="Infantil 3 anos colecao oficial"
+          >
+            <div class="library-cover has-cover">
+              <img src="assets/RS-011-CapaInfantil3.webp" alt="Capa oficial Infantil 3 anos" loading="lazy" />
+            </div>
+            <div class="library-card-body">
+              <span class="library-tag">Infantil 3 anos</span>
+              <h3>Colecao Infantil 3 anos</h3>
+              <p>Capa oficial integrada para apresentacao da etapa.</p>
+              <button class="button primary book-open-button" type="button" data-book-viewer>Ver colecao</button>
+            </div>
+          </article>
+
+          <article class="library-card" data-category="infantil preparacao" data-title="Infantil 3 anos Livro do Aluno Volume 1">
+            <div class="library-cover pending-cover"><span>Capa oficial em preparacao</span></div>
+            <div class="library-card-body">
+              <span class="library-tag">Infantil 3 anos</span>
+              <h3>Livro do Aluno - Volume 1</h3>
+              <p>Estrutura pronta para receber capa e arquivo do livro.</p>
+              <button class="button secondary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
+            </div>
+          </article>
+
+          <article class="library-card" data-category="infantil preparacao" data-title="Infantil 3 anos Livro do Aluno Volume 2">
+            <div class="library-cover pending-cover"><span>Capa oficial em preparacao</span></div>
+            <div class="library-card-body">
+              <span class="library-tag">Infantil 3 anos</span>
+              <h3>Livro do Aluno - Volume 2</h3>
+              <p>Estrutura pronta para receber capa e arquivo do livro.</p>
+              <button class="button secondary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
+            </div>
+          </article>
+
+          <article class="library-card" data-category="infantil preparacao" data-title="Infantil 3 anos Guia do Alfabetizador">
+            <div class="library-cover pending-cover"><span>Capa oficial em preparacao</span></div>
+            <div class="library-card-body">
+              <span class="library-tag">Infantil 3 anos</span>
+              <h3>Guia do Alfabetizador</h3>
+              <p>Area preparada para o guia oficial da etapa.</p>
+              <button class="button secondary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
+            </div>
+          </article>
+
+          <article
+            class="library-card is-featured"
+            data-category="infantil oficial"
+            data-title="Infantil 4 anos colecao oficial"
+          >
+            <div class="library-cover has-cover">
+              <img src="assets/RS-012-CapaInfantil4.webp" alt="Capa oficial Infantil 4 anos" loading="lazy" />
+            </div>
+            <div class="library-card-body">
+              <span class="library-tag">Infantil 4 anos</span>
+              <h3>Colecao Infantil 4 anos</h3>
+              <p>Capa oficial integrada para apresentacao da etapa.</p>
+              <button class="button primary book-open-button" type="button" data-book-viewer>Ver colecao</button>
+            </div>
+          </article>
+
+          <article class="library-card" data-category="infantil preparacao" data-title="Infantil 4 anos Livro do Aluno Volume 1">
+            <div class="library-cover pending-cover"><span>Capa oficial em preparacao</span></div>
+            <div class="library-card-body">
+              <span class="library-tag">Infantil 4 anos</span>
+              <h3>Livro do Aluno - Volume 1</h3>
+              <p>Estrutura pronta para receber capa e arquivo do livro.</p>
+              <button class="button secondary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
+            </div>
+          </article>
+
+          <article class="library-card" data-category="infantil preparacao" data-title="Infantil 4 anos Livro do Aluno Volume 2">
+            <div class="library-cover pending-cover"><span>Capa oficial em preparacao</span></div>
+            <div class="library-card-body">
+              <span class="library-tag">Infantil 4 anos</span>
+              <h3>Livro do Aluno - Volume 2</h3>
+              <p>Estrutura pronta para receber capa e arquivo do livro.</p>
+              <button class="button secondary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
+            </div>
+          </article>
+
+          <article class="library-card" data-category="infantil preparacao" data-title="Infantil 4 anos Guia do Alfabetizador">
+            <div class="library-cover pending-cover"><span>Capa oficial em preparacao</span></div>
+            <div class="library-card-body">
+              <span class="library-tag">Infantil 4 anos</span>
+              <h3>Guia do Alfabetizador</h3>
+              <p>Area preparada para o guia oficial da etapa.</p>
+              <button class="button secondary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
+            </div>
+          </article>
+
+          <article
+            class="library-card is-featured"
+            data-category="infantil oficial"
+            data-title="Infantil 5 anos colecao oficial"
+          >
+            <div class="library-cover has-cover">
+              <img src="assets/RS-013-CapaInfantil5.webp" alt="Capa oficial Infantil 5 anos" loading="lazy" />
+            </div>
+            <div class="library-card-body">
+              <span class="library-tag">Infantil 5 anos</span>
+              <h3>Colecao Infantil 5 anos</h3>
+              <p>Capa oficial integrada para apresentacao da etapa.</p>
+              <button class="button primary book-open-button" type="button" data-book-viewer>Ver colecao</button>
+            </div>
+          </article>
+
+          <article class="library-card" data-category="infantil preparacao" data-title="Infantil 5 anos Livro do Aluno Volume 1">
+            <div class="library-cover pending-cover"><span>Capa oficial em preparacao</span></div>
+            <div class="library-card-body">
+              <span class="library-tag">Infantil 5 anos</span>
+              <h3>Livro do Aluno - Volume 1</h3>
+              <p>Estrutura pronta para receber capa e arquivo do livro.</p>
+              <button class="button secondary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
+            </div>
+          </article>
+
+          <article class="library-card" data-category="infantil preparacao" data-title="Infantil 5 anos Livro do Aluno Volume 2">
+            <div class="library-cover pending-cover"><span>Capa oficial em preparacao</span></div>
+            <div class="library-card-body">
+              <span class="library-tag">Infantil 5 anos</span>
+              <h3>Livro do Aluno - Volume 2</h3>
+              <p>Estrutura pronta para receber capa e arquivo do livro.</p>
+              <button class="button secondary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
+            </div>
+          </article>
+
+          <article class="library-card" data-category="infantil preparacao" data-title="Infantil 5 anos Guia do Alfabetizador">
+            <div class="library-cover pending-cover"><span>Capa oficial em preparacao</span></div>
+            <div class="library-card-body">
+              <span class="library-tag">Infantil 5 anos</span>
+              <h3>Guia do Alfabetizador</h3>
+              <p>Area preparada para o guia oficial da etapa.</p>
+              <button class="button secondary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
+            </div>
+          </article>
+
+          <article class="library-card" data-category="sensorial preparacao" data-title="Laboratorio Sensorial Volume 1">
+            <div class="library-cover pending-cover sensorial-cover"><span>Capa oficial em preparacao</span></div>
+            <div class="library-card-body">
+              <span class="library-tag gold">Laboratorio Sensorial</span>
+              <h3>Volume 1</h3>
+              <p>Material preparado para experiencias sensoriais e exploratorias.</p>
+              <button class="button secondary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
+            </div>
+          </article>
+
+          <article class="library-card" data-category="sensorial preparacao" data-title="Laboratorio Sensorial Volume 2">
+            <div class="library-cover pending-cover sensorial-cover"><span>Capa oficial em preparacao</span></div>
+            <div class="library-card-body">
+              <span class="library-tag gold">Laboratorio Sensorial</span>
+              <h3>Volume 2</h3>
+              <p>Material preparado para experiencias sensoriais e exploratorias.</p>
+              <button class="button secondary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
+            </div>
+          </article>
+
+          <article class="library-card" data-category="sensorial preparacao" data-title="Laboratorio Sensorial Volume 3">
+            <div class="library-cover pending-cover sensorial-cover"><span>Capa oficial em preparacao</span></div>
+            <div class="library-card-body">
+              <span class="library-tag gold">Laboratorio Sensorial</span>
+              <h3>Volume 3</h3>
+              <p>Material preparado para experiencias sensoriais e exploratorias.</p>
+              <button class="button secondary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
+            </div>
+          </article>
+
+          <article class="library-card" data-category="sensorial preparacao" data-title="Laboratorio Sensorial Volume 4">
+            <div class="library-cover pending-cover sensorial-cover"><span>Capa oficial em preparacao</span></div>
+            <div class="library-card-body">
+              <span class="library-tag gold">Laboratorio Sensorial</span>
+              <h3>Volume 4</h3>
+              <p>Material preparado para experiencias sensoriais e exploratorias.</p>
+              <button class="button secondary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
+            </div>
+          </article>
+        </div>
+
+        <p class="library-empty" data-library-empty hidden>
+          Nenhum livro encontrado para esta pesquisa. Ajuste os filtros para visualizar o acervo.
+        </p>
+      </section>
+    </main>
+
+    <div class="book-viewer-modal" data-book-modal hidden>
+      <div class="book-viewer-dialog" role="dialog" aria-modal="true" aria-labelledby="book-modal-title">
+        <button class="book-modal-close" type="button" data-book-modal-close aria-label="Fechar">&times;</button>
+        <p class="eyebrow">Book Viewer</p>
+        <h2 id="book-modal-title">Livro preparado para abertura digital</h2>
+        <p>
+          Este botao ja esta conectado ao fluxo demonstrativo. Na integracao definitiva, esta acao
+          abrira o arquivo oficial no leitor digital da plataforma.
+        </p>
+        <button class="button primary" type="button" data-book-modal-close>Entendi</button>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div>
+        <strong>Raizes e Saberes Digital</strong>
+        <span>Biblioteca demonstrativa do ecossistema educacional.</span>
+      </div>
+      <div>
+        <strong>Editora Grafica Santa Helena Ltda.</strong>
+        <span>Contato comercial: graficasantahelena@yahoo.com</span>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
