@@ -5,20 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Plataforma digital Raizes e Saberes: livros didaticos, biblioteca digital, avaliacoes, formacao docente e acompanhamento pedagogico."
+      content="Ecossistema educacional Raizes e Saberes Digital: plataforma, biblioteca, livros digitais, avaliacoes, formacao docente e acompanhamento pedagogico."
+    />
+    <meta name="theme-color" content="#2E7D32" />
+    <meta property="og:title" content="Raizes e Saberes Digital" />
+    <meta
+      property="og:description"
+      content="Ecossistema educacional completo para escolas, redes de ensino, professores e estudantes."
     />
     <title>Raizes e Saberes | Plataforma Digital Educacional</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="site-header" data-header>
-      <a class="brand-link" href="#inicio" aria-label="Inicio"></a>
+      <a class="brand" href="#inicio" aria-label="Raizes e Saberes">
+        <img src="logo-raizes-e-saberes.png" alt="Raizes e Saberes Digital" />
+      </a>
 
       <button class="menu-button" type="button" aria-label="Abrir menu" data-menu-button>
         <span></span>
@@ -26,119 +34,278 @@
         <span></span>
       </button>
 
-      <nav class="site-nav" data-nav>
-        <a href="#solucoes">Solucoes</a>
-        <a href="#colecoes">Colecoes</a>
+      <nav class="site-nav" data-nav aria-label="Menu principal">
+        <a href="#ecossistema">Ecossistema</a>
+        <a href="#infantil">Educacao Infantil</a>
         <a href="#plataforma">Plataforma</a>
+        <a href="#biblioteca">Biblioteca</a>
+        <a href="#universidade">Universidade</a>
         <a href="#contato">Contato</a>
       </nav>
+
+      <a class="button primary nav-cta" href="#contato">Solicitar Demonstracao</a>
     </header>
 
     <main id="inicio">
       <section class="hero">
-        <img
-          class="hero-image"
-          src="assets/hero-educacao-digital.png"
-          alt="Ambiente escolar moderno com livros, tecnologia e aprendizagem digital"
-        />
-        <div class="hero-shade"></div>
-        <img class="hero-logo" src="logo-raizes-e-saberes.png" alt="Raizes e Saberes Digital" />
         <div class="hero-content">
-          <p class="eyebrow">Editora Grafica Santa Helena</p>
-          <h1>Raizes e Saberes</h1>
-          <p class="hero-text">
-            Um ecossistema educacional premium para integrar livros didaticos,
-            conteudos digitais, avaliacoes, formacao de professores e acompanhamento pedagogico.
+          <div class="hero-logo-slot placeholder-chip">
+            <span>Marca institucional</span>
+          </div>
+          <p class="eyebrow">Ecossistema Educacional</p>
+          <h1>Educacao que cria raizes. Conhecimento que transforma.</h1>
+          <p class="hero-text">Uma plataforma integrada para redes de ensino, escolas, professores e estudantes.</p>
+          <p class="hero-copy">
+            Home Premium V1.0 preparada para receber os textos oficiais e os assets definitivos da marca,
+            mantendo uma experiencia institucional elegante para demonstracoes comerciais.
           </p>
           <div class="hero-actions">
             <a class="button primary" href="#contato">Solicitar demonstracao</a>
-            <a class="button secondary" href="#solucoes">Conhecer solucoes</a>
+            <a class="button secondary" href="#ecossistema">Conhecer ecossistema</a>
+          </div>
+          <div class="hero-indicators" aria-label="HeroIndicators">
+            <div>
+              <strong>Rede</strong>
+              <span>Gestao, acompanhamento e indicadores educacionais.</span>
+            </div>
+            <div>
+              <strong>Escola</strong>
+              <span>Conteudos, professores, turmas e aprendizagem.</span>
+            </div>
+            <div>
+              <strong>Aluno</strong>
+              <span>Experiencia digital, livros, atividades e evolucao.</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="mockup-shell">
+            <div class="mockup-topbar">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="image-placeholder image-placeholder-large">
+              <span class="placeholder-icon" aria-hidden="true"></span>
+              <strong>Mockup principal</strong>
+              <small>ASSET 001 sera inserido aqui</small>
+              <em>Dashboard institucional + experiencia do aluno</em>
+            </div>
+          </div>
+          <div class="floating-preview dashboard-preview">
+            <span class="placeholder-icon" aria-hidden="true"></span>
+            <strong>Dashboard preview</strong>
+            <small>ASSET 002</small>
+          </div>
+          <div class="floating-preview book-preview">
+            <span class="placeholder-icon" aria-hidden="true"></span>
+            <strong>Book viewer preview</strong>
+            <small>ASSET 003</small>
           </div>
         </div>
       </section>
 
-      <section class="section intro">
-        <div class="section-heading">
-          <p class="eyebrow">Educacao conectada</p>
-          <h2>Uma plataforma para escolas, redes de ensino, professores e estudantes.</h2>
-        </div>
-        <p>
-          A Raizes e Saberes reune materiais impressos, livros digitais, recursos multimidia,
-          relatorios, gamificacao e formacao docente em uma experiencia moderna, segura e escalavel.
-        </p>
-      </section>
-
-      <section class="section band" id="solucoes">
-        <div class="section-heading">
-          <p class="eyebrow">Solucoes</p>
-          <h2>O ecossistema digital da aprendizagem.</h2>
+      <section class="section intro" id="ecossistema">
+        <div class="section-heading centered">
+          <p class="eyebrow">Ecossistema Educacional</p>
+          <h2>Uma estrutura completa para conectar ensino, tecnologia e gestao.</h2>
+          <p>
+            A Home foi organizada para apresentar a Raizes e Saberes como um ecossistema educacional
+            premium, com areas prontas para receber textos oficiais, imagens reais e mockups finais.
+          </p>
         </div>
 
         <div class="solution-grid">
           <article class="solution-card">
-            <span class="icon">P</span>
+            <span class="icon">01</span>
+            <h3>Gestao</h3>
+            <p>Secretarias e gestores acompanham rede, escolas, indicadores e uso da plataforma.</p>
+          </article>
+          <article class="solution-card">
+            <span class="icon">02</span>
+            <h3>Aprendizagem</h3>
+            <p>Alunos acessam livros digitais, atividades, biblioteca, videos e experiencias interativas.</p>
+          </article>
+          <article class="solution-card">
+            <span class="icon">03</span>
             <h3>Professor</h3>
-            <p>Turmas, alunos, atividades, avaliacoes, mensagens, relatorios e acompanhamento pedagogico.</p>
+            <p>Professores organizam turmas, acompanham desempenho e conduzem trilhas pedagogicas.</p>
           </article>
           <article class="solution-card">
-            <span class="icon">A</span>
-            <h3>Aluno</h3>
-            <p>Livros digitais, atividades, jogos, videos, conquistas, XP, medalhas e ranking.</p>
-          </article>
-          <article class="solution-card">
-            <span class="icon">B</span>
-            <h3>Biblioteca Digital</h3>
-            <p>Livros protegidos, visualizacao por pagina, busca, favoritos, QR Codes e materiais extras.</p>
-          </article>
-          <article class="solution-card">
-            <span class="icon">U</span>
-            <h3>Universidade</h3>
-            <p>Cursos, videoaulas, avaliacoes, certificados, historico e controle de progresso.</p>
-          </article>
-          <article class="solution-card">
-            <span class="icon">+</span>
-            <h3>Avalia+</h3>
-            <p>Avaliacoes diagnosticas e formativas com indicadores, comparativos e relatorios.</p>
-          </article>
-          <article class="solution-card">
-            <span class="icon">G</span>
-            <h3>Gestao Escolar</h3>
-            <p>Usuarios, professores, turmas, licencas, indicadores e painel administrativo.</p>
+            <span class="icon">04</span>
+            <h3>Formacao</h3>
+            <p>Formacao continuada, cursos, trilhas e certificados para evolucao docente.</p>
           </article>
         </div>
       </section>
 
-      <section class="section split" id="colecoes">
+      <section class="section split soft-section" id="infantil">
         <div>
-          <p class="eyebrow">Colecoes</p>
-          <h2>Conteudos para diferentes etapas da educacao basica.</h2>
+          <p class="eyebrow">Educacao Infantil</p>
+          <h2>Colecoes preparadas para encantar, organizar e acompanhar cada etapa.</h2>
           <p>
-            A plataforma foi pensada para acompanhar a jornada escolar com livros, projetos,
-            avaliacoes e materiais complementares integrados ao ambiente digital.
+            Esta area esta pronta para receber as capas oficiais da Educacao Infantil. As capas serao
+            o principal elemento visual da secao quando os assets finais forem entregues.
           </p>
+          <div class="section-note">Capas oficiais pendentes: Infantil 2, 3, 4 e 5 anos.</div>
         </div>
 
-        <div class="collection-list">
-          <div><strong>Educacao Infantil</strong><span>2, 3, 4 e 5 anos</span></div>
-          <div><strong>Ensino Fundamental</strong><span>1o ao 9o ano</span></div>
-          <div><strong>Avalia+</strong><span>Portugues e Matematica</span></div>
-          <div><strong>Literatura</strong><span>Colecao Africanidade</span></div>
-          <div><strong>Ingles</strong><span>3o ao 5o ano</span></div>
+        <div class="collection-list book-grid-preview">
+          <article class="book-card">
+            <div class="image-placeholder book-placeholder">
+              <span class="placeholder-icon" aria-hidden="true"></span>
+              <strong>CapaInfantil2</strong>
+            </div>
+            <h3>Infantil 2 anos</h3>
+            <p>Asset oficial pendente.</p>
+          </article>
+          <article class="book-card">
+            <div class="image-placeholder book-placeholder">
+              <span class="placeholder-icon" aria-hidden="true"></span>
+              <strong>CapaInfantil3</strong>
+            </div>
+            <h3>Infantil 3 anos</h3>
+            <p>Asset oficial pendente.</p>
+          </article>
+          <article class="book-card">
+            <div class="image-placeholder book-placeholder">
+              <span class="placeholder-icon" aria-hidden="true"></span>
+              <strong>CapaInfantil4</strong>
+            </div>
+            <h3>Infantil 4 anos</h3>
+            <p>Asset oficial pendente.</p>
+          </article>
+          <article class="book-card">
+            <div class="image-placeholder book-placeholder">
+              <span class="placeholder-icon" aria-hidden="true"></span>
+              <strong>CapaInfantil5</strong>
+            </div>
+            <h3>Infantil 5 anos</h3>
+            <p>Asset oficial pendente.</p>
+          </article>
         </div>
       </section>
 
       <section class="section platform" id="plataforma">
         <div class="section-heading">
-          <p class="eyebrow">Plataforma</p>
-          <h2>Tecnologia para acompanhamento pedagogico em escala.</h2>
+          <p class="eyebrow">Plataforma Digital</p>
+          <h2>Tecnologia para transformar dados pedagogicos em decisao.</h2>
+          <p>
+            Estrutura preparada para demonstrar a plataforma em funcionamento, com painel, modulos,
+            permissoes, relatorios e acompanhamento por perfil de usuario.
+          </p>
         </div>
 
-        <div class="metrics">
-          <div><strong>8</strong><span>modulos integrados</span></div>
-          <div><strong>100%</strong><span>responsiva</span></div>
-          <div><strong>LGPD</strong><span>seguranca e permissoes</span></div>
-          <div><strong>XP</strong><span>gamificacao e engajamento</span></div>
+        <div class="preview-grid">
+          <div class="image-placeholder platform-placeholder">
+            <span class="placeholder-icon" aria-hidden="true"></span>
+            <strong>Plataforma Digital</strong>
+            <small>ASSET 004</small>
+            <em>Preview institucional do painel principal</em>
+          </div>
+          <div class="metrics">
+            <div><strong>Multi-perfil</strong><span>Secretaria, gestor, professor e aluno.</span></div>
+            <div><strong>LGPD</strong><span>Estrutura preparada para permissoes e seguranca.</span></div>
+            <div><strong>Dados</strong><span>Indicadores para acompanhamento pedagogico.</span></div>
+            <div><strong>Escala</strong><span>Base pensada para redes municipais de ensino.</span></div>
+          </div>
         </div>
+      </section>
+
+      <section class="section split" id="biblioteca">
+        <div>
+          <p class="eyebrow">Biblioteca Digital</p>
+          <h2>Um acervo digital preparado para livros, trilhas e recursos complementares.</h2>
+          <p>
+            A secao foi preparada para receber o Book Viewer Preview, cards de acervo, recursos de
+            leitura e acesso a conteudos digitais de apoio.
+          </p>
+          <div class="feature-list">
+            <span>Leitor digital</span>
+            <span>Busca e favoritos</span>
+            <span>Materiais complementares</span>
+          </div>
+        </div>
+        <div class="image-placeholder image-placeholder-medium">
+          <span class="placeholder-icon" aria-hidden="true"></span>
+          <strong>Biblioteca Digital</strong>
+          <small>ASSET 005</small>
+          <em>Book Viewer Preview + acervo</em>
+        </div>
+      </section>
+
+      <section class="section placeholder-section" id="universidade">
+        <div class="section-heading centered">
+          <p class="eyebrow">Universidade Raizes e Saberes</p>
+          <h2>Formacao continuada integrada ao ecossistema.</h2>
+          <p>
+            Area pronta para apresentar cursos, videoaulas, trilhas, certificados e acompanhamento
+            da evolucao dos profissionais da educacao.
+          </p>
+        </div>
+        <div class="module-grid">
+          <article class="module-card">
+            <div class="image-placeholder compact-placeholder">
+              <strong>CursoPreview</strong>
+            </div>
+            <h3>Trilhas de formacao</h3>
+            <p>Espaco para cursos oficiais, cargas horarias e progresso.</p>
+          </article>
+          <article class="module-card">
+            <div class="image-placeholder compact-placeholder">
+              <strong>CertificadoPreview</strong>
+            </div>
+            <h3>Certificados</h3>
+            <p>Area preparada para emitir ou apresentar certificados da Universidade.</p>
+          </article>
+          <article class="module-card">
+            <div class="image-placeholder compact-placeholder">
+              <strong>VideoAulaPreview</strong>
+            </div>
+            <h3>Videoaulas</h3>
+            <p>Espaco para aulas, modulos, professores e materiais complementares.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section placeholder-section" id="avalia">
+        <div class="section-heading centered">
+          <p class="eyebrow">Avalia+</p>
+          <h2>Avaliacao, diagnostico e relatorios para orientar a aprendizagem.</h2>
+          <p>
+            Secao pronta para demonstrar dashboards, comparativos, indicadores e relatorios do Avalia+.
+          </p>
+        </div>
+        <div class="assessment-layout">
+          <div class="image-placeholder report-placeholder">
+            <span class="placeholder-icon" aria-hidden="true"></span>
+            <strong>AvaliaDashboard</strong>
+            <small>Relatorios e indicadores</small>
+          </div>
+          <div class="assessment-list">
+            <article>
+              <strong>Diagnostico</strong>
+              <span>Mapeamento inicial por turma, aluno ou habilidade.</span>
+            </article>
+            <article>
+              <strong>Acompanhamento</strong>
+              <span>Evolucao pedagogica com dados claros para tomada de decisao.</span>
+            </article>
+            <article>
+              <strong>Relatorios</strong>
+              <span>Visualizacoes preparadas para gestores, professores e secretaria.</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section final-cta">
+        <div>
+          <p class="eyebrow">Demonstracao institucional</p>
+          <h2>Apresente uma plataforma educacional completa, moderna e preparada para escala.</h2>
+          <p>Chamada final pronta para receber texto comercial oficial e materiais de demonstracao.</p>
+        </div>
+        <a class="button primary" href="#contato">Solicitar Demonstracao</a>
       </section>
 
       <section class="section contact" id="contato">
@@ -146,8 +313,8 @@
           <p class="eyebrow">Demonstracao</p>
           <h2>Leve a Raizes e Saberes para sua escola ou rede de ensino.</h2>
           <p>
-            Fale com a equipe comercial para conhecer as colecoes, a plataforma digital,
-            a biblioteca, o Avalia+ e a Universidade Raizes e Saberes.
+            Formulario funcional para solicitacao de apresentacao comercial. Os campos podem ser
+            conectados futuramente ao Supabase, CRM ou ferramenta de atendimento.
           </p>
         </div>
 
@@ -178,8 +345,14 @@
     </main>
 
     <footer class="site-footer">
-      <span>Raizes e Saberes</span>
-      <span>Editora Grafica Santa Helena Ltda.</span>
+      <div>
+        <strong>Raizes e Saberes Digital</strong>
+        <span>Ecossistema educacional para redes de ensino.</span>
+      </div>
+      <div>
+        <strong>Editora Grafica Santa Helena Ltda.</strong>
+        <span>Contato comercial: graficasantahelena@yahoo.com</span>
+      </div>
     </footer>
 
     <script src="script.js"></script>

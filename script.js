@@ -7,40 +7,50 @@ const syncHeader = () => {
   header.classList.toggle("is-scrolled", window.scrollY > 12);
 };
 
-menuButton.addEventListener("click", () => {
-  header.classList.toggle("is-open");
-});
+if (menuButton) {
+  menuButton.setAttribute("aria-expanded", "false");
 
-nav.addEventListener("click", (event) => {
-  if (event.target.matches("a")) {
-    header.classList.remove("is-open");
-  }
-});
+  menuButton.addEventListener("click", () => {
+    const isOpen = header.classList.toggle("is-open");
+    menuButton.setAttribute("aria-expanded", String(isOpen));
+  });
+}
 
-contactForm.addEventListener("submit", (event) => {
-  event.preventDefault();
+if (nav) {
+  nav.addEventListener("click", (event) => {
+    if (event.target.matches("a")) {
+      header.classList.remove("is-open");
+      menuButton?.setAttribute("aria-expanded", "false");
+    }
+  });
+}
 
-  const data = new FormData(contactForm);
-  const nome = data.get("nome") || "";
-  const instituicao = data.get("instituicao") || "";
-  const email = data.get("email") || "";
-  const telefone = data.get("telefone") || "";
-  const mensagem = data.get("mensagem") || "";
+if (contactForm) {
+  contactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-  const subject = "Solicitacao de demonstracao - Raizes e Saberes";
-  const body = [
-    `Nome: ${nome}`,
-    `Escola ou instituicao: ${instituicao}`,
-    `E-mail: ${email}`,
-    `Telefone: ${telefone}`,
-    "",
-    "Mensagem:",
-    mensagem,
-  ].join("\n");
+    const data = new FormData(contactForm);
+    const nome = data.get("nome") || "";
+    const instituicao = data.get("instituicao") || "";
+    const email = data.get("email") || "";
+    const telefone = data.get("telefone") || "";
+    const mensagem = data.get("mensagem") || "";
 
-  window.location.href =
-    `mailto:graficasantahelena@yahoo.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-});
+    const subject = "Solicitacao de demonstracao - Raizes e Saberes";
+    const body = [
+      `Nome: ${nome}`,
+      `Escola ou instituicao: ${instituicao}`,
+      `E-mail: ${email}`,
+      `Telefone: ${telefone}`,
+      "",
+      "Mensagem:",
+      mensagem,
+    ].join("\n");
+
+    window.location.href =
+      `mailto:graficasantahelena@yahoo.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
+}
 
 syncHeader();
 window.addEventListener("scroll", syncHeader, { passive: true });
