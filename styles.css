@@ -64,36 +64,18 @@ img {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  min-width: 220px;
+  min-width: 170px;
 }
 
-.brand-mark {
-  display: grid;
-  width: 42px;
-  height: 42px;
-  place-items: center;
-  border-radius: 8px;
-  background: linear-gradient(135deg, var(--green), var(--blue));
-  color: #fff;
-  font-weight: 800;
-  letter-spacing: 0;
+.brand-logo {
+  width: 156px;
+  height: auto;
+  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.18));
 }
 
-.brand strong,
-.brand small {
-  display: block;
-}
-
-.brand strong {
-  font-size: 1rem;
-  line-height: 1.1;
-}
-
-.brand small {
-  color: currentColor;
-  font-size: 0.76rem;
-  opacity: 0.78;
+.site-header.is-scrolled .brand-logo,
+.site-header.is-open .brand-logo {
+  filter: none;
 }
 
 .site-nav {
@@ -499,8 +481,8 @@ img {
     min-width: 0;
   }
 
-  .brand small {
-    display: none;
+  .brand-logo {
+    width: 124px;
   }
 
   .hero h1 {
