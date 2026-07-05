@@ -221,6 +221,40 @@
         </div>
       </section>
 
+      <section class="section video-section" id="video-institucional">
+        <div class="video-copy">
+          <p class="eyebrow">Conheca o Ecossistema em Acao</p>
+          <h2>Veja como a Raizes e Saberes conecta conteudo, tecnologia e acompanhamento pedagogico.</h2>
+          <p>
+            Uma apresentacao institucional para demonstrar a experiencia completa do ecossistema,
+            reunindo plataforma digital, biblioteca, recursos pedagogicos e gestao educacional.
+          </p>
+          <div class="video-highlights" aria-label="Destaques do video institucional">
+            <span>Visao institucional</span>
+            <span>Experiencia da plataforma</span>
+            <span>Apresentacao comercial</span>
+          </div>
+        </div>
+
+        <button class="video-player-card" type="button" data-video-open aria-label="Abrir video institucional">
+          <span class="video-thumbnail">
+            <img
+              src="assets/RS-001-HeroMockup.webp"
+              alt="Thumbnail do video institucional do Ecossistema Educacional Raizes e Saberes"
+              loading="lazy"
+            />
+          </span>
+          <span class="video-overlay" aria-hidden="true"></span>
+          <span class="video-play" aria-hidden="true">
+            <span></span>
+          </span>
+          <span class="video-card-copy">
+            <small>Video institucional</small>
+            <strong>Raizes e Saberes Digital</strong>
+          </span>
+        </button>
+      </section>
+
       <section class="section university-section" id="universidade">
         <div class="university-content">
           <p class="eyebrow">Universidade Raizes e Saberes</p>
@@ -475,6 +509,16 @@
         </form>
       </section>
     </main>
+
+    <div class="video-modal" data-video-modal hidden>
+      <div class="video-modal-dialog" role="dialog" aria-modal="true" aria-label="Video institucional Raizes e Saberes">
+        <button class="video-modal-close" type="button" data-video-close aria-label="Fechar video">Fechar</button>
+        <video controls playsinline preload="metadata" data-video-player poster="assets/RS-001-HeroMockup.webp">
+          <source src="assets/video/RS-020-video-institucional.mp4" type="video/mp4" />
+          Seu navegador nao suporta a reproducao deste video.
+        </video>
+      </div>
+    </div>
 
     <footer class="site-footer">
       <div>

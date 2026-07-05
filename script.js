@@ -9,6 +9,10 @@ const libraryEmpty = document.querySelector("[data-library-empty]");
 const bookModal = document.querySelector("[data-book-modal]");
 const bookButtons = document.querySelectorAll("[data-book-viewer]");
 const bookModalCloseButtons = document.querySelectorAll("[data-book-modal-close]");
+const videoModal = document.querySelector("[data-video-modal]");
+const videoOpenButton = document.querySelector("[data-video-open]");
+const videoCloseButton = document.querySelector("[data-video-close]");
+const videoPlayer = document.querySelector("[data-video-player]");
 
 const syncHeader = () => {
   header.classList.toggle("is-scrolled", window.scrollY > 12);
@@ -134,6 +138,51 @@ if (bookModal) {
     }
   });
 }
+
+const openVideoModal = () => {
+  if (!videoModal) {
+    return;
+  }
+
+  videoModal.hidden = false;
+  document.body.classList.add("modal-open");
+  videoPlayer?.play?.().catch(() => {});
+};
+
+const closeVideoModal = () => {
+  if (!videoModal) {
+    return;
+  }
+
+  videoModal.hidden = true;
+  document.body.classList.remove("modal-open");
+
+  if (videoPlayer) {
+    videoPlayer.pause();
+  }
+};
+
+if (videoOpenButton) {
+  videoOpenButton.addEventListener("click", openVideoModal);
+}
+
+if (videoCloseButton) {
+  videoCloseButton.addEventListener("click", closeVideoModal);
+}
+
+if (videoModal) {
+  videoModal.addEventListener("click", (event) => {
+    if (event.target === videoModal) {
+      closeVideoModal();
+    }
+  });
+}
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && videoModal && !videoModal.hidden) {
+    closeVideoModal();
+  }
+});
 
 syncHeader();
 window.addEventListener("scroll", syncHeader, { passive: true });
