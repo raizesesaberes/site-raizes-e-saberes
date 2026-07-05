@@ -368,6 +368,13 @@ h3 {
   box-shadow: var(--shadow-lg);
 }
 
+.hero-mockup-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+}
+
 .mockup-topbar {
   display: flex;
   gap: 8px;
@@ -393,43 +400,6 @@ h3 {
 
 .mockup-topbar span:nth-child(3) {
   background: var(--green-light);
-}
-
-.floating-preview {
-  position: absolute;
-  display: grid;
-  min-width: 190px;
-  gap: 4px;
-  padding: 16px;
-  border: 1px solid rgba(229, 231, 235, 0.95);
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.94);
-  box-shadow: var(--shadow-md);
-}
-
-.floating-preview .placeholder-icon {
-  width: 30px;
-  height: 30px;
-  border-radius: 10px;
-}
-
-.floating-preview strong {
-  font-family: Poppins, Inter, system-ui, sans-serif;
-  font-size: 0.86rem;
-}
-
-.floating-preview small {
-  color: var(--muted);
-}
-
-.dashboard-preview {
-  top: 10%;
-  right: -20px;
-}
-
-.book-preview {
-  bottom: 9%;
-  left: -22px;
 }
 
 .section {
@@ -1092,11 +1062,6 @@ h3 {
   .platform-placeholder,
   .report-placeholder {
     min-height: 340px;
-  }
-
-  .floating-preview {
-    position: static;
-    margin-top: 14px;
   }
 
   .final-cta {
