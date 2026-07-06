@@ -892,13 +892,52 @@ h3 {
 }
 
 .video-section {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(320px, 0.82fr) minmax(0, 1.18fr);
   gap: 44px;
   align-items: center;
   width: min(100% - 48px, var(--container));
-  padding-top: 126px;
-  padding-bottom: 126px;
+  overflow: hidden;
+  padding: 104px clamp(28px, 5vw, 72px);
+  border: 1px solid rgba(46, 125, 50, 0.1);
+  border-radius: 42px;
+  background:
+    radial-gradient(circle at 16% 18%, rgba(212, 175, 55, 0.16), transparent 18rem),
+    radial-gradient(circle at 88% 28%, rgba(102, 187, 106, 0.2), transparent 21rem),
+    linear-gradient(135deg, #ffffff 0%, #f8fafc 46%, #ecf8ef 100%);
+  box-shadow:
+    0 38px 110px rgba(31, 41, 55, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  isolation: isolate;
+}
+
+.video-section::before,
+.video-section::after {
+  position: absolute;
+  z-index: -1;
+  border-radius: 999px;
+  content: "";
+  pointer-events: none;
+}
+
+.video-section::before {
+  top: -82px;
+  right: 10%;
+  width: 260px;
+  height: 260px;
+  border: 1px solid rgba(46, 125, 50, 0.12);
+  background: rgba(232, 245, 233, 0.36);
+}
+
+.video-section::after {
+  right: -120px;
+  bottom: -130px;
+  width: 360px;
+  height: 360px;
+  background:
+    radial-gradient(circle, rgba(212, 175, 55, 0.18), transparent 62%),
+    rgba(46, 125, 50, 0.06);
 }
 
 .video-copy h2 {
@@ -908,7 +947,8 @@ h3 {
 .video-copy > p:not(.eyebrow) {
   max-width: 620px;
   color: var(--muted);
-  font-size: 1.05rem;
+  font-size: 1.08rem;
+  line-height: 1.8;
 }
 
 .video-highlights {
@@ -936,15 +976,16 @@ h3 {
   position: relative;
   display: block;
   overflow: hidden;
-  min-height: 430px;
+  min-height: 470px;
   padding: 0;
-  border: 0;
+  border: 1px solid rgba(255, 255, 255, 0.56);
   border-radius: 34px;
   color: var(--white);
   background: var(--text);
   box-shadow:
-    0 38px 88px rgba(31, 41, 55, 0.24),
-    0 18px 40px rgba(17, 54, 45, 0.16);
+    0 48px 110px rgba(31, 41, 55, 0.25),
+    0 22px 52px rgba(17, 54, 45, 0.18),
+    0 0 0 10px rgba(255, 255, 255, 0.62);
   cursor: pointer;
   isolation: isolate;
   transition: transform 0.28s ease, box-shadow 0.28s ease;
@@ -962,8 +1003,9 @@ h3 {
 
 .video-player-card:hover {
   box-shadow:
-    0 48px 104px rgba(31, 41, 55, 0.28),
-    0 22px 48px rgba(17, 54, 45, 0.18);
+    0 58px 128px rgba(31, 41, 55, 0.3),
+    0 28px 58px rgba(17, 54, 45, 0.2),
+    0 0 0 10px rgba(255, 255, 255, 0.74);
   transform: translateY(-6px);
 }
 
@@ -978,7 +1020,9 @@ h3 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: scale(1.04);
+  object-position: center;
+  filter: saturate(1.06) contrast(1.02);
+  transform: scale(1.035);
   transition: transform 0.32s ease;
 }
 
@@ -989,8 +1033,9 @@ h3 {
 .video-overlay {
   z-index: 1;
   background:
-    radial-gradient(circle at 78% 16%, rgba(212, 175, 55, 0.24), transparent 19rem),
-    linear-gradient(110deg, rgba(17, 54, 45, 0.92), rgba(17, 54, 45, 0.44) 48%, rgba(31, 41, 55, 0.18));
+    radial-gradient(circle at 78% 16%, rgba(212, 175, 55, 0.28), transparent 18rem),
+    radial-gradient(circle at 52% 50%, rgba(255, 255, 255, 0.12), transparent 11rem),
+    linear-gradient(110deg, rgba(7, 27, 47, 0.9), rgba(17, 54, 45, 0.42) 50%, rgba(31, 41, 55, 0.12));
 }
 
 .video-play {
@@ -1046,6 +1091,12 @@ h3 {
   font-family: Poppins, Inter, system-ui, sans-serif;
   font-size: clamp(1.55rem, 2.7vw, 2.4rem);
   line-height: 1;
+}
+
+.video-card-copy em {
+  color: rgba(255, 255, 255, 0.78);
+  font-style: normal;
+  font-weight: 700;
 }
 
 .video-modal {
