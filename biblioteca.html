@@ -90,8 +90,8 @@
           <button class="library-filter is-active" type="button" data-filter="all">Todos</button>
           <button class="library-filter" type="button" data-filter="infantil">Educacao Infantil</button>
           <button class="library-filter" type="button" data-filter="sensorial">Laboratorio Sensorial</button>
-          <button class="library-filter" type="button" data-filter="oficial">Com capa oficial</button>
-          <button class="library-filter" type="button" data-filter="preparacao">Capas em preparacao</button>
+          <button class="library-filter" type="button" data-filter="volume">Volumes</button>
+          <button class="library-filter" type="button" data-filter="guia">Guias</button>
         </div>
       </section>
 
@@ -100,233 +100,221 @@
           <p class="eyebrow">Educacao Infantil</p>
           <h2 id="educacao-infantil-title">Colecoes por etapa</h2>
           <p>
-            As capas oficiais disponiveis foram integradas como referencia visual principal de cada
-            etapa. Os volumes e guias ficam prontos para receber suas capas individuais.
+            As capas oficiais disponiveis foram integradas como elemento visual principal do acervo,
+            organizando volumes, laboratorio sensorial e guias por etapa.
           </p>
         </div>
 
         <div class="library-grid" data-library-grid>
-          <article
-            class="library-card is-featured"
-            data-category="infantil oficial"
-            data-title="Infantil 2 anos colecao oficial"
-          >
+          <div class="library-stage-title">
+            <span>Educacao Infantil</span>
+            <h3>Infantil 2 anos</h3>
+          </div>
+
+          <article class="library-card" data-category="infantil volume oficial" data-title="Infantil 2 anos Volume 1">
             <div class="library-cover has-cover">
-              <img src="assets/RS-010-CapaInfantil2.webp" alt="Capa oficial Infantil 2 anos" loading="lazy" />
+              <img src="assets/RS-010-CapaInfantil2.webp" alt="Capa oficial do Volume 1 Infantil 2 anos" loading="lazy" />
             </div>
             <div class="library-card-body">
               <span class="library-tag">Infantil 2 anos</span>
-              <h3>Colecao Infantil 2 anos</h3>
-              <p>Capa oficial integrada para apresentacao da etapa.</p>
-              <button class="button primary book-open-button" type="button" data-book-viewer>Ver colecao</button>
-            </div>
-          </article>
-
-          <article class="library-card" data-category="infantil preparacao" data-title="Infantil 2 anos Livro do Aluno Volume 1">
-            <div class="library-cover pending-cover"><span>Capa oficial em preparacao</span></div>
-            <div class="library-card-body">
-              <span class="library-tag">Infantil 2 anos</span>
-              <h3>Livro do Aluno - Volume 1</h3>
-              <p>Estrutura pronta para receber capa e arquivo do livro.</p>
-              <button class="button secondary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
-            </div>
-          </article>
-
-          <article class="library-card" data-category="infantil preparacao" data-title="Infantil 2 anos Livro do Aluno Volume 2">
-            <div class="library-cover pending-cover"><span>Capa oficial em preparacao</span></div>
-            <div class="library-card-body">
-              <span class="library-tag">Infantil 2 anos</span>
-              <h3>Livro do Aluno - Volume 2</h3>
-              <p>Estrutura pronta para receber capa e arquivo do livro.</p>
-              <button class="button secondary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
-            </div>
-          </article>
-
-          <article class="library-card" data-category="infantil preparacao" data-title="Infantil 2 anos Guia do Alfabetizador">
-            <div class="library-cover pending-cover"><span>Capa oficial em preparacao</span></div>
-            <div class="library-card-body">
-              <span class="library-tag">Infantil 2 anos</span>
-              <h3>Guia do Alfabetizador</h3>
-              <p>Area preparada para o guia oficial da etapa.</p>
-              <button class="button secondary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
-            </div>
-          </article>
-
-          <article
-            class="library-card is-featured"
-            data-category="infantil oficial"
-            data-title="Infantil 3 anos colecao oficial"
-          >
-            <div class="library-cover has-cover">
-              <img src="assets/RS-011-CapaInfantil3.webp" alt="Capa oficial Infantil 3 anos" loading="lazy" />
-            </div>
-            <div class="library-card-body">
-              <span class="library-tag">Infantil 3 anos</span>
-              <h3>Colecao Infantil 3 anos</h3>
-              <p>Capa oficial integrada para apresentacao da etapa.</p>
-              <button class="button primary book-open-button" type="button" data-book-viewer>Ver colecao</button>
-            </div>
-          </article>
-
-          <article class="library-card" data-category="infantil preparacao" data-title="Infantil 3 anos Livro do Aluno Volume 1">
-            <div class="library-cover pending-cover"><span>Capa oficial em preparacao</span></div>
-            <div class="library-card-body">
-              <span class="library-tag">Infantil 3 anos</span>
-              <h3>Livro do Aluno - Volume 1</h3>
-              <p>Estrutura pronta para receber capa e arquivo do livro.</p>
-              <button class="button secondary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
-            </div>
-          </article>
-
-          <article class="library-card" data-category="infantil preparacao" data-title="Infantil 3 anos Livro do Aluno Volume 2">
-            <div class="library-cover pending-cover"><span>Capa oficial em preparacao</span></div>
-            <div class="library-card-body">
-              <span class="library-tag">Infantil 3 anos</span>
-              <h3>Livro do Aluno - Volume 2</h3>
-              <p>Estrutura pronta para receber capa e arquivo do livro.</p>
-              <button class="button secondary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
-            </div>
-          </article>
-
-          <article class="library-card" data-category="infantil preparacao" data-title="Infantil 3 anos Guia do Alfabetizador">
-            <div class="library-cover pending-cover"><span>Capa oficial em preparacao</span></div>
-            <div class="library-card-body">
-              <span class="library-tag">Infantil 3 anos</span>
-              <h3>Guia do Alfabetizador</h3>
-              <p>Area preparada para o guia oficial da etapa.</p>
-              <button class="button secondary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
-            </div>
-          </article>
-
-          <article
-            class="library-card is-featured"
-            data-category="infantil oficial"
-            data-title="Infantil 4 anos colecao oficial"
-          >
-            <div class="library-cover has-cover">
-              <img src="assets/RS-012-CapaInfantil4.webp" alt="Capa oficial Infantil 4 anos" loading="lazy" />
-            </div>
-            <div class="library-card-body">
-              <span class="library-tag">Infantil 4 anos</span>
-              <h3>Colecao Infantil 4 anos</h3>
-              <p>Capa oficial integrada para apresentacao da etapa.</p>
-              <button class="button primary book-open-button" type="button" data-book-viewer>Ver colecao</button>
-            </div>
-          </article>
-
-          <article class="library-card" data-category="infantil preparacao" data-title="Infantil 4 anos Livro do Aluno Volume 1">
-            <div class="library-cover pending-cover"><span>Capa oficial em preparacao</span></div>
-            <div class="library-card-body">
-              <span class="library-tag">Infantil 4 anos</span>
-              <h3>Livro do Aluno - Volume 1</h3>
-              <p>Estrutura pronta para receber capa e arquivo do livro.</p>
-              <button class="button secondary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
-            </div>
-          </article>
-
-          <article class="library-card" data-category="infantil preparacao" data-title="Infantil 4 anos Livro do Aluno Volume 2">
-            <div class="library-cover pending-cover"><span>Capa oficial em preparacao</span></div>
-            <div class="library-card-body">
-              <span class="library-tag">Infantil 4 anos</span>
-              <h3>Livro do Aluno - Volume 2</h3>
-              <p>Estrutura pronta para receber capa e arquivo do livro.</p>
-              <button class="button secondary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
-            </div>
-          </article>
-
-          <article class="library-card" data-category="infantil preparacao" data-title="Infantil 4 anos Guia do Alfabetizador">
-            <div class="library-cover pending-cover"><span>Capa oficial em preparacao</span></div>
-            <div class="library-card-body">
-              <span class="library-tag">Infantil 4 anos</span>
-              <h3>Guia do Alfabetizador</h3>
-              <p>Area preparada para o guia oficial da etapa.</p>
-              <button class="button secondary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
-            </div>
-          </article>
-
-          <article
-            class="library-card is-featured"
-            data-category="infantil oficial"
-            data-title="Infantil 5 anos colecao oficial"
-          >
-            <div class="library-cover has-cover">
-              <img src="assets/RS-013-CapaInfantil5.webp" alt="Capa oficial Infantil 5 anos" loading="lazy" />
-            </div>
-            <div class="library-card-body">
-              <span class="library-tag">Infantil 5 anos</span>
-              <h3>Colecao Infantil 5 anos</h3>
-              <p>Capa oficial integrada para apresentacao da etapa.</p>
-              <button class="button primary book-open-button" type="button" data-book-viewer>Ver colecao</button>
-            </div>
-          </article>
-
-          <article class="library-card" data-category="infantil preparacao" data-title="Infantil 5 anos Livro do Aluno Volume 1">
-            <div class="library-cover pending-cover"><span>Capa oficial em preparacao</span></div>
-            <div class="library-card-body">
-              <span class="library-tag">Infantil 5 anos</span>
-              <h3>Livro do Aluno - Volume 1</h3>
-              <p>Estrutura pronta para receber capa e arquivo do livro.</p>
-              <button class="button secondary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
-            </div>
-          </article>
-
-          <article class="library-card" data-category="infantil preparacao" data-title="Infantil 5 anos Livro do Aluno Volume 2">
-            <div class="library-cover pending-cover"><span>Capa oficial em preparacao</span></div>
-            <div class="library-card-body">
-              <span class="library-tag">Infantil 5 anos</span>
-              <h3>Livro do Aluno - Volume 2</h3>
-              <p>Estrutura pronta para receber capa e arquivo do livro.</p>
-              <button class="button secondary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
-            </div>
-          </article>
-
-          <article class="library-card" data-category="infantil preparacao" data-title="Infantil 5 anos Guia do Alfabetizador">
-            <div class="library-cover pending-cover"><span>Capa oficial em preparacao</span></div>
-            <div class="library-card-body">
-              <span class="library-tag">Infantil 5 anos</span>
-              <h3>Guia do Alfabetizador</h3>
-              <p>Area preparada para o guia oficial da etapa.</p>
-              <button class="button secondary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
-            </div>
-          </article>
-
-          <article class="library-card" data-category="sensorial preparacao" data-title="Laboratorio Sensorial Volume 1">
-            <div class="library-cover pending-cover sensorial-cover"><span>Capa oficial em preparacao</span></div>
-            <div class="library-card-body">
-              <span class="library-tag gold">Laboratorio Sensorial</span>
               <h3>Volume 1</h3>
-              <p>Material preparado para experiencias sensoriais e exploratorias.</p>
-              <button class="button secondary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
+              <p>Livro do Aluno para apresentacao comercial da etapa.</p>
+              <button class="button primary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
             </div>
           </article>
 
-          <article class="library-card" data-category="sensorial preparacao" data-title="Laboratorio Sensorial Volume 2">
-            <div class="library-cover pending-cover sensorial-cover"><span>Capa oficial em preparacao</span></div>
+          <article class="library-card" data-category="infantil volume oficial" data-title="Infantil 2 anos Volume 2">
+            <div class="library-cover has-cover">
+              <img src="assets/RS-010-CapaInfantil2.webp" alt="Capa oficial do Volume 2 Infantil 2 anos" loading="lazy" />
+            </div>
             <div class="library-card-body">
-              <span class="library-tag gold">Laboratorio Sensorial</span>
+              <span class="library-tag">Infantil 2 anos</span>
               <h3>Volume 2</h3>
-              <p>Material preparado para experiencias sensoriais e exploratorias.</p>
-              <button class="button secondary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
+              <p>Continuidade da colecao para uso na biblioteca digital.</p>
+              <button class="button primary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
             </div>
           </article>
 
-          <article class="library-card" data-category="sensorial preparacao" data-title="Laboratorio Sensorial Volume 3">
-            <div class="library-cover pending-cover sensorial-cover"><span>Capa oficial em preparacao</span></div>
+          <article class="library-card" data-category="infantil sensorial oficial" data-title="Infantil 2 anos Laboratorio Sensorial">
+            <div class="library-cover has-cover">
+              <img src="assets/RS-010-CapaInfantil2.webp" alt="Capa oficial do Laboratorio Sensorial Infantil 2 anos" loading="lazy" />
+            </div>
             <div class="library-card-body">
               <span class="library-tag gold">Laboratorio Sensorial</span>
-              <h3>Volume 3</h3>
-              <p>Material preparado para experiencias sensoriais e exploratorias.</p>
-              <button class="button secondary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
+              <h3>Laboratorio Sensorial</h3>
+              <p>Experiencias exploratorias integradas a etapa Infantil 2 anos.</p>
+              <button class="button primary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
             </div>
           </article>
 
-          <article class="library-card" data-category="sensorial preparacao" data-title="Laboratorio Sensorial Volume 4">
-            <div class="library-cover pending-cover sensorial-cover"><span>Capa oficial em preparacao</span></div>
+          <article class="library-card" data-category="infantil guia oficial" data-title="Infantil 2 anos Guia do Alfabetizador">
+            <div class="library-cover has-cover">
+              <img src="assets/RS-010-CapaInfantil2.webp" alt="Capa oficial do Guia do Alfabetizador Infantil 2 anos" loading="lazy" />
+            </div>
+            <div class="library-card-body">
+              <span class="library-tag">Infantil 2 anos</span>
+              <h3>Guia do Alfabetizador</h3>
+              <p>Material de apoio para planejamento e mediacao pedagogica.</p>
+              <button class="button primary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
+            </div>
+          </article>
+
+          <div class="library-stage-title">
+            <span>Educacao Infantil</span>
+            <h3>Infantil 3 anos</h3>
+          </div>
+
+          <article class="library-card" data-category="infantil volume oficial" data-title="Infantil 3 anos Volume 1">
+            <div class="library-cover has-cover">
+              <img src="assets/RS-011-CapaInfantil3.webp" alt="Capa oficial do Volume 1 Infantil 3 anos" loading="lazy" />
+            </div>
+            <div class="library-card-body">
+              <span class="library-tag">Infantil 3 anos</span>
+              <h3>Volume 1</h3>
+              <p>Livro do Aluno para apresentacao comercial da etapa.</p>
+              <button class="button primary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
+            </div>
+          </article>
+
+          <article class="library-card" data-category="infantil volume oficial" data-title="Infantil 3 anos Volume 2">
+            <div class="library-cover has-cover">
+              <img src="assets/RS-011-CapaInfantil3.webp" alt="Capa oficial do Volume 2 Infantil 3 anos" loading="lazy" />
+            </div>
+            <div class="library-card-body">
+              <span class="library-tag">Infantil 3 anos</span>
+              <h3>Volume 2</h3>
+              <p>Continuidade da colecao para uso na biblioteca digital.</p>
+              <button class="button primary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
+            </div>
+          </article>
+
+          <article class="library-card" data-category="infantil sensorial oficial" data-title="Infantil 3 anos Laboratorio Sensorial">
+            <div class="library-cover has-cover">
+              <img src="assets/RS-011-CapaInfantil3.webp" alt="Capa oficial do Laboratorio Sensorial Infantil 3 anos" loading="lazy" />
+            </div>
             <div class="library-card-body">
               <span class="library-tag gold">Laboratorio Sensorial</span>
-              <h3>Volume 4</h3>
-              <p>Material preparado para experiencias sensoriais e exploratorias.</p>
-              <button class="button secondary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
+              <h3>Laboratorio Sensorial</h3>
+              <p>Experiencias exploratorias integradas a etapa Infantil 3 anos.</p>
+              <button class="button primary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
+            </div>
+          </article>
+
+          <article class="library-card" data-category="infantil guia oficial" data-title="Infantil 3 anos Guia do Alfabetizador">
+            <div class="library-cover has-cover">
+              <img src="assets/RS-011-CapaInfantil3.webp" alt="Capa oficial do Guia do Alfabetizador Infantil 3 anos" loading="lazy" />
+            </div>
+            <div class="library-card-body">
+              <span class="library-tag">Infantil 3 anos</span>
+              <h3>Guia do Alfabetizador</h3>
+              <p>Material de apoio para planejamento e mediacao pedagogica.</p>
+              <button class="button primary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
+            </div>
+          </article>
+
+          <div class="library-stage-title">
+            <span>Educacao Infantil</span>
+            <h3>Infantil 4 anos</h3>
+          </div>
+
+          <article class="library-card" data-category="infantil volume oficial" data-title="Infantil 4 anos Volume 1">
+            <div class="library-cover has-cover">
+              <img src="assets/RS-012-CapaInfantil4.webp" alt="Capa oficial do Volume 1 Infantil 4 anos" loading="lazy" />
+            </div>
+            <div class="library-card-body">
+              <span class="library-tag">Infantil 4 anos</span>
+              <h3>Volume 1</h3>
+              <p>Livro do Aluno para apresentacao comercial da etapa.</p>
+              <button class="button primary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
+            </div>
+          </article>
+
+          <article class="library-card" data-category="infantil volume oficial" data-title="Infantil 4 anos Volume 2">
+            <div class="library-cover has-cover">
+              <img src="assets/RS-012-CapaInfantil4.webp" alt="Capa oficial do Volume 2 Infantil 4 anos" loading="lazy" />
+            </div>
+            <div class="library-card-body">
+              <span class="library-tag">Infantil 4 anos</span>
+              <h3>Volume 2</h3>
+              <p>Continuidade da colecao para uso na biblioteca digital.</p>
+              <button class="button primary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
+            </div>
+          </article>
+
+          <article class="library-card" data-category="infantil sensorial oficial" data-title="Infantil 4 anos Laboratorio Sensorial">
+            <div class="library-cover has-cover">
+              <img src="assets/RS-012-CapaInfantil4.webp" alt="Capa oficial do Laboratorio Sensorial Infantil 4 anos" loading="lazy" />
+            </div>
+            <div class="library-card-body">
+              <span class="library-tag gold">Laboratorio Sensorial</span>
+              <h3>Laboratorio Sensorial</h3>
+              <p>Experiencias exploratorias integradas a etapa Infantil 4 anos.</p>
+              <button class="button primary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
+            </div>
+          </article>
+
+          <article class="library-card" data-category="infantil guia oficial" data-title="Infantil 4 anos Guia do Alfabetizador">
+            <div class="library-cover has-cover">
+              <img src="assets/RS-012-CapaInfantil4.webp" alt="Capa oficial do Guia do Alfabetizador Infantil 4 anos" loading="lazy" />
+            </div>
+            <div class="library-card-body">
+              <span class="library-tag">Infantil 4 anos</span>
+              <h3>Guia do Alfabetizador</h3>
+              <p>Material de apoio para planejamento e mediacao pedagogica.</p>
+              <button class="button primary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
+            </div>
+          </article>
+
+          <div class="library-stage-title">
+            <span>Educacao Infantil</span>
+            <h3>Infantil 5 anos</h3>
+          </div>
+
+          <article class="library-card" data-category="infantil volume oficial" data-title="Infantil 5 anos Volume 1">
+            <div class="library-cover has-cover">
+              <img src="assets/RS-013-CapaInfantil5.webp" alt="Capa oficial do Volume 1 Infantil 5 anos" loading="lazy" />
+            </div>
+            <div class="library-card-body">
+              <span class="library-tag">Infantil 5 anos</span>
+              <h3>Volume 1</h3>
+              <p>Livro do Aluno para apresentacao comercial da etapa.</p>
+              <button class="button primary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
+            </div>
+          </article>
+
+          <article class="library-card" data-category="infantil volume oficial" data-title="Infantil 5 anos Volume 2">
+            <div class="library-cover has-cover">
+              <img src="assets/RS-013-CapaInfantil5.webp" alt="Capa oficial do Volume 2 Infantil 5 anos" loading="lazy" />
+            </div>
+            <div class="library-card-body">
+              <span class="library-tag">Infantil 5 anos</span>
+              <h3>Volume 2</h3>
+              <p>Continuidade da colecao para uso na biblioteca digital.</p>
+              <button class="button primary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
+            </div>
+          </article>
+
+          <article class="library-card" data-category="infantil sensorial oficial" data-title="Infantil 5 anos Laboratorio Sensorial">
+            <div class="library-cover has-cover">
+              <img src="assets/RS-013-CapaInfantil5.webp" alt="Capa oficial do Laboratorio Sensorial Infantil 5 anos" loading="lazy" />
+            </div>
+            <div class="library-card-body">
+              <span class="library-tag gold">Laboratorio Sensorial</span>
+              <h3>Laboratorio Sensorial</h3>
+              <p>Experiencias exploratorias integradas a etapa Infantil 5 anos.</p>
+              <button class="button primary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
+            </div>
+          </article>
+
+          <article class="library-card" data-category="infantil guia oficial" data-title="Infantil 5 anos Guia do Alfabetizador">
+            <div class="library-cover has-cover">
+              <img src="assets/RS-013-CapaInfantil5.webp" alt="Capa oficial do Guia do Alfabetizador Infantil 5 anos" loading="lazy" />
+            </div>
+            <div class="library-card-body">
+              <span class="library-tag">Infantil 5 anos</span>
+              <h3>Guia do Alfabetizador</h3>
+              <p>Material de apoio para planejamento e mediacao pedagogica.</p>
+              <button class="button primary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
             </div>
           </article>
         </div>
