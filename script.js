@@ -5,6 +5,7 @@ const contactForm = document.querySelector("[data-contact-form]");
 const librarySearch = document.querySelector("[data-library-search]");
 const libraryFilters = document.querySelectorAll("[data-filter]");
 const libraryCards = document.querySelectorAll("[data-library-grid] .library-card");
+const libraryShelves = document.querySelectorAll("[data-library-shelf]");
 const libraryEmpty = document.querySelector("[data-library-empty]");
 const bookModal = document.querySelector("[data-book-modal]");
 const bookButtons = document.querySelectorAll("[data-book-viewer]");
@@ -94,6 +95,14 @@ const syncLibrary = () => {
     if (isVisible) {
       visibleCount += 1;
     }
+  });
+
+  libraryShelves.forEach((shelf) => {
+    const hasVisibleCard = Array.from(shelf.querySelectorAll(".library-card")).some(
+      (card) => !card.classList.contains("is-hidden")
+    );
+
+    shelf.classList.toggle("is-hidden", !hasVisibleCard);
   });
 
   if (libraryEmpty) {

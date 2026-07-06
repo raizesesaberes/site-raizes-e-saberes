@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Biblioteca Digital demonstrativa do Ecossistema Educacional Raizes e Saberes, com acervo de Educacao Infantil e Laboratorio Sensorial."
+      content="Biblioteca Digital demonstrativa do Ecossistema Educacional Raizes e Saberes, com acervo oficial de Educacao Infantil."
     />
     <meta name="theme-color" content="#2E7D32" />
     <meta property="og:title" content="Biblioteca Digital | Raizes e Saberes" />
     <meta
       property="og:description"
-      content="Ambiente demonstrativo da Biblioteca Digital com capas oficiais e estrutura preparada para Book Viewer."
+      content="Ambiente premium da Biblioteca Digital com capas oficiais e estrutura preparada para Book Viewer."
     />
     <title>Biblioteca Digital | Raizes e Saberes</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -22,7 +22,7 @@
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="library-page">
+  <body class="library-page premium-library-page">
     <header class="site-header library-header" data-header>
       <a class="brand" href="index.html#inicio" aria-label="Raizes e Saberes">
         <img src="logo-raizes-e-saberes.png" alt="Raizes e Saberes Digital" />
@@ -36,6 +36,7 @@
 
       <nav class="site-nav" data-nav aria-label="Menu principal">
         <a href="index.html#ecossistema">Ecossistema</a>
+        <a href="index.html#video-institucional">Video</a>
         <a href="index.html#infantil">Educacao Infantil</a>
         <a href="index.html#plataforma">Plataforma</a>
         <a href="biblioteca.html" aria-current="page">Biblioteca</a>
@@ -46,282 +47,324 @@
       <a class="button primary nav-cta" href="index.html#contato">Solicitar Demonstracao</a>
     </header>
 
-    <main>
-      <section class="library-hero">
-        <div class="library-hero-copy">
-          <div class="trust-badge">
-            <span>Biblioteca demonstrativa do ecossistema</span>
+    <main class="library-app-shell">
+      <aside class="library-sidebar" aria-label="Navegacao da Biblioteca Digital">
+        <div class="library-sidebar-brand">
+          <img src="logo-raizes-e-saberes.png" alt="Raizes e Saberes Digital" />
+          <div>
+            <strong>Biblioteca Digital</strong>
+            <span>Acervo demonstrativo oficial</span>
           </div>
-          <p class="eyebrow">Biblioteca Digital</p>
-          <h1>Acervo organizado para apresentar as colecoes oficiais Raizes e Saberes.</h1>
-          <p>
-            Um ambiente visual e funcional para demonstrar livros, guias, colecoes e a futura
-            integracao com o Book Viewer da plataforma.
-          </p>
         </div>
 
-        <div class="library-hero-panel" aria-label="Resumo do acervo">
+        <nav class="library-side-nav" aria-label="Colecoes">
+          <a href="#infantil-2" class="is-active">Infantil 2 anos</a>
+          <a href="#infantil-3">Infantil 3 anos</a>
+          <a href="#infantil-4">Infantil 4 anos</a>
+          <a href="#infantil-5">Infantil 5 anos</a>
+        </nav>
+
+        <div class="library-institutional-card">
+          <span>Ecossistema Educacional</span>
+          <strong>Livros, plataforma, avaliacao e formacao conectados.</strong>
+          <p>Ambiente preparado para demonstracoes comerciais, secretarias e redes de ensino.</p>
+        </div>
+
+        <div class="library-sidebar-metrics" aria-label="Resumo institucional">
           <div>
             <strong>16</strong>
-            <span>itens estruturados</span>
+            <span>capas oficiais</span>
           </div>
           <div>
             <strong>4</strong>
-            <span>capas oficiais integradas</span>
-          </div>
-          <div>
-            <strong>2</strong>
-            <span>colecoes iniciais</span>
+            <span>etapas infantis</span>
           </div>
         </div>
-      </section>
+      </aside>
 
-      <section class="library-tools" aria-label="Ferramentas da biblioteca">
-        <label class="library-search">
-          <span>Pesquisar no acervo</span>
-          <input
-            type="search"
-            placeholder="Buscar por etapa, volume, guia ou colecao"
-            data-library-search
-          />
-        </label>
+      <section class="library-content" data-library-grid>
+        <div class="library-topbar">
+          <label class="library-search">
+            <span>Pesquisar no acervo</span>
+            <input
+              type="search"
+              placeholder="Buscar por etapa, volume, laboratorio ou guia"
+              data-library-search
+            />
+          </label>
 
-        <div class="library-filters" aria-label="Filtros da biblioteca">
-          <button class="library-filter is-active" type="button" data-filter="all">Todos</button>
-          <button class="library-filter" type="button" data-filter="infantil">Educacao Infantil</button>
-          <button class="library-filter" type="button" data-filter="sensorial">Laboratorio Sensorial</button>
-          <button class="library-filter" type="button" data-filter="volume">Volumes</button>
-          <button class="library-filter" type="button" data-filter="guia">Guias</button>
-        </div>
-      </section>
-
-      <section class="library-section" aria-labelledby="educacao-infantil-title">
-        <div class="library-section-heading">
-          <p class="eyebrow">Educacao Infantil</p>
-          <h2 id="educacao-infantil-title">Colecoes por etapa</h2>
-          <p>
-            As capas oficiais disponiveis foram integradas como elemento visual principal do acervo,
-            organizando volumes, laboratorio sensorial e guias por etapa.
-          </p>
+          <div class="library-filters" aria-label="Filtros da biblioteca">
+            <button class="library-filter is-active" type="button" data-filter="all">Todos</button>
+            <button class="library-filter" type="button" data-filter="volume">Volumes</button>
+            <button class="library-filter" type="button" data-filter="sensorial">Sensorial</button>
+            <button class="library-filter" type="button" data-filter="guia">Guias</button>
+          </div>
         </div>
 
-        <div class="library-grid" data-library-grid>
-          <div class="library-stage-title">
-            <span>Educacao Infantil</span>
-            <h3>Infantil 2 anos</h3>
+        <section class="library-command-center" aria-labelledby="library-title">
+          <div class="library-command-copy">
+            <p class="eyebrow">Biblioteca Digital</p>
+            <h1 id="library-title">Acervo oficial pronto para apresentacao comercial.</h1>
+            <p>
+              Capas reais da colecao Raizes e Saberes organizadas em uma interface premium,
+              preparada para demonstrar a experiencia da plataforma e futura abertura no Book Viewer.
+            </p>
+            <div class="library-command-actions">
+              <a class="button primary" href="#infantil-2">Explorar acervo</a>
+              <a class="button secondary" href="index.html#video-institucional">Ver ecossistema</a>
+            </div>
           </div>
 
-          <article class="library-card" data-category="infantil volume oficial" data-title="Infantil 2 anos Volume 1">
-            <div class="library-cover has-cover">
-              <img src="assets/RAIZES_INFANTIL2_VOL1_BIBLIOTECA.webp" alt="Capa oficial do Volume 1 Infantil 2 anos" loading="lazy" />
-            </div>
-            <div class="library-card-body">
-              <span class="library-tag">Infantil 2 anos</span>
-              <h3>Volume 1</h3>
-              <p>Livro do Aluno para apresentacao comercial da etapa.</p>
-              <button class="button primary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
-            </div>
-          </article>
-
-          <article class="library-card" data-category="infantil volume oficial" data-title="Infantil 2 anos Volume 2">
-            <div class="library-cover has-cover">
-              <img src="assets/RAIZES_INFANTIL2_VOL2_BIBLIOTECA.webp" alt="Capa oficial do Volume 2 Infantil 2 anos" loading="lazy" />
-            </div>
-            <div class="library-card-body">
-              <span class="library-tag">Infantil 2 anos</span>
-              <h3>Volume 2</h3>
-              <p>Continuidade da colecao para uso na biblioteca digital.</p>
-              <button class="button primary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
-            </div>
-          </article>
-
-          <article class="library-card" data-category="infantil sensorial oficial" data-title="Infantil 2 anos Laboratorio Sensorial">
-            <div class="library-cover has-cover">
-              <img src="assets/RAIZES_LAB_SENSORIAL_INFANTIL2_BIBLIOTECA.webp" alt="Capa oficial do Laboratorio Sensorial Infantil 2 anos" loading="lazy" />
-            </div>
-            <div class="library-card-body">
-              <span class="library-tag gold">Laboratorio Sensorial</span>
-              <h3>Laboratorio Sensorial</h3>
-              <p>Experiencias exploratorias integradas a etapa Infantil 2 anos.</p>
-              <button class="button primary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
-            </div>
-          </article>
-
-          <article class="library-card" data-category="infantil guia oficial" data-title="Infantil 2 anos Guia do Alfabetizador">
-            <div class="library-cover has-cover">
-              <img src="assets/RAIZES_GUIA_ALFABETIZADOR_INFANTIL2_BIBLIOTECA.webp" alt="Capa oficial do Guia do Alfabetizador Infantil 2 anos" loading="lazy" />
-            </div>
-            <div class="library-card-body">
-              <span class="library-tag">Infantil 2 anos</span>
-              <h3>Guia do Alfabetizador</h3>
-              <p>Material de apoio para planejamento e mediacao pedagogica.</p>
-              <button class="button primary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
-            </div>
-          </article>
-
-          <div class="library-stage-title">
-            <span>Educacao Infantil</span>
-            <h3>Infantil 3 anos</h3>
+          <div class="library-featured-stack" aria-label="Destaque da Biblioteca Digital">
+            <img
+              src="assets/RAIZES_INFANTIL5_VOL2_BIBLIOTECA.webp"
+              alt="Capa oficial Infantil 5 anos Volume 2"
+              loading="eager"
+            />
+            <img
+              src="assets/RAIZES_INFANTIL4_VOL1_BIBLIOTECA.webp"
+              alt="Capa oficial Infantil 4 anos Volume 1"
+              loading="eager"
+            />
+            <img
+              src="assets/RAIZES_LAB_SENSORIAL_INFANTIL3_BIBLIOTECA.webp"
+              alt="Capa oficial Laboratorio Sensorial Infantil 3 anos"
+              loading="eager"
+            />
           </div>
-
-          <article class="library-card" data-category="infantil volume oficial" data-title="Infantil 3 anos Volume 1">
-            <div class="library-cover has-cover">
-              <img src="assets/RAIZES_INFANTIL3_VOL1_BIBLIOTECA.webp" alt="Capa oficial do Volume 1 Infantil 3 anos" loading="lazy" />
-            </div>
-            <div class="library-card-body">
-              <span class="library-tag">Infantil 3 anos</span>
-              <h3>Volume 1</h3>
-              <p>Livro do Aluno para apresentacao comercial da etapa.</p>
-              <button class="button primary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
-            </div>
-          </article>
-
-          <article class="library-card" data-category="infantil volume oficial" data-title="Infantil 3 anos Volume 2">
-            <div class="library-cover has-cover">
-              <img src="assets/RAIZES_INFANTIL3_VOL2_BIBLIOTECA.webp" alt="Capa oficial do Volume 2 Infantil 3 anos" loading="lazy" />
-            </div>
-            <div class="library-card-body">
-              <span class="library-tag">Infantil 3 anos</span>
-              <h3>Volume 2</h3>
-              <p>Continuidade da colecao para uso na biblioteca digital.</p>
-              <button class="button primary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
-            </div>
-          </article>
-
-          <article class="library-card" data-category="infantil sensorial oficial" data-title="Infantil 3 anos Laboratorio Sensorial">
-            <div class="library-cover has-cover">
-              <img src="assets/RAIZES_LAB_SENSORIAL_INFANTIL3_BIBLIOTECA.webp" alt="Capa oficial do Laboratorio Sensorial Infantil 3 anos" loading="lazy" />
-            </div>
-            <div class="library-card-body">
-              <span class="library-tag gold">Laboratorio Sensorial</span>
-              <h3>Laboratorio Sensorial</h3>
-              <p>Experiencias exploratorias integradas a etapa Infantil 3 anos.</p>
-              <button class="button primary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
-            </div>
-          </article>
-
-          <article class="library-card" data-category="infantil guia oficial" data-title="Infantil 3 anos Guia do Alfabetizador">
-            <div class="library-cover has-cover">
-              <img src="assets/RAIZES_GUIA_ALFABETIZADOR_INFANTIL3_BIBLIOTECA.webp" alt="Capa oficial do Guia do Alfabetizador Infantil 3 anos" loading="lazy" />
-            </div>
-            <div class="library-card-body">
-              <span class="library-tag">Infantil 3 anos</span>
-              <h3>Guia do Alfabetizador</h3>
-              <p>Material de apoio para planejamento e mediacao pedagogica.</p>
-              <button class="button primary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
-            </div>
-          </article>
-
-          <div class="library-stage-title">
-            <span>Educacao Infantil</span>
-            <h3>Infantil 4 anos</h3>
-          </div>
-
-          <article class="library-card" data-category="infantil volume oficial" data-title="Infantil 4 anos Volume 1">
-            <div class="library-cover has-cover">
-              <img src="assets/RAIZES_INFANTIL4_VOL1_BIBLIOTECA.webp" alt="Capa oficial do Volume 1 Infantil 4 anos" loading="lazy" />
-            </div>
-            <div class="library-card-body">
-              <span class="library-tag">Infantil 4 anos</span>
-              <h3>Volume 1</h3>
-              <p>Livro do Aluno para apresentacao comercial da etapa.</p>
-              <button class="button primary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
-            </div>
-          </article>
-
-          <article class="library-card" data-category="infantil volume oficial" data-title="Infantil 4 anos Volume 2">
-            <div class="library-cover has-cover">
-              <img src="assets/RAIZES_INFANTIL4_VOL2_BIBLIOTECA.webp" alt="Capa oficial do Volume 2 Infantil 4 anos" loading="lazy" />
-            </div>
-            <div class="library-card-body">
-              <span class="library-tag">Infantil 4 anos</span>
-              <h3>Volume 2</h3>
-              <p>Continuidade da colecao para uso na biblioteca digital.</p>
-              <button class="button primary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
-            </div>
-          </article>
-
-          <article class="library-card" data-category="infantil sensorial oficial" data-title="Infantil 4 anos Laboratorio Sensorial">
-            <div class="library-cover has-cover">
-              <img src="assets/RAIZES_LAB_SENSORIAL_INFANTIL4_BIBLIOTECA.webp" alt="Capa oficial do Laboratorio Sensorial Infantil 4 anos" loading="lazy" />
-            </div>
-            <div class="library-card-body">
-              <span class="library-tag gold">Laboratorio Sensorial</span>
-              <h3>Laboratorio Sensorial</h3>
-              <p>Experiencias exploratorias integradas a etapa Infantil 4 anos.</p>
-              <button class="button primary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
-            </div>
-          </article>
-
-          <article class="library-card" data-category="infantil guia oficial" data-title="Infantil 4 anos Guia do Alfabetizador">
-            <div class="library-cover has-cover">
-              <img src="assets/RAIZES_GUIA_ALFABETIZADOR_INFANTIL4_BIBLIOTECA.webp" alt="Capa oficial do Guia do Alfabetizador Infantil 4 anos" loading="lazy" />
-            </div>
-            <div class="library-card-body">
-              <span class="library-tag">Infantil 4 anos</span>
-              <h3>Guia do Alfabetizador</h3>
-              <p>Material de apoio para planejamento e mediacao pedagogica.</p>
-              <button class="button primary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
-            </div>
-          </article>
-
-          <div class="library-stage-title">
-            <span>Educacao Infantil</span>
-            <h3>Infantil 5 anos</h3>
-          </div>
-
-          <article class="library-card" data-category="infantil volume oficial" data-title="Infantil 5 anos Volume 1">
-            <div class="library-cover has-cover">
-              <img src="assets/RAIZES_INFANTIL5_VOL1_BIBLIOTECA.webp" alt="Capa oficial do Volume 1 Infantil 5 anos" loading="lazy" />
-            </div>
-            <div class="library-card-body">
-              <span class="library-tag">Infantil 5 anos</span>
-              <h3>Volume 1</h3>
-              <p>Livro do Aluno para apresentacao comercial da etapa.</p>
-              <button class="button primary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
-            </div>
-          </article>
-
-          <article class="library-card" data-category="infantil volume oficial" data-title="Infantil 5 anos Volume 2">
-            <div class="library-cover has-cover">
-              <img src="assets/RAIZES_INFANTIL5_VOL2_BIBLIOTECA.webp" alt="Capa oficial do Volume 2 Infantil 5 anos" loading="lazy" />
-            </div>
-            <div class="library-card-body">
-              <span class="library-tag">Infantil 5 anos</span>
-              <h3>Volume 2</h3>
-              <p>Continuidade da colecao para uso na biblioteca digital.</p>
-              <button class="button primary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
-            </div>
-          </article>
-
-          <article class="library-card" data-category="infantil sensorial oficial" data-title="Infantil 5 anos Laboratorio Sensorial">
-            <div class="library-cover has-cover">
-              <img src="assets/RAIZES_LAB_SENSORIAL_INFANTIL5_BIBLIOTECA.webp" alt="Capa oficial do Laboratorio Sensorial Infantil 5 anos" loading="lazy" />
-            </div>
-            <div class="library-card-body">
-              <span class="library-tag gold">Laboratorio Sensorial</span>
-              <h3>Laboratorio Sensorial</h3>
-              <p>Experiencias exploratorias integradas a etapa Infantil 5 anos.</p>
-              <button class="button primary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
-            </div>
-          </article>
-
-          <article class="library-card" data-category="infantil guia oficial" data-title="Infantil 5 anos Guia do Alfabetizador">
-            <div class="library-cover has-cover">
-              <img src="assets/RAIZES_GUIA_ALFABETIZADOR_INFANTIL5_BIBLIOTECA.webp" alt="Capa oficial do Guia do Alfabetizador Infantil 5 anos" loading="lazy" />
-            </div>
-            <div class="library-card-body">
-              <span class="library-tag">Infantil 5 anos</span>
-              <h3>Guia do Alfabetizador</h3>
-              <p>Material de apoio para planejamento e mediacao pedagogica.</p>
-              <button class="button primary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
-            </div>
-          </article>
-        </div>
+        </section>
 
         <p class="library-empty" data-library-empty hidden>
           Nenhum livro encontrado para esta pesquisa. Ajuste os filtros para visualizar o acervo.
         </p>
+
+        <section class="library-shelf" id="infantil-2" data-library-shelf>
+          <div class="library-shelf-heading">
+            <span>Educacao Infantil</span>
+            <h2>Infantil 2 anos</h2>
+            <p>Primeiras experiencias, acolhimento, descobertas e exploracao sensorial.</p>
+          </div>
+          <div class="library-rail">
+            <article class="library-card" data-category="infantil volume oficial" data-title="Infantil 2 anos Volume 1">
+              <div class="library-cover has-cover">
+                <img src="assets/RAIZES_INFANTIL2_VOL1_BIBLIOTECA.webp" alt="Capa oficial do Volume 1 Infantil 2 anos" loading="lazy" />
+              </div>
+              <div class="library-card-body">
+                <span class="library-tag">Infantil 2 anos</span>
+                <h3>Volume 1</h3>
+                <p>Livro do Aluno - 1o semestre.</p>
+                <button class="button primary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
+              </div>
+            </article>
+
+            <article class="library-card" data-category="infantil volume oficial" data-title="Infantil 2 anos Volume 2">
+              <div class="library-cover has-cover">
+                <img src="assets/RAIZES_INFANTIL2_VOL2_BIBLIOTECA.webp" alt="Capa oficial do Volume 2 Infantil 2 anos" loading="lazy" />
+              </div>
+              <div class="library-card-body">
+                <span class="library-tag">Infantil 2 anos</span>
+                <h3>Volume 2</h3>
+                <p>Livro do Aluno - 2o semestre.</p>
+                <button class="button primary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
+              </div>
+            </article>
+
+            <article class="library-card" data-category="infantil sensorial oficial" data-title="Infantil 2 anos Laboratorio Sensorial">
+              <div class="library-cover has-cover">
+                <img src="assets/RAIZES_LAB_SENSORIAL_INFANTIL2_BIBLIOTECA.webp" alt="Capa oficial do Laboratorio Sensorial Infantil 2 anos" loading="lazy" />
+              </div>
+              <div class="library-card-body">
+                <span class="library-tag gold">Laboratorio Sensorial</span>
+                <h3>Laboratorio Sensorial</h3>
+                <p>Experiencias investigativas e sensoriais.</p>
+                <button class="button primary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
+              </div>
+            </article>
+
+            <article class="library-card" data-category="infantil guia oficial" data-title="Infantil 2 anos Guia do Alfabetizador">
+              <div class="library-cover has-cover">
+                <img src="assets/RAIZES_GUIA_ALFABETIZADOR_INFANTIL2_BIBLIOTECA.webp" alt="Capa oficial do Guia do Alfabetizador Infantil 2 anos" loading="lazy" />
+              </div>
+              <div class="library-card-body">
+                <span class="library-tag emerald">Guia do Alfabetizador</span>
+                <h3>Guia do Alfabetizador</h3>
+                <p>Planejamento e mediacao pedagogica.</p>
+                <button class="button primary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="library-shelf" id="infantil-3" data-library-shelf>
+          <div class="library-shelf-heading">
+            <span>Educacao Infantil</span>
+            <h2>Infantil 3 anos</h2>
+            <p>Linguagem, convivencia, autonomia e descobertas com intencionalidade pedagogica.</p>
+          </div>
+          <div class="library-rail">
+            <article class="library-card" data-category="infantil volume oficial" data-title="Infantil 3 anos Volume 1">
+              <div class="library-cover has-cover">
+                <img src="assets/RAIZES_INFANTIL3_VOL1_BIBLIOTECA.webp" alt="Capa oficial do Volume 1 Infantil 3 anos" loading="lazy" />
+              </div>
+              <div class="library-card-body">
+                <span class="library-tag">Infantil 3 anos</span>
+                <h3>Volume 1</h3>
+                <p>Livro do Aluno - 1o semestre.</p>
+                <button class="button primary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
+              </div>
+            </article>
+
+            <article class="library-card" data-category="infantil volume oficial" data-title="Infantil 3 anos Volume 2">
+              <div class="library-cover has-cover">
+                <img src="assets/RAIZES_INFANTIL3_VOL2_BIBLIOTECA.webp" alt="Capa oficial do Volume 2 Infantil 3 anos" loading="lazy" />
+              </div>
+              <div class="library-card-body">
+                <span class="library-tag">Infantil 3 anos</span>
+                <h3>Volume 2</h3>
+                <p>Livro do Aluno - 2o semestre.</p>
+                <button class="button primary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
+              </div>
+            </article>
+
+            <article class="library-card" data-category="infantil sensorial oficial" data-title="Infantil 3 anos Laboratorio Sensorial">
+              <div class="library-cover has-cover">
+                <img src="assets/RAIZES_LAB_SENSORIAL_INFANTIL3_BIBLIOTECA.webp" alt="Capa oficial do Laboratorio Sensorial Infantil 3 anos" loading="lazy" />
+              </div>
+              <div class="library-card-body">
+                <span class="library-tag gold">Laboratorio Sensorial</span>
+                <h3>Laboratorio Sensorial</h3>
+                <p>Exploracao, observacao e experiencias praticas.</p>
+                <button class="button primary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
+              </div>
+            </article>
+
+            <article class="library-card" data-category="infantil guia oficial" data-title="Infantil 3 anos Guia do Alfabetizador">
+              <div class="library-cover has-cover">
+                <img src="assets/RAIZES_GUIA_ALFABETIZADOR_INFANTIL3_BIBLIOTECA.webp" alt="Capa oficial do Guia do Alfabetizador Infantil 3 anos" loading="lazy" />
+              </div>
+              <div class="library-card-body">
+                <span class="library-tag emerald">Guia do Alfabetizador</span>
+                <h3>Guia do Alfabetizador</h3>
+                <p>Orientacoes pedagogicas para o professor.</p>
+                <button class="button primary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="library-shelf" id="infantil-4" data-library-shelf>
+          <div class="library-shelf-heading">
+            <span>Educacao Infantil</span>
+            <h2>Infantil 4 anos</h2>
+            <p>Curiosidade, cultura, investigacao e experiencias conectadas ao desenvolvimento.</p>
+          </div>
+          <div class="library-rail">
+            <article class="library-card" data-category="infantil volume oficial" data-title="Infantil 4 anos Volume 1">
+              <div class="library-cover has-cover">
+                <img src="assets/RAIZES_INFANTIL4_VOL1_BIBLIOTECA.webp" alt="Capa oficial do Volume 1 Infantil 4 anos" loading="lazy" />
+              </div>
+              <div class="library-card-body">
+                <span class="library-tag">Infantil 4 anos</span>
+                <h3>Volume 1</h3>
+                <p>Livro do Aluno - 1o semestre.</p>
+                <button class="button primary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
+              </div>
+            </article>
+
+            <article class="library-card" data-category="infantil volume oficial" data-title="Infantil 4 anos Volume 2">
+              <div class="library-cover has-cover">
+                <img src="assets/RAIZES_INFANTIL4_VOL2_BIBLIOTECA.webp" alt="Capa oficial do Volume 2 Infantil 4 anos" loading="lazy" />
+              </div>
+              <div class="library-card-body">
+                <span class="library-tag">Infantil 4 anos</span>
+                <h3>Volume 2</h3>
+                <p>Livro do Aluno - 2o semestre.</p>
+                <button class="button primary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
+              </div>
+            </article>
+
+            <article class="library-card" data-category="infantil sensorial oficial" data-title="Infantil 4 anos Laboratorio Sensorial">
+              <div class="library-cover has-cover">
+                <img src="assets/RAIZES_LAB_SENSORIAL_INFANTIL4_BIBLIOTECA.webp" alt="Capa oficial do Laboratorio Sensorial Infantil 4 anos" loading="lazy" />
+              </div>
+              <div class="library-card-body">
+                <span class="library-tag gold">Laboratorio Sensorial</span>
+                <h3>Laboratorio Sensorial</h3>
+                <p>Atividades de descoberta, ciencia e natureza.</p>
+                <button class="button primary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
+              </div>
+            </article>
+
+            <article class="library-card" data-category="infantil guia oficial" data-title="Infantil 4 anos Guia do Alfabetizador">
+              <div class="library-cover has-cover">
+                <img src="assets/RAIZES_GUIA_ALFABETIZADOR_INFANTIL4_BIBLIOTECA.webp" alt="Capa oficial do Guia do Alfabetizador Infantil 4 anos" loading="lazy" />
+              </div>
+              <div class="library-card-body">
+                <span class="library-tag emerald">Guia do Alfabetizador</span>
+                <h3>Guia do Alfabetizador</h3>
+                <p>Suporte para planejamento e acompanhamento.</p>
+                <button class="button primary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="library-shelf" id="infantil-5" data-library-shelf>
+          <div class="library-shelf-heading">
+            <span>Educacao Infantil</span>
+            <h2>Infantil 5 anos</h2>
+            <p>Preparacao, repertorio, continuidade da aprendizagem e experiencias investigativas.</p>
+          </div>
+          <div class="library-rail">
+            <article class="library-card" data-category="infantil volume oficial" data-title="Infantil 5 anos Volume 1">
+              <div class="library-cover has-cover">
+                <img src="assets/RAIZES_INFANTIL5_VOL1_BIBLIOTECA.webp" alt="Capa oficial do Volume 1 Infantil 5 anos" loading="lazy" />
+              </div>
+              <div class="library-card-body">
+                <span class="library-tag">Infantil 5 anos</span>
+                <h3>Volume 1</h3>
+                <p>Livro do Aluno - 1o semestre.</p>
+                <button class="button primary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
+              </div>
+            </article>
+
+            <article class="library-card" data-category="infantil volume oficial" data-title="Infantil 5 anos Volume 2">
+              <div class="library-cover has-cover">
+                <img src="assets/RAIZES_INFANTIL5_VOL2_BIBLIOTECA.webp" alt="Capa oficial do Volume 2 Infantil 5 anos" loading="lazy" />
+              </div>
+              <div class="library-card-body">
+                <span class="library-tag">Infantil 5 anos</span>
+                <h3>Volume 2</h3>
+                <p>Livro do Aluno - 2o semestre.</p>
+                <button class="button primary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
+              </div>
+            </article>
+
+            <article class="library-card" data-category="infantil sensorial oficial" data-title="Infantil 5 anos Laboratorio Sensorial">
+              <div class="library-cover has-cover">
+                <img src="assets/RAIZES_LAB_SENSORIAL_INFANTIL5_BIBLIOTECA.webp" alt="Capa oficial do Laboratorio Sensorial Infantil 5 anos" loading="lazy" />
+              </div>
+              <div class="library-card-body">
+                <span class="library-tag gold">Laboratorio Sensorial</span>
+                <h3>Laboratorio Sensorial</h3>
+                <p>Investigacao, autonomia e experiencias para a vida.</p>
+                <button class="button primary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
+              </div>
+            </article>
+
+            <article class="library-card" data-category="infantil guia oficial" data-title="Infantil 5 anos Guia do Alfabetizador">
+              <div class="library-cover has-cover">
+                <img src="assets/RAIZES_GUIA_ALFABETIZADOR_INFANTIL5_BIBLIOTECA.webp" alt="Capa oficial do Guia do Alfabetizador Infantil 5 anos" loading="lazy" />
+              </div>
+              <div class="library-card-body">
+                <span class="library-tag emerald">Guia do Alfabetizador</span>
+                <h3>Guia do Alfabetizador</h3>
+                <p>Apoio ao professor na organizacao da pratica docente.</p>
+                <button class="button primary book-open-button" type="button" data-book-viewer>Abrir Livro</button>
+              </div>
+            </article>
+          </div>
+        </section>
       </section>
     </main>
 
@@ -331,14 +374,14 @@
         <p class="eyebrow">Book Viewer</p>
         <h2 id="book-modal-title">Livro preparado para abertura digital</h2>
         <p>
-          Este botao ja esta conectado ao fluxo demonstrativo. Na integracao definitiva, esta acao
-          abrira o arquivo oficial no leitor digital da plataforma.
+          Este fluxo demonstrativo ja esta pronto para receber os arquivos oficiais. Na integracao
+          definitiva, esta acao abrira o livro no leitor digital da plataforma.
         </p>
         <button class="button primary" type="button" data-book-modal-close>Entendi</button>
       </div>
     </div>
 
-    <footer class="site-footer">
+    <footer class="site-footer library-footer">
       <div>
         <strong>Raizes e Saberes Digital</strong>
         <span>Biblioteca demonstrativa do ecossistema educacional.</span>
