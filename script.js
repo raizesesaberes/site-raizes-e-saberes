@@ -12,7 +12,9 @@ const bookModalCloseButtons = document.querySelectorAll("[data-book-modal-close]
 const videoModal = document.querySelector("[data-video-modal]");
 const videoOpenButton = document.querySelector("[data-video-open]");
 const videoCloseButton = document.querySelector("[data-video-close]");
-const videoPlayer = document.querySelector("[data-video-player]");
+const videoFrame = document.querySelector("[data-video-frame]");
+const youtubeEmbedUrl =
+  "https://www.youtube.com/embed/w4BPUg2x_O8?autoplay=1&rel=0&modestbranding=1";
 
 const syncHeader = () => {
   header.classList.toggle("is-scrolled", window.scrollY > 12);
@@ -146,7 +148,17 @@ const openVideoModal = () => {
 
   videoModal.hidden = false;
   document.body.classList.add("modal-open");
-  videoPlayer?.play?.().catch(() => {});
+
+  if (videoFrame && !videoFrame.innerHTML) {
+    videoFrame.innerHTML = `
+      <iframe
+        src="${youtubeEmbedUrl}"
+        title="Video institucional Raizes e Saberes"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    `;
+  }
 };
 
 const closeVideoModal = () => {
@@ -157,8 +169,8 @@ const closeVideoModal = () => {
   videoModal.hidden = true;
   document.body.classList.remove("modal-open");
 
-  if (videoPlayer) {
-    videoPlayer.pause();
+  if (videoFrame) {
+    videoFrame.innerHTML = "";
   }
 };
 
