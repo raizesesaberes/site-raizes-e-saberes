@@ -709,7 +709,7 @@ h3 {
 
 .book-cover-frame {
   display: grid;
-  min-height: 318px;
+  min-height: 360px;
   place-items: center;
   border-radius: 18px;
   background:
@@ -718,8 +718,8 @@ h3 {
 }
 
 .book-cover-frame img {
-  width: min(82%, 230px);
-  max-height: 286px;
+  width: min(86%, 250px);
+  height: auto;
   border-radius: 10px;
   box-shadow:
     0 22px 42px rgba(31, 41, 55, 0.18),
@@ -2322,7 +2322,7 @@ h3 {
 
 .library-cover {
   display: grid;
-  min-height: 300px;
+  min-height: 390px;
   place-items: center;
   padding: 22px;
   background:
@@ -2331,8 +2331,8 @@ h3 {
 }
 
 .library-cover.has-cover img {
-  width: min(82%, 230px);
-  max-height: 278px;
+  width: min(88%, 260px);
+  height: auto;
   border-radius: 12px;
   box-shadow:
     0 28px 58px rgba(31, 41, 55, 0.2),
@@ -2884,7 +2884,10 @@ h3 {
     gap: 6px;
   }
 
-  .library-cover,
+  .library-cover {
+    min-height: 360px;
+  }
+
   .pending-cover {
     min-height: 280px;
   }
