@@ -1,3 +1,52 @@
+const ecosystemModules = [
+  ["biblioteca.html", "Biblioteca"],
+  ["book-viewer.html", "Book Viewer"],
+  ["professor.html", "Professor"],
+  ["avalia.html", "Avalia+"],
+  ["secretaria.html", "Secretaria"],
+  ["gestor.html", "Gestor"],
+  ["familia.html", "Familia"],
+];
+
+const libraryBooks = [
+  ["assets/RAIZES_INFANTIL2_VOL1_BIBLIOTECA.webp", "Infantil 2", "Volume 1", "Livro do Aluno"],
+  ["assets/RAIZES_INFANTIL2_VOL2_BIBLIOTECA.webp", "Infantil 2", "Volume 2", "Livro do Aluno"],
+  ["assets/RAIZES_LAB_SENSORIAL_INFANTIL2_BIBLIOTECA.webp", "Infantil 2", "Lab Sensorial", "Experiencias"],
+  ["assets/RAIZES_GUIA_ALFABETIZADOR_INFANTIL2_BIBLIOTECA.webp", "Infantil 2", "Guia do Alfabetizador", "Professor"],
+  ["assets/RAIZES_INFANTIL3_VOL1_BIBLIOTECA.webp", "Infantil 3", "Volume 1", "Livro do Aluno"],
+  ["assets/RAIZES_INFANTIL3_VOL2_BIBLIOTECA.webp", "Infantil 3", "Volume 2", "Livro do Aluno"],
+  ["assets/RAIZES_LAB_SENSORIAL_INFANTIL3_BIBLIOTECA.webp", "Infantil 3", "Lab Sensorial", "Experiencias"],
+  ["assets/RAIZES_GUIA_ALFABETIZADOR_INFANTIL3_BIBLIOTECA.webp", "Infantil 3", "Guia do Alfabetizador", "Professor"],
+  ["assets/RAIZES_INFANTIL4_VOL1_BIBLIOTECA.webp", "Infantil 4", "Volume 1", "Livro do Aluno"],
+  ["assets/RAIZES_INFANTIL4_VOL2_BIBLIOTECA.webp", "Infantil 4", "Volume 2", "Livro do Aluno"],
+  ["assets/RAIZES_LAB_SENSORIAL_INFANTIL4_BIBLIOTECA.webp", "Infantil 4", "Lab Sensorial", "Experiencias"],
+  ["assets/RAIZES_GUIA_ALFABETIZADOR_INFANTIL4_BIBLIOTECA.webp", "Infantil 4", "Guia do Alfabetizador", "Professor"],
+  ["assets/RAIZES_INFANTIL5_VOL1_BIBLIOTECA.webp", "Infantil 5", "Volume 1", "Livro do Aluno"],
+  ["assets/RAIZES_INFANTIL5_VOL2_BIBLIOTECA.webp", "Infantil 5", "Volume 2", "Livro do Aluno"],
+  ["assets/RAIZES_LAB_SENSORIAL_INFANTIL5_BIBLIOTECA.webp", "Infantil 5", "Lab Sensorial", "Experiencias"],
+  ["assets/RAIZES_GUIA_ALFABETIZADOR_INFANTIL5_BIBLIOTECA.webp", "Infantil 5", "Guia do Alfabetizador", "Professor"],
+];
+
+const libraryBookCards = libraryBooks
+  .map(
+    ([src, year, title, type]) => `
+      <article class="library-book-card">
+        <img src="${src}" alt="${year} ${title}" loading="lazy" />
+        <div>
+          <span>${year}</span>
+          <strong>${title}</strong>
+          <small>${type}</small>
+          <a href="book-viewer.html">Abrir</a>
+        </div>
+      </article>
+    `
+  )
+  .join("");
+
+const ecosystemModuleLinks = ecosystemModules
+  .map(([href, label]) => `<a href="${href}">${label}</a>`)
+  .join("");
+
 const modules = {
   biblioteca: {
     title: "Biblioteca Digital",
@@ -32,16 +81,9 @@ const modules = {
           </div>
         </section>
         <aside class="premium-card"><img src="logo-premium-dark.png" alt="Raizes e Saberes Premium" onerror="this.hidden=true;" /><h2>Explore o Premium</h2><p>Acesso ilimitado ao acervo e funcionalidades exclusivas.</p><button>Saiba mais</button></aside>
-        <section class="wide-panel recent-books">
-          <div class="panel-head"><h2>Livros Recentes</h2><a>Ver todos</a></div>
-          <div class="book-strip">
-            <img src="assets/RAIZES_INFANTIL5_VOL1_BIBLIOTECA.webp" alt="" />
-            <img src="assets/RAIZES_INFANTIL2_VOL1_BIBLIOTECA.webp" alt="" />
-            <img src="assets/RAIZES_INFANTIL4_VOL1_BIBLIOTECA.webp" alt="" />
-            <img src="assets/RAIZES_INFANTIL3_VOL2_BIBLIOTECA.webp" alt="" />
-            <img src="assets/RAIZES_INFANTIL5_VOL2_BIBLIOTECA.webp" alt="" />
-            <img src="assets/RAIZES_INFANTIL4_VOL2_BIBLIOTECA.webp" alt="" />
-          </div>
+        <section class="wide-panel recent-books library-catalog-panel">
+          <div class="panel-head"><h2>Acervo Completo</h2><a>16 materiais</a></div>
+          <div class="library-catalog">${libraryBookCards}</div>
         </section>
       </div>
     `,
@@ -342,6 +384,7 @@ const renderAppPage = () => {
           <a class="icon-button menu-toggle" href="biblioteca.html" aria-label="Inicio">☰</a>
           <label class="app-search"><span>Pesquisar</span><input type="search" placeholder="${environment.search}" /></label>
           <button class="top-filter" type="button">Filtros</button>
+          <nav class="module-switcher" aria-label="Modulos do Ecossistema">${ecosystemModuleLinks}</nav>
           <div class="top-actions" aria-label="Acoes"><span class="notif">3</span><span class="notif">2</span><div class="user-chip"><span>MS</span><strong>${environment.user}</strong></div></div>
         </header>
         <section class="screen is-active route-screen" data-route-screen="${activeKey}">${activeModule.html}</section>

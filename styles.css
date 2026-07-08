@@ -2163,6 +2163,64 @@ h3 {
   font-size: 0.93rem;
 }
 
+.platform-pillars article a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  margin: 12px 8px 0 0;
+  padding: 0 12px;
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  border-radius: 8px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.platform-pillars article a:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.platform-module-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.platform-module-grid a {
+  display: grid;
+  gap: 6px;
+  min-height: 92px;
+  padding: 16px;
+  border: 1px solid rgba(46, 125, 50, 0.16);
+  border-radius: 8px;
+  color: var(--text);
+  background: #fff;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.07);
+  text-decoration: none;
+  transition: transform 0.22s ease, border-color 0.22s ease;
+}
+
+.platform-module-grid a:hover {
+  border-color: rgba(46, 125, 50, 0.32);
+  transform: translateY(-2px);
+}
+
+.platform-module-grid strong {
+  color: var(--green);
+  font-family: Poppins, Inter, system-ui, sans-serif;
+  font-size: 0.94rem;
+}
+
+.platform-module-grid span {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
 .pillar-index {
   position: absolute;
   top: 20px;
@@ -3924,6 +3982,10 @@ h3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .platform-module-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .video-player-card {
     min-height: 380px;
   }
@@ -4071,6 +4133,7 @@ h3 {
   .solution-grid,
   .metrics,
   .platform-pillars,
+  .platform-module-grid,
   .university-features,
   .assessment-pillars,
   .results-grid,

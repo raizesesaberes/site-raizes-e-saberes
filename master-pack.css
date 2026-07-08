@@ -221,6 +221,33 @@
   backdrop-filter: blur(18px);
 }
 
+.module-switcher {
+  display: flex;
+  grid-column: 1 / -1;
+  gap: 6px;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 0;
+  overflow-x: auto;
+}
+
+.module-switcher a {
+  flex: 0 0 auto;
+  padding: 9px 10px;
+  border: 1px solid var(--rs-line);
+  border-radius: var(--rs-radius);
+  color: var(--rs-muted);
+  background: #fff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.module-switcher a:hover {
+  color: #fff;
+  background: var(--rs-green-700);
+}
+
 .menu-toggle {
   display: none;
 }
@@ -576,6 +603,64 @@
 .book-strip.small img {
   width: 78px;
   height: 112px;
+}
+
+.library-catalog-panel {
+  min-width: 0;
+}
+
+.library-catalog {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(110px, 1fr));
+  gap: 14px;
+}
+
+.library-book-card {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid var(--rs-line);
+  border-radius: var(--rs-radius);
+  background: #fff;
+}
+
+.library-book-card img {
+  width: 100%;
+  height: 132px;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 12px rgba(18, 32, 51, 0.12));
+}
+
+.library-book-card div {
+  display: grid;
+  gap: 5px;
+}
+
+.library-book-card span,
+.library-book-card small {
+  color: var(--rs-muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.library-book-card strong {
+  min-height: 34px;
+  color: var(--rs-ink);
+  font-size: 0.84rem;
+  line-height: 1.2;
+}
+
+.library-book-card a {
+  display: inline-grid;
+  min-height: 30px;
+  place-items: center;
+  border-radius: var(--rs-radius);
+  color: #fff;
+  background: var(--rs-green-700);
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-decoration: none;
 }
 
 .viewer-shell {
@@ -1072,6 +1157,11 @@ td {
     display: none;
   }
 
+  .module-switcher {
+    grid-column: 1 / -1;
+    justify-content: flex-start;
+  }
+
   .screen {
     padding: 18px 14px 92px;
   }
@@ -1082,6 +1172,10 @@ td {
   .analytics-grid,
   .metric-row {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .library-catalog {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .viewer-shell {
@@ -1152,6 +1246,10 @@ td {
     display: none;
   }
 
+  .module-switcher {
+    grid-column: 1 / -1;
+  }
+
   .screen-title,
   .dashboard-head {
     align-items: flex-start;
@@ -1184,6 +1282,10 @@ td {
 
   .collection-strip {
     grid-auto-columns: 170px;
+  }
+
+  .library-catalog {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .page {
