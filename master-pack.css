@@ -58,19 +58,60 @@
   border-radius: 8px;
 }
 
+.sidebar-logo-fallback {
+  display: grid;
+  min-height: 170px;
+  place-items: center;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 50% 22%, rgba(255, 255, 255, 0.18), transparent 34%),
+    rgba(255, 255, 255, 0.06);
+  color: #fff;
+  text-align: center;
+}
+
+.sidebar-logo-fallback strong,
+.sidebar-logo-fallback em {
+  display: block;
+}
+
+.sidebar-logo-fallback strong {
+  font-family: Poppins, Inter, sans-serif;
+  font-size: 1.35rem;
+  font-style: normal;
+  line-height: 1.05;
+}
+
+.sidebar-logo-fallback em {
+  margin-top: 8px;
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 0.7rem;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .app-nav {
   display: grid;
   gap: 8px;
 }
 
 .app-nav button,
-.mobile-tabbar button {
+.app-nav a,
+.mobile-tabbar button,
+.mobile-tabbar a {
   border: 0;
   font: inherit;
   cursor: pointer;
 }
 
-.app-nav button {
+.app-nav button,
+.app-nav a {
+  display: flex;
+  align-items: center;
   min-height: 42px;
   padding: 0 14px;
   border-radius: var(--rs-radius);
@@ -78,10 +119,13 @@
   background: transparent;
   text-align: left;
   font-weight: 700;
+  text-decoration: none;
 }
 
 .app-nav button.is-active,
-.app-nav button:hover {
+.app-nav button:hover,
+.app-nav a.is-active,
+.app-nav a:hover {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0.12));
   color: #fff;
 }
@@ -230,6 +274,17 @@
   display: block;
 }
 
+.route-screen {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 240ms ease, transform 240ms ease;
+}
+
+.route-screen.is-mounted {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .screen-title,
 .dashboard-head {
   display: flex;
@@ -369,16 +424,21 @@
 }
 
 .reading-card button,
+.mini-action,
 .premium-card button,
 .book-mini button,
 .shortcut-grid button {
+  display: inline-grid;
+  place-items: center;
   min-height: 32px;
   margin-top: 10px;
+  padding: 0 12px;
   border: 0;
   border-radius: var(--rs-radius);
   background: var(--rs-green-700);
   color: #fff;
   font-weight: 800;
+  text-decoration: none;
 }
 
 .quick-card {
@@ -921,14 +981,17 @@ td {
     max-width: none;
   }
 
-  .app-nav button {
+  .app-nav button,
+  .app-nav a {
+    justify-content: center;
     min-height: 44px;
     padding: 0;
     text-align: center;
     font-size: 0;
   }
 
-  .app-nav button::first-letter {
+  .app-nav button::first-letter,
+  .app-nav a::first-letter {
     font-size: 0.9rem;
   }
 
@@ -1022,16 +1085,21 @@ td {
     backdrop-filter: blur(16px);
   }
 
-  .mobile-tabbar button {
+  .mobile-tabbar button,
+  .mobile-tabbar a {
+    display: grid;
     min-height: 42px;
+    place-items: center;
     border-radius: 12px;
     background: transparent;
     color: var(--rs-muted);
     font-size: 0.72rem;
     font-weight: 800;
+    text-decoration: none;
   }
 
-  .mobile-tabbar button.is-active {
+  .mobile-tabbar button.is-active,
+  .mobile-tabbar a.is-active {
     background: var(--rs-green-700);
     color: #fff;
   }
