@@ -1,5 +1,5 @@
 const ecosystemModules = [
-  ["index.html", "Portal"],
+  ["index.html", "🏠 Site"],
   ["biblioteca.html", "Biblioteca"],
   ["book-viewer.html", "Book Viewer"],
   ["professor.html", "Professor"],
@@ -95,7 +95,12 @@ const modules = {
             <article><b>▤</b><strong>Materiais Complementares</strong><span>89 livros</span></article>
           </div>
         </section>
-        <aside class="premium-card"><img src="logo-premium-dark.png" alt="Raizes e Saberes Premium" onerror="this.hidden=true;" /><h2>Explore o Premium</h2><p>Acesso ilimitado ao acervo e funcionalidades exclusivas.</p><button>Saiba mais</button></aside>
+        <aside class="ecosystem-video-card">
+          <span>🎬</span>
+          <h2>Conheca o Ecossistema</h2>
+          <p>Assista ao video institucional e veja como os modulos se conectam em uma experiencia unica.</p>
+          <a href="index.html#video-institucional">Assistir video</a>
+        </aside>
         <section class="wide-panel recent-books library-catalog-panel">
           <div class="panel-head"><h2>Acervo Completo</h2><a>16 materiais</a></div>
           <div class="library-catalog">${libraryBookCards}</div>

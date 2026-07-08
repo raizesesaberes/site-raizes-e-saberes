@@ -72,26 +72,27 @@
 
 .sidebar-logo {
   display: block;
-  width: 170px;
-  margin: 0 auto 24px;
+  width: 174px;
+  margin: 0 auto 26px;
 }
 
 .sidebar-logo img {
   display: block;
   width: 100%;
-  border-radius: 8px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .sidebar-logo-fallback {
   display: grid;
   min-height: 170px;
   place-items: center;
-  padding: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.45);
-  border-radius: 8px;
-  background:
-    radial-gradient(circle at 50% 22%, rgba(255, 255, 255, 0.18), transparent 34%),
-    rgba(255, 255, 255, 0.06);
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
   color: #fff;
   text-align: center;
 }
@@ -409,7 +410,8 @@
 .wide-panel,
 .panel,
 .quick-card,
-.premium-card {
+.premium-card,
+.ecosystem-video-card {
   border: 1px solid var(--rs-line);
   border-radius: var(--rs-radius);
   background: var(--rs-card);
@@ -432,7 +434,8 @@
 .panel-head h2,
 .panel h2,
 .quick-card h2,
-.premium-card h2 {
+.premium-card h2,
+.ecosystem-video-card h2 {
   margin: 0;
   font-family: Poppins, Inter, sans-serif;
   font-size: 1rem;
@@ -585,6 +588,53 @@
 .premium-card button {
   width: 100%;
   background: rgba(255, 255, 255, 0.18);
+}
+
+.ecosystem-video-card {
+  display: grid;
+  align-content: center;
+  gap: 12px;
+  align-self: stretch;
+  padding: 20px;
+  color: #fff;
+  background:
+    radial-gradient(circle at 80% 18%, rgba(215, 169, 40, 0.26), transparent 34%),
+    linear-gradient(145deg, #07543d, #0d6b4b);
+  text-align: left;
+}
+
+.ecosystem-video-card span {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.14);
+  font-size: 1.3rem;
+}
+
+.ecosystem-video-card h2 {
+  color: #fff;
+}
+
+.ecosystem-video-card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.ecosystem-video-card a {
+  display: inline-grid;
+  min-height: 36px;
+  place-items: center;
+  padding: 0 14px;
+  border-radius: 8px;
+  color: var(--rs-green-900);
+  background: #fff;
+  font-size: 0.82rem;
+  font-weight: 900;
+  text-decoration: none;
 }
 
 .recent-books {
