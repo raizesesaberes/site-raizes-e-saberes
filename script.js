@@ -18,6 +18,10 @@ const youtubeEmbedUrl =
   "https://www.youtube.com/embed/w4BPUg2x_O8?autoplay=1&rel=0&modestbranding=1";
 
 const syncHeader = () => {
+  if (!header) {
+    return;
+  }
+
   header.classList.toggle("is-scrolled", window.scrollY > 12);
 };
 
@@ -36,6 +40,54 @@ if (nav) {
       header.classList.remove("is-open");
       menuButton?.setAttribute("aria-expanded", "false");
     }
+  });
+}
+
+const screenButtons = document.querySelectorAll("[data-screen-target]");
+const screenLinks = document.querySelectorAll("[data-screen-link]");
+const screens = document.querySelectorAll("[data-screen]");
+
+const showScreen = (screenName, shouldUpdateHash = true) => {
+  if (!screens.length) {
+    return;
+  }
+
+  const target = document.querySelector(`[data-screen="${screenName}"]`) || screens[0];
+  const activeName = target.dataset.screen;
+
+  screens.forEach((screen) => {
+    screen.classList.toggle("is-active", screen === target);
+  });
+
+  screenButtons.forEach((button) => {
+    button.classList.toggle("is-active", button.dataset.screenTarget === activeName);
+  });
+
+  if (shouldUpdateHash) {
+    history.replaceState(null, "", `#${activeName}`);
+  }
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
+
+screenButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    showScreen(button.dataset.screenTarget);
+  });
+});
+
+screenLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    showScreen(link.dataset.screenLink);
+  });
+});
+
+if (screens.length) {
+  showScreen(window.location.hash.replace("#", "") || "biblioteca", false);
+
+  window.addEventListener("hashchange", () => {
+    showScreen(window.location.hash.replace("#", "") || "biblioteca", false);
   });
 }
 

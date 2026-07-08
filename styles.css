@@ -1401,8 +1401,8 @@ h3 {
 .brand {
   display: inline-flex;
   align-items: center;
-  width: 154px;
-  min-width: 154px;
+  width: 236px;
+  min-width: 236px;
 }
 
 .brand img {
@@ -2367,6 +2367,13 @@ h3 {
   display: grid;
   gap: 8px;
   text-align: left;
+}
+
+.video-card-copy img {
+  width: min(230px, 72%);
+  height: auto;
+  margin-bottom: 6px;
+  border-radius: 8px;
 }
 
 .video-card-copy small {
@@ -3829,8 +3836,8 @@ h3 {
   }
 
   .brand {
-    width: 140px;
-    min-width: 140px;
+    width: 208px;
+    min-width: 208px;
   }
 
   .site-nav {
@@ -3976,8 +3983,8 @@ h3 {
   }
 
   .brand {
-    width: 134px;
-    min-width: 134px;
+    width: 190px;
+    min-width: 190px;
   }
 
   .menu-button {
@@ -4029,8 +4036,8 @@ h3 {
   }
 
   .brand {
-    width: 112px;
-    min-width: 112px;
+    width: 164px;
+    min-width: 164px;
   }
 
   .brand img {
