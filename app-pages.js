@@ -146,23 +146,163 @@ const modules = {
   },
 };
 
-const navItems = [
-  ["biblioteca", "Biblioteca Digital", "biblioteca.html"],
-  ["viewer", "Book Viewer", "book-viewer.html"],
-  ["professor", "Painel do Professor", "professor.html"],
-  ["avalia", "Avalia+", "avalia.html"],
-  ["secretaria", "Secretaria Municipal", "secretaria.html"],
-  ["gestor", "Gestor Escolar", "gestor.html"],
-  ["familia", "Painel da Familia", "familia.html"],
-];
+const environments = {
+  biblioteca: {
+    label: "Biblioteca Digital",
+    profile: "Acervo Educacional",
+    search: "Buscar livros, colecoes, disciplinas...",
+    user: "Ola, Professor<br />Marcos Silva",
+    nav: [
+      ["biblioteca", "Biblioteca Digital", "biblioteca.html"],
+      ["viewer", "Book Viewer", "book-viewer.html"],
+      ["recentes", "Livros Recentes", "#"],
+      ["favoritos", "Favoritos", "#"],
+      ["colecoes", "Colecoes", "#"],
+    ],
+    mobile: [
+      ["biblioteca", "Biblioteca", "biblioteca.html"],
+      ["viewer", "Livro", "book-viewer.html"],
+      ["recentes", "Recentes", "#"],
+      ["favoritos", "Favoritos", "#"],
+      ["colecoes", "Colecoes", "#"],
+    ],
+  },
+  professor: {
+    label: "Painel do Professor",
+    profile: "Professor",
+    search: "Buscar turmas, alunos, atividades, livros...",
+    user: "Prof. Marcos Silva<br />Ver perfil",
+    nav: [
+      ["professor", "Inicio", "professor.html"],
+      ["turmas", "Turmas", "#"],
+      ["planejamento", "Planejamento", "#"],
+      ["aulas", "Aulas", "#"],
+      ["atividades", "Atividades", "#"],
+      ["avaliacoes", "Avaliacoes", "#"],
+      ["correcoes", "Correcoes", "#"],
+      ["biblioteca", "Biblioteca Digital", "biblioteca.html"],
+      ["mensagens", "Mensagens", "#"],
+      ["relatorios", "Relatorios", "#"],
+    ],
+    mobile: [
+      ["professor", "Inicio", "professor.html"],
+      ["turmas", "Turmas", "#"],
+      ["atividades", "Atividades", "#"],
+      ["biblioteca", "Biblioteca", "biblioteca.html"],
+      ["mensagens", "Mais", "#"],
+    ],
+  },
+  avalia: {
+    label: "Avalia+",
+    profile: "Inteligencia em Avaliacao",
+    search: "Buscar diagnosticos, disciplinas, turmas...",
+    user: "Prof. Marcos Silva<br />Gestor Escolar",
+    nav: [
+      ["avalia", "Visao Geral", "avalia.html"],
+      ["diagnosticos", "Diagnosticos", "#"],
+      ["evolucao", "Evolucao", "#"],
+      ["comparativos", "Comparativos", "#"],
+      ["turmas", "Turmas", "#"],
+      ["escolas", "Escolas", "#"],
+      ["disciplinas", "Disciplinas", "#"],
+      ["relatorios", "Relatorios", "#"],
+      ["banco", "Banco de Itens", "#"],
+    ],
+    mobile: [
+      ["avalia", "Inicio", "avalia.html"],
+      ["diagnosticos", "Diagnosticos", "#"],
+      ["turmas", "Turmas", "#"],
+      ["relatorios", "Relatorios", "#"],
+      ["mais", "Mais", "#"],
+    ],
+  },
+  secretaria: {
+    label: "Secretaria Municipal",
+    profile: "Gestao 2025 - 2028",
+    search: "Buscar escolas, indicadores, relatorios...",
+    user: "Secretaria Ana Paula<br />Secretaria de Educacao",
+    nav: [
+      ["secretaria", "Visao Geral da Rede", "secretaria.html"],
+      ["escolas", "Escolas", "#"],
+      ["indicadores", "Indicadores", "#"],
+      ["desempenho", "Desempenho", "#"],
+      ["avalia", "Avalia+", "avalia.html"],
+      ["frequencia", "Frequencia", "#"],
+      ["ideb", "IDEB", "#"],
+      ["relatorios", "Relatorios", "#"],
+      ["comparativos", "Comparativos", "#"],
+      ["planejamento", "Planejamento", "#"],
+    ],
+    mobile: [
+      ["secretaria", "Inicio", "secretaria.html"],
+      ["indicadores", "Indicadores", "#"],
+      ["escolas", "Escolas", "#"],
+      ["avalia", "Avalia+", "avalia.html"],
+      ["mais", "Mais", "#"],
+    ],
+  },
+  gestor: {
+    label: "Gestor Escolar",
+    profile: "EM Joao da Silva",
+    search: "Buscar alunos, professores, turmas...",
+    user: "Carlos Oliveira<br />Gestor Escolar",
+    nav: [
+      ["gestor", "Visao Geral", "gestor.html"],
+      ["turmas", "Turmas", "#"],
+      ["desempenho", "Desempenho", "#"],
+      ["frequencia", "Frequencia", "#"],
+      ["avalia", "Avalia+", "avalia.html"],
+      ["professores", "Professores", "#"],
+      ["alunos", "Alunos", "#"],
+      ["planejamento", "Planejamento", "#"],
+      ["comunicados", "Comunicados", "#"],
+      ["agenda", "Agenda", "#"],
+      ["relatorios", "Relatorios", "#"],
+    ],
+    mobile: [
+      ["gestor", "Inicio", "gestor.html"],
+      ["turmas", "Turmas", "#"],
+      ["desempenho", "Desempenho", "#"],
+      ["relatorios", "Relatorios", "#"],
+      ["mais", "Mais", "#"],
+    ],
+  },
+  familia: {
+    label: "Painel da Familia",
+    profile: "Responsavel",
+    search: "Buscar comunicados, atividades, agenda...",
+    user: "Ana Paula Silva<br />Responsavel",
+    nav: [
+      ["familia", "Inicio", "familia.html"],
+      ["filhos", "Meus Filhos", "#"],
+      ["frequencia", "Frequencia", "#"],
+      ["atividades", "Atividades", "#"],
+      ["avaliacoes", "Avaliacoes", "#"],
+      ["biblioteca", "Biblioteca Digital", "biblioteca.html"],
+      ["agenda", "Agenda Escolar", "#"],
+      ["comunicados", "Comunicados", "#"],
+      ["mensagens", "Mensagens", "#"],
+      ["financeiro", "Financeiro", "#"],
+    ],
+    mobile: [
+      ["familia", "Inicio", "familia.html"],
+      ["filhos", "Filhos", "#"],
+      ["atividades", "Atividades", "#"],
+      ["mensagens", "Mensagens", "#"],
+      ["mais", "Mais", "#"],
+    ],
+  },
+};
 
-const mobileItems = [
-  ["biblioteca", "Inicio", "biblioteca.html"],
-  ["viewer", "Livro", "book-viewer.html"],
-  ["professor", "Professor", "professor.html"],
-  ["avalia", "Avalia+", "avalia.html"],
-  ["familia", "Mais", "familia.html"],
-];
+const moduleEnvironment = {
+  biblioteca: "biblioteca",
+  viewer: "biblioteca",
+  professor: "professor",
+  avalia: "avalia",
+  secretaria: "secretaria",
+  gestor: "gestor",
+  familia: "familia",
+};
 
 const renderAppPage = () => {
   const mount = document.querySelector("[data-app-page]");
@@ -172,34 +312,37 @@ const renderAppPage = () => {
 
   const activeKey = mount.dataset.appPage || "biblioteca";
   const activeModule = modules[activeKey] || modules.biblioteca;
+  const environmentKey = moduleEnvironment[activeKey] || activeKey;
+  const environment = environments[environmentKey] || environments.biblioteca;
   document.title = `${activeModule.title} | Raizes e Saberes`;
 
-  const nav = navItems
+  const nav = environment.nav
     .map(([key, label, href]) => `<a class="${key === activeKey ? "is-active" : ""}" href="${href}">${label}</a>`)
     .join("");
-  const mobileNav = mobileItems
+  const mobileNav = environment.mobile
     .map(([key, label, href]) => `<a class="${key === activeKey ? "is-active" : ""}" href="${href}">${label}</a>`)
     .join("");
 
   mount.innerHTML = `
-    <div class="app-shell">
+    <div class="app-shell" data-environment="${environmentKey}">
       <aside class="app-sidebar" aria-label="Navegacao principal">
         <a class="sidebar-logo" href="index.html" aria-label="Raizes e Saberes">
           <img src="logo-sidebar-dark.png" alt="Raizes e Saberes Ecossistema Educacional" onerror="this.hidden=true; this.nextElementSibling.hidden=false;" />
           <span class="sidebar-logo-fallback" hidden><strong>Raizes e Saberes</strong><em>Ecossistema Educacional</em></span>
         </a>
+        <div class="environment-label">${environment.label}</div>
         <nav class="app-nav" aria-label="Master Screens">${nav}</nav>
         <section class="sidebar-profile">
           <img src="logo-app.png" alt="" onerror="this.hidden=true;" />
-          <div><strong>Raizes e Saberes</strong><span>MASTER PACK V1</span></div>
+          <div><strong>${environment.label}</strong><span>${environment.profile}</span></div>
         </section>
       </aside>
       <main class="app-main">
         <header class="app-topbar">
           <a class="icon-button menu-toggle" href="biblioteca.html" aria-label="Inicio">☰</a>
-          <label class="app-search"><span>Pesquisar</span><input type="search" placeholder="Buscar livros, turmas, alunos, atividades..." /></label>
+          <label class="app-search"><span>Pesquisar</span><input type="search" placeholder="${environment.search}" /></label>
           <button class="top-filter" type="button">Filtros</button>
-          <div class="top-actions" aria-label="Acoes"><span class="notif">3</span><span class="notif">2</span><div class="user-chip"><span>MS</span><strong>Ola, Professor<br />Marcos Silva</strong></div></div>
+          <div class="top-actions" aria-label="Acoes"><span class="notif">3</span><span class="notif">2</span><div class="user-chip"><span>MS</span><strong>${environment.user}</strong></div></div>
         </header>
         <section class="screen is-active route-screen" data-route-screen="${activeKey}">${activeModule.html}</section>
       </main>

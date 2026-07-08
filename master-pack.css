@@ -46,6 +46,30 @@
   color: white;
 }
 
+.app-shell[data-environment="avalia"] .app-sidebar {
+  background:
+    radial-gradient(circle at 55% 0%, rgba(92, 74, 255, 0.44), transparent 36%),
+    linear-gradient(180deg, #111746 0%, #17133f 100%);
+}
+
+.app-shell[data-environment="secretaria"] .app-sidebar {
+  background:
+    radial-gradient(circle at 55% 0%, rgba(43, 112, 175, 0.35), transparent 36%),
+    linear-gradient(180deg, #063b35 0%, #052e3c 100%);
+}
+
+.app-shell[data-environment="gestor"] .app-sidebar {
+  background:
+    radial-gradient(circle at 55% 0%, rgba(89, 139, 89, 0.4), transparent 36%),
+    linear-gradient(180deg, #073820 0%, #052d24 100%);
+}
+
+.app-shell[data-environment="familia"] .app-sidebar {
+  background:
+    radial-gradient(circle at 55% 0%, rgba(62, 143, 97, 0.38), transparent 36%),
+    linear-gradient(180deg, #06422f 0%, #053125 100%);
+}
+
 .sidebar-logo {
   display: block;
   width: 170px;
@@ -70,6 +94,10 @@
     rgba(255, 255, 255, 0.06);
   color: #fff;
   text-align: center;
+}
+
+.sidebar-logo-fallback[hidden] {
+  display: none;
 }
 
 .sidebar-logo-fallback strong,
@@ -97,6 +125,16 @@
 .app-nav {
   display: grid;
   gap: 8px;
+}
+
+.environment-label {
+  margin: 0 0 12px;
+  padding: 0 14px;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .app-nav button,
