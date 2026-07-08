@@ -9,8 +9,32 @@ const ecosystemModules = [
   ["familia.html", "Familia"],
 ];
 
+const masterBook001 = {
+  id: "livro-mestre-001",
+  title: "Educacao Infantil 2 anos",
+  subtitle: "Livro do Aluno - Volume 1",
+  collection: "Colecao Raizes e Saberes",
+  totalPages: 126,
+  basePath: "assets/livro-mestre-001",
+  cover: "assets/livro-mestre-001/pages/page-001.webp",
+  thumb: (page) => `assets/livro-mestre-001/thumbs/page-${String(page).padStart(3, "0")}.webp`,
+  page: (page) => `assets/livro-mestre-001/pages/page-${String(page).padStart(3, "0")}.webp`,
+  summary: [
+    ["Abertura", 1],
+    ["Sumario", 10],
+    ["Unidade 1 - Eu e meu mundo", 14],
+    ["Unidade 2 - Historias e imaginacao", 34],
+    ["Unidade 3 - Descobrindo o mundo", 56],
+    ["Unidade 4 - Eu e os outros", 76],
+    ["Projetos Integradores", 92],
+    ["Atividades Extras", 93],
+    ["Portfolio", 95],
+    ["Certificado", 96],
+  ],
+};
+
 const libraryBooks = [
-  ["assets/RAIZES_INFANTIL2_VOL1_BIBLIOTECA.webp", "Infantil 2", "Volume 1", "Livro do Aluno"],
+  ["assets/RAIZES_INFANTIL2_VOL1_BIBLIOTECA.webp", "Infantil 2", "Volume 1", "Livro do Aluno", "book-viewer.html"],
   ["assets/RAIZES_INFANTIL2_VOL2_BIBLIOTECA.webp", "Infantil 2", "Volume 2", "Livro do Aluno"],
   ["assets/RAIZES_LAB_SENSORIAL_INFANTIL2_BIBLIOTECA.webp", "Infantil 2", "Lab Sensorial", "Experiencias"],
   ["assets/RAIZES_GUIA_ALFABETIZADOR_INFANTIL2_BIBLIOTECA.webp", "Infantil 2", "Guia do Alfabetizador", "Professor"],
@@ -30,14 +54,14 @@ const libraryBooks = [
 
 const libraryBookCards = libraryBooks
   .map(
-    ([src, year, title, type]) => `
+    ([src, year, title, type, href = "book-viewer.html"]) => `
       <article class="library-book-card">
         <img src="${src}" alt="${year} ${title}" loading="lazy" />
         <div>
           <span>${year}</span>
           <strong>${title}</strong>
           <small>${type}</small>
-          <a href="book-viewer.html">Abrir</a>
+          <a href="${href}">Abrir</a>
         </div>
       </article>
     `
@@ -110,18 +134,53 @@ const modules = {
   },
   viewer: {
     title: "Book Viewer",
-    subtitle: "Colecao Raizes e Saberes - 4º Ano - Ciencias",
+    subtitle: "Livro Mestre 001 - Educacao Infantil 2 anos - Volume 1",
     code: "MS-002",
     html: `
-      <div class="viewer-shell">
-        <aside class="page-rail"><h2>Paginas</h2><img src="assets/RAIZES_INFANTIL5_VOL1_BIBLIOTECA.webp" alt="" /><img class="selected" src="assets/RAIZES_INFANTIL4_VOL1_BIBLIOTECA.webp" alt="" /><img src="assets/RAIZES_INFANTIL3_VOL1_BIBLIOTECA.webp" alt="" /><img src="assets/RAIZES_INFANTIL2_VOL1_BIBLIOTECA.webp" alt="" /></aside>
-        <section class="book-spread">
-          <div class="page left-page"><span class="chapter">3</span><h1>Os seres vivos<br />e o ambiente</h1><p>Todos os seres vivos precisam do ambiente para sobreviver. Eles obtem do ambiente os recursos necessarios para viver, como agua, luz, ar e alimentos.</p><div class="nature-photo"></div><b>28</b></div>
-          <div class="page right-page"><p>As plantas produzem seu proprio alimento por meio da <strong>fotossintese</strong>. Ja os animais obtem seu alimento de outros seres vivos.</p><div class="tree-diagram"><span>Luz do sol</span><strong>Oxigenio</strong><em>Agua e sais minerais</em></div><div class="reflect-box"><strong>Para refletir</strong><span>Como os seres vivos interagem entre si e com o ambiente?</span></div><b>29</b></div>
-        </section>
-        <aside class="summary-rail"><h2>Sumario</h2><p><strong>Capitulo 1</strong><span>10</span></p><p><strong>Capitulo 2</strong><span>22</span></p><p class="active"><strong>Capitulo 3</strong><span>28</span></p><p><strong>Capitulo 4</strong><span>40</span></p></aside>
+      <div class="book-reader" data-book-reader data-total-pages="${masterBook001.totalPages}">
+        <header class="reader-header">
+          <a class="reader-back" href="biblioteca.html">&larr; Biblioteca</a>
+          <div>
+            <p>${masterBook001.collection}</p>
+            <h1>${masterBook001.title}</h1>
+            <span>${masterBook001.subtitle}</span>
+          </div>
+          <div class="reader-progress" aria-label="Progresso de leitura">
+            <strong data-progress-label>1%</strong>
+            <i><span data-progress-bar style="width: 1%"></span></i>
+          </div>
+        </header>
+
+        <div class="reader-layout">
+          <aside class="page-rail reader-rail" aria-label="Miniaturas das paginas">
+            <div class="rail-title"><h2>Paginas</h2><span data-page-count>1/${masterBook001.totalPages}</span></div>
+            <div class="thumbnail-list" data-thumbnail-list></div>
+          </aside>
+
+          <section class="book-stage" data-book-stage aria-live="polite">
+            <button class="reader-turn previous" type="button" data-prev-page aria-label="Pagina anterior">&lsaquo;</button>
+            <figure class="reader-page" data-reader-page style="--zoom: 1">
+              <img data-page-image src="${masterBook001.page(1)}" alt="${masterBook001.title} pagina 1" loading="eager" />
+            </figure>
+            <button class="reader-turn next" type="button" data-next-page aria-label="Proxima pagina">&rsaquo;</button>
+          </section>
+
+          <aside class="summary-rail reader-summary" aria-label="Sumario do livro">
+            <div class="rail-title"><h2>Sumario</h2><button type="button" data-bookmark-page>&#9734; Marcar</button></div>
+            <div class="summary-list" data-summary-list></div>
+          </aside>
+        </div>
+
+        <div class="viewer-controls reader-controls">
+          <button type="button" data-zoom-out aria-label="Reduzir zoom">&minus;</button>
+          <span data-zoom-label>100%</span>
+          <button type="button" data-zoom-in aria-label="Aumentar zoom">+</button>
+          <button type="button" data-prev-page aria-label="Pagina anterior">&lsaquo;</button>
+          <strong data-page-label>1 / ${masterBook001.totalPages}</strong>
+          <button type="button" data-next-page aria-label="Proxima pagina">&rsaquo;</button>
+          <button type="button" data-fullscreen-reader aria-label="Tela cheia">[]</button>
+        </div>
       </div>
-      <div class="viewer-controls"><button>−</button><span>100%</span><button>+</button><button>‹</button><strong>29 / 128</strong><button>›</button></div>
     `,
   },
   professor: {
@@ -366,6 +425,173 @@ const moduleEnvironment = {
   familia: "familia",
 };
 
+const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+
+const initBookReader = () => {
+  const reader = document.querySelector("[data-book-reader]");
+  if (!reader) {
+    return;
+  }
+
+  const book = masterBook001;
+  const storageKey = `${book.id}:bookmark`;
+  const image = reader.querySelector("[data-page-image]");
+  const pageFrame = reader.querySelector("[data-reader-page]");
+  const thumbnailList = reader.querySelector("[data-thumbnail-list]");
+  const summaryList = reader.querySelector("[data-summary-list]");
+  const pageLabel = reader.querySelector("[data-page-label]");
+  const pageCount = reader.querySelector("[data-page-count]");
+  const progressLabel = reader.querySelector("[data-progress-label]");
+  const progressBar = reader.querySelector("[data-progress-bar]");
+  const zoomLabel = reader.querySelector("[data-zoom-label]");
+  const bookmarkButton = reader.querySelector("[data-bookmark-page]");
+  const stage = reader.querySelector("[data-book-stage]");
+  const pageTemplate = document.createDocumentFragment();
+
+  let page = 1;
+  let zoom = 1;
+  let bookmarkedPage = Number(localStorage.getItem(storageKey)) || 0;
+  const preloadedPages = new Set();
+
+  for (let currentPage = 1; currentPage <= book.totalPages; currentPage += 1) {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.dataset.gotoPage = String(currentPage);
+    button.setAttribute("aria-label", `Abrir pagina ${currentPage}`);
+    button.innerHTML = `<img src="${book.thumb(currentPage)}" alt="" loading="lazy" /><span>${currentPage}</span>`;
+    pageTemplate.appendChild(button);
+  }
+  thumbnailList.appendChild(pageTemplate);
+
+  summaryList.innerHTML = book.summary
+    .map(
+      ([label, summaryPage]) => `
+        <button type="button" data-goto-page="${summaryPage}">
+          <strong>${label}</strong>
+          <span>${summaryPage}</span>
+        </button>
+      `
+    )
+    .join("");
+
+  const preload = (targetPage) => {
+    if (targetPage < 1 || targetPage > book.totalPages || preloadedPages.has(targetPage)) {
+      return;
+    }
+    const preloadImage = new Image();
+    preloadImage.src = book.page(targetPage);
+    preloadedPages.add(targetPage);
+  };
+
+  const updateBookmark = () => {
+    if (!bookmarkButton) {
+      return;
+    }
+    const isCurrent = bookmarkedPage === page;
+    bookmarkButton.classList.toggle("is-active", isCurrent);
+    bookmarkButton.innerHTML = `${isCurrent ? "*" : "&#9734;"} ${isCurrent ? "Marcado" : "Marcar"}`;
+  };
+
+  const updateActiveItems = () => {
+    reader.querySelectorAll("[data-goto-page]").forEach((button) => {
+      const targetPage = Number(button.dataset.gotoPage);
+      const isExact = targetPage === page;
+      const isSummary = button.closest(".summary-list");
+      const nextSummaryPage = isSummary
+        ? book.summary.find(([, summaryPage]) => summaryPage > targetPage)?.[1] || book.totalPages + 1
+        : targetPage + 1;
+      const isInSection = isSummary && page >= targetPage && page < nextSummaryPage;
+      button.classList.toggle("is-active", isExact || isInSection);
+    });
+  };
+
+  const renderPage = (nextPage) => {
+    page = clamp(nextPage, 1, book.totalPages);
+    image.classList.add("is-loading");
+    image.src = book.page(page);
+    image.alt = `${book.title} pagina ${page}`;
+
+    const progress = Math.round((page / book.totalPages) * 100);
+    pageLabel.textContent = `${page} / ${book.totalPages}`;
+    pageCount.textContent = `${page}/${book.totalPages}`;
+    progressLabel.textContent = `${progress}%`;
+    progressBar.style.width = `${progress}%`;
+    updateActiveItems();
+    updateBookmark();
+    preload(page + 1);
+    preload(page + 2);
+    preload(page - 1);
+  };
+
+  const setZoom = (nextZoom) => {
+    zoom = clamp(nextZoom, 0.75, 1.65);
+    pageFrame.style.setProperty("--zoom", zoom.toFixed(2));
+    zoomLabel.textContent = `${Math.round(zoom * 100)}%`;
+  };
+
+  reader.addEventListener("click", (event) => {
+    const target = event.target.closest("button");
+    if (!target) {
+      return;
+    }
+    if (target.dataset.gotoPage) {
+      renderPage(Number(target.dataset.gotoPage));
+      return;
+    }
+    if (target.matches("[data-prev-page]")) {
+      renderPage(page - 1);
+      return;
+    }
+    if (target.matches("[data-next-page]")) {
+      renderPage(page + 1);
+      return;
+    }
+    if (target.matches("[data-zoom-out]")) {
+      setZoom(zoom - 0.1);
+      return;
+    }
+    if (target.matches("[data-zoom-in]")) {
+      setZoom(zoom + 0.1);
+      return;
+    }
+    if (target.matches("[data-bookmark-page]")) {
+      bookmarkedPage = bookmarkedPage === page ? 0 : page;
+      if (bookmarkedPage) {
+        localStorage.setItem(storageKey, String(bookmarkedPage));
+      } else {
+        localStorage.removeItem(storageKey);
+      }
+      updateBookmark();
+      return;
+    }
+    if (target.matches("[data-fullscreen-reader]") && stage?.requestFullscreen) {
+      stage.requestFullscreen();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (!reader.isConnected) {
+      return;
+    }
+    if (event.key === "ArrowLeft") {
+      renderPage(page - 1);
+    }
+    if (event.key === "ArrowRight") {
+      renderPage(page + 1);
+    }
+  });
+
+  image.addEventListener("load", () => {
+    image.classList.remove("is-loading");
+  });
+
+  if (bookmarkedPage) {
+    page = clamp(bookmarkedPage, 1, book.totalPages);
+  }
+  setZoom(1);
+  renderPage(page);
+};
+
 const renderAppPage = () => {
   const mount = document.querySelector("[data-app-page]");
   if (!mount) {
@@ -416,6 +642,8 @@ const renderAppPage = () => {
   requestAnimationFrame(() => {
     document.querySelector(".route-screen")?.classList.add("is-mounted");
   });
+
+  initBookReader();
 };
 
 renderAppPage();
