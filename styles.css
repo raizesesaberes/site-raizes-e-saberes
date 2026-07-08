@@ -1412,6 +1412,14 @@ h3 {
   object-fit: contain;
 }
 
+.brand-fallback {
+  color: #063f2f;
+  font-family: Poppins, Inter, system-ui, sans-serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
 .site-nav {
   display: flex;
   align-items: center;
