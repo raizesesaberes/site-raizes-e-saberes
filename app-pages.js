@@ -1,4 +1,5 @@
 const ecosystemModules = [
+  ["index.html", "Portal"],
   ["biblioteca.html", "Biblioteca"],
   ["book-viewer.html", "Book Viewer"],
   ["professor.html", "Professor"],
@@ -43,9 +44,23 @@ const libraryBookCards = libraryBooks
   )
   .join("");
 
-const ecosystemModuleLinks = ecosystemModules
-  .map(([href, label]) => `<a href="${href}">${label}</a>`)
-  .join("");
+const routeKeyByHref = {
+  "biblioteca.html": "biblioteca",
+  "book-viewer.html": "viewer",
+  "professor.html": "professor",
+  "avalia.html": "avalia",
+  "secretaria.html": "secretaria",
+  "gestor.html": "gestor",
+  "familia.html": "familia",
+};
+
+const ecosystemModuleLinks = (activeKey) =>
+  ecosystemModules
+    .map(([href, label]) => {
+      const isActive = routeKeyByHref[href] === activeKey;
+      return `<a class="${isActive ? "is-active" : ""}" href="${href}">${label}</a>`;
+    })
+    .join("");
 
 const modules = {
   biblioteca: {
@@ -384,7 +399,7 @@ const renderAppPage = () => {
           <a class="icon-button menu-toggle" href="biblioteca.html" aria-label="Inicio">☰</a>
           <label class="app-search"><span>Pesquisar</span><input type="search" placeholder="${environment.search}" /></label>
           <button class="top-filter" type="button">Filtros</button>
-          <nav class="module-switcher" aria-label="Modulos do Ecossistema">${ecosystemModuleLinks}</nav>
+          <nav class="module-switcher" aria-label="Modulos do Ecossistema">${ecosystemModuleLinks(activeKey)}</nav>
           <div class="top-actions" aria-label="Acoes"><span class="notif">3</span><span class="notif">2</span><div class="user-chip"><span>MS</span><strong>${environment.user}</strong></div></div>
         </header>
         <section class="screen is-active route-screen" data-route-screen="${activeKey}">${activeModule.html}</section>

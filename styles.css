@@ -1455,6 +1455,27 @@ h3 {
   opacity: 1;
 }
 
+.site-nav a.nav-platform-link {
+  min-height: 38px;
+  padding: 0 14px;
+  border-radius: 8px;
+  color: #fff;
+  background: var(--green);
+  opacity: 1;
+  display: inline-flex;
+  align-items: center;
+  box-shadow: 0 12px 26px rgba(46, 125, 50, 0.2);
+}
+
+.site-nav a.nav-platform-link::after {
+  display: none;
+}
+
+.site-nav a.nav-platform-link:hover,
+.site-nav a.nav-platform-link:focus-visible {
+  background: #1b6f2a;
+}
+
 .site-nav a:hover::after,
 .site-nav a:focus-visible::after {
   opacity: 1;

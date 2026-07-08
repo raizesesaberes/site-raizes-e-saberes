@@ -248,6 +248,12 @@
   background: var(--rs-green-700);
 }
 
+.module-switcher a.is-active {
+  color: #fff;
+  border-color: var(--rs-green-700);
+  background: var(--rs-green-700);
+}
+
 .menu-toggle {
   display: none;
 }
