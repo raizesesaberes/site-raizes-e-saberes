@@ -13,10 +13,15 @@ const masterBook001 = {
   id: "livro-mestre-001",
   title: "Educacao Infantil 2 anos",
   subtitle: "Livro do Aluno - Volume 1",
+  catalogTitle: "Volume 1",
+  level: "Infantil 2",
+  type: "Livro do Aluno",
   collection: "Colecao Raizes e Saberes",
   totalPages: 126,
   basePath: "assets",
   cover: "assets/livro-mestre-001-page-001.webp",
+  catalogCover: "assets/RAIZES_INFANTIL2_VOL1_BIBLIOTECA.webp",
+  href: "book-viewer.html?book=livro-mestre-001",
   thumb: (page) => `assets/livro-mestre-001-thumb-${String(page).padStart(3, "0")}.webp`,
   page: (page) => `assets/livro-mestre-001-page-${String(page).padStart(3, "0")}.webp`,
   summary: [
@@ -33,11 +38,121 @@ const masterBook001 = {
   ],
 };
 
+const bookCatalog = [
+  masterBook001,
+  {
+    id: "livro-002",
+    title: "Educacao Infantil 2 anos",
+    subtitle: "Livro do Aluno - Volume 2",
+    catalogTitle: "Volume 2",
+    level: "Infantil 2",
+    type: "Livro do Aluno",
+    collection: "Colecao Raizes e Saberes",
+    totalPages: 124,
+    basePath: "assets",
+    cover: "assets/livro-002-page-001.jpg",
+    catalogCover: "assets/RAIZES_INFANTIL2_VOL2_BIBLIOTECA.webp",
+    href: "book-viewer.html?book=livro-002",
+    thumb: (page) => `assets/livro-002-thumb-${String(page).padStart(3, "0")}.jpg`,
+    page: (page) => `assets/livro-002-page-${String(page).padStart(3, "0")}.jpg`,
+    summary: [
+      ["Boas-vindas", 1],
+      ["Volume 2 - 2o semestre", 2],
+      ["Unidade 3 - Cantigas e brincadeiras", 10],
+      ["Convivencia e escola", 30],
+      ["Rotina e descobertas", 50],
+      ["Cores, tamanhos e comparacoes", 70],
+      ["Caminhos e organizacao", 90],
+      ["Descobrindo os seres vivos", 110],
+    ],
+  },
+  {
+    id: "laboratorio-sensorial-002",
+    title: "Educacao Infantil 2 anos",
+    subtitle: "Laboratorio Sensorial",
+    catalogTitle: "Laboratorio Sensorial",
+    level: "Infantil 2",
+    type: "Laboratorio Sensorial",
+    collection: "Colecao Raizes e Saberes",
+    totalPages: 41,
+    basePath: "assets",
+    cover: "assets/laboratorio-sensorial-002-page-001.jpg",
+    catalogCover: "assets/RAIZES_LAB_SENSORIAL_INFANTIL2_BIBLIOTECA.webp",
+    href: "book-viewer.html?book=laboratorio-sensorial-002",
+    thumb: (page) => `assets/laboratorio-sensorial-002-thumb-${String(page).padStart(3, "0")}.jpg`,
+    page: (page) => `assets/laboratorio-sensorial-002-page-${String(page).padStart(3, "0")}.jpg`,
+    summary: [
+      ["Apresentacao", 1],
+      ["Missoes sensoriais", 2],
+      ["Explorando os sentidos", 5],
+      ["Sons e corpo", 10],
+      ["Minhas conquistas", 20],
+      ["Formas e materiais", 30],
+      ["Registro final", 38],
+      ["Certificado", 41],
+    ],
+  },
+];
+
+const defaultBook = masterBook001;
+
+const getActiveBook = () => {
+  if (typeof window === "undefined") {
+    return defaultBook;
+  }
+  const requestedBook = new URLSearchParams(window.location.search).get("book");
+  return bookCatalog.find((book) => book.id === requestedBook) || defaultBook;
+};
+
+const activeBook = getActiveBook();
+
+const getRecentBookIds = () => {
+  try {
+    return JSON.parse(localStorage.getItem("library:recentBooks") || "[]");
+  } catch (error) {
+    return [];
+  }
+};
+
+const updateRecentBook = (bookId) => {
+  try {
+    const recentBookIds = getRecentBookIds().filter((recentBookId) => recentBookId !== bookId);
+    localStorage.setItem("library:recentBooks", JSON.stringify([bookId, ...recentBookIds].slice(0, 4)));
+  } catch (error) {
+    // Reading history is a progressive enhancement for the static prototype.
+  }
+};
+
+const buildRecentReadingCards = () => {
+  const recentBookIds = getRecentBookIds();
+  const visibleBooks = (recentBookIds.length ? recentBookIds : bookCatalog.map((book) => book.id))
+    .map((bookId) => bookCatalog.find((book) => book.id === bookId))
+    .filter(Boolean)
+    .slice(0, 4);
+
+  return visibleBooks
+    .map((book) => {
+      const lastPage = Number(localStorage.getItem(`${book.id}:lastPage`)) || 1;
+      const progress = Math.round((lastPage / book.totalPages) * 100);
+      return `
+        <article class="reading-card">
+          <img src="${book.catalogCover}" alt="${book.level} ${book.catalogTitle}" />
+          <div>
+            <h3>${book.catalogTitle}</h3>
+            <p>${book.level}</p>
+            <i style="--value:${progress}%"></i>
+            <a class="mini-action" href="${book.href}">Continuar</a>
+          </div>
+        </article>
+      `;
+    })
+    .join("");
+};
+
 const libraryBooks = [
-  ["assets/RAIZES_INFANTIL2_VOL1_BIBLIOTECA.webp", "Infantil 2", "Volume 1", "Livro do Aluno", "book-viewer.html"],
-  ["assets/RAIZES_INFANTIL2_VOL2_BIBLIOTECA.webp", "Infantil 2", "Volume 2", "Livro do Aluno"],
-  ["assets/RAIZES_LAB_SENSORIAL_INFANTIL2_BIBLIOTECA.webp", "Infantil 2", "Lab Sensorial", "Experiencias"],
-  ["assets/RAIZES_GUIA_ALFABETIZADOR_INFANTIL2_BIBLIOTECA.webp", "Infantil 2", "Guia do Alfabetizador", "Professor"],
+  ["assets/RAIZES_INFANTIL2_VOL1_BIBLIOTECA.webp", "Infantil 2", "Volume 1", "Livro do Aluno", "book-viewer.html?book=livro-mestre-001"],
+  ["assets/RAIZES_INFANTIL2_VOL2_BIBLIOTECA.webp", "Infantil 2", "Volume 2", "Livro do Aluno", "book-viewer.html?book=livro-002"],
+  ["assets/RAIZES_LAB_SENSORIAL_INFANTIL2_BIBLIOTECA.webp", "Infantil 2", "Laboratorio Sensorial", "Material Sensorial", "book-viewer.html?book=laboratorio-sensorial-002"],
   ["assets/RAIZES_INFANTIL3_VOL1_BIBLIOTECA.webp", "Infantil 3", "Volume 1", "Livro do Aluno"],
   ["assets/RAIZES_INFANTIL3_VOL2_BIBLIOTECA.webp", "Infantil 3", "Volume 2", "Livro do Aluno"],
   ["assets/RAIZES_LAB_SENSORIAL_INFANTIL3_BIBLIOTECA.webp", "Infantil 3", "Lab Sensorial", "Experiencias"],
@@ -101,10 +216,7 @@ const modules = {
         <section class="wide-panel">
           <div class="panel-head"><h2>Continuar Leitura</h2><a href="book-viewer.html">Ver todos</a></div>
           <div class="reading-row">
-            <article class="reading-card"><img src="assets/RAIZES_INFANTIL5_VOL1_BIBLIOTECA.webp" alt="Capa Matematica" /><div><h3>Matematica</h3><p>5º Ano</p><i style="--value:72%"></i><a class="mini-action" href="book-viewer.html">Continuar</a></div></article>
-            <article class="reading-card"><img src="assets/RAIZES_INFANTIL4_VOL2_BIBLIOTECA.webp" alt="Capa Ciencias" /><div><h3>Ciencias</h3><p>4º Ano</p><i style="--value:48%"></i><a class="mini-action" href="book-viewer.html">Continuar</a></div></article>
-            <article class="reading-card"><img src="assets/RAIZES_INFANTIL3_VOL2_BIBLIOTECA.webp" alt="Capa Historia" /><div><h3>Historia</h3><p>6º Ano</p><i style="--value:28%"></i><a class="mini-action" href="book-viewer.html">Continuar</a></div></article>
-            <article class="reading-card"><img src="assets/RAIZES_INFANTIL4_VOL1_BIBLIOTECA.webp" alt="Capa Geografia" /><div><h3>Geografia</h3><p>3º Ano</p><i style="--value:15%"></i><a class="mini-action" href="book-viewer.html">Continuar</a></div></article>
+            ${buildRecentReadingCards()}
           </div>
         </section>
         <aside class="quick-card"><h2>Navegacao Rapida</h2><a>Livros Recentes</a><a>Meus Favoritos</a><a>Leitura em Andamento</a><a>Novos Materiais</a></aside>
@@ -126,7 +238,7 @@ const modules = {
           <a href="index.html#video-institucional">Assistir video</a>
         </aside>
         <section class="wide-panel recent-books library-catalog-panel">
-          <div class="panel-head"><h2>Acervo Completo</h2><a>16 materiais</a></div>
+          <div class="panel-head"><h2>Acervo Completo</h2><a>${libraryBooks.length} materiais</a></div>
           <div class="library-catalog">${libraryBookCards}</div>
         </section>
       </div>
@@ -134,16 +246,16 @@ const modules = {
   },
   viewer: {
     title: "Book Viewer",
-    subtitle: "Livro Mestre 001 - Educacao Infantil 2 anos - Volume 1",
+    subtitle: `${activeBook.title} - ${activeBook.subtitle}`,
     code: "MS-002",
     html: `
-      <div class="book-reader" data-book-reader data-total-pages="${masterBook001.totalPages}">
+      <div class="book-reader" data-book-reader data-total-pages="${activeBook.totalPages}">
         <header class="reader-header">
           <a class="reader-back" href="biblioteca.html">&larr; Biblioteca</a>
           <div>
-            <p>${masterBook001.collection}</p>
-            <h1>${masterBook001.title}</h1>
-            <span>${masterBook001.subtitle}</span>
+            <p>${activeBook.collection}</p>
+            <h1>${activeBook.title}</h1>
+            <span>${activeBook.subtitle}</span>
           </div>
           <div class="reader-progress" aria-label="Progresso de leitura">
             <strong data-progress-label>1%</strong>
@@ -153,14 +265,14 @@ const modules = {
 
         <div class="reader-layout">
           <aside class="page-rail reader-rail" aria-label="Miniaturas das paginas">
-            <div class="rail-title"><h2>Paginas</h2><span data-page-count>1/${masterBook001.totalPages}</span></div>
+            <div class="rail-title"><h2>Paginas</h2><span data-page-count>1/${activeBook.totalPages}</span></div>
             <div class="thumbnail-list" data-thumbnail-list></div>
           </aside>
 
           <section class="book-stage" data-book-stage aria-live="polite">
             <button class="reader-turn previous" type="button" data-prev-page aria-label="Pagina anterior">&lsaquo;</button>
             <figure class="reader-page" data-reader-page style="--zoom: 1">
-              <img data-page-image src="${masterBook001.page(1)}" alt="${masterBook001.title} pagina 1" loading="eager" />
+              <img data-page-image src="${activeBook.page(1)}" alt="${activeBook.title} pagina 1" loading="eager" />
             </figure>
             <button class="reader-turn next" type="button" data-next-page aria-label="Proxima pagina">&rsaquo;</button>
           </section>
@@ -176,7 +288,7 @@ const modules = {
           <span data-zoom-label>100%</span>
           <button type="button" data-zoom-in aria-label="Aumentar zoom">+</button>
           <button type="button" data-prev-page aria-label="Pagina anterior">&lsaquo;</button>
-          <strong data-page-label>1 / ${masterBook001.totalPages}</strong>
+          <strong data-page-label>1 / ${activeBook.totalPages}</strong>
           <button type="button" data-next-page aria-label="Proxima pagina">&rsaquo;</button>
           <button type="button" data-fullscreen-reader aria-label="Tela cheia">[]</button>
         </div>
@@ -433,7 +545,7 @@ const initBookReader = () => {
     return;
   }
 
-  const book = masterBook001;
+  const book = activeBook;
   const storageKey = `${book.id}:bookmark`;
   const image = reader.querySelector("[data-page-image]");
   const pageFrame = reader.querySelector("[data-reader-page]");
@@ -452,6 +564,7 @@ const initBookReader = () => {
   let zoom = 1;
   let bookmarkedPage = Number(localStorage.getItem(storageKey)) || 0;
   const preloadedPages = new Set();
+  updateRecentBook(book.id);
 
   for (let currentPage = 1; currentPage <= book.totalPages; currentPage += 1) {
     const button = document.createElement("button");
@@ -516,6 +629,7 @@ const initBookReader = () => {
     pageCount.textContent = `${page}/${book.totalPages}`;
     progressLabel.textContent = `${progress}%`;
     progressBar.style.width = `${progress}%`;
+    localStorage.setItem(`${book.id}:lastPage`, String(page));
     updateActiveItems();
     updateBookmark();
     preload(page + 1);
@@ -592,6 +706,26 @@ const initBookReader = () => {
   renderPage(page);
 };
 
+const initLibrarySearch = () => {
+  const searchInput = document.querySelector(".app-search input");
+  const catalogCards = [...document.querySelectorAll(".library-book-card")];
+  if (!searchInput || !catalogCards.length) {
+    return;
+  }
+
+  searchInput.addEventListener("input", () => {
+    const query = searchInput.value.trim().toLowerCase().replace(/\s+/g, " ");
+    const terms = query.split(/\s+/).filter(Boolean);
+    catalogCards.forEach((card) => {
+      const searchableText = card.textContent.toLowerCase().replace(/\s+/g, " ");
+      const phraseMatch = searchableText.includes(query);
+      const termMatch = terms.every((term) => searchableText.includes(term));
+      const hasNumberTerm = terms.some((term) => /^\d+$/.test(term));
+      card.hidden = terms.length > 0 && !(phraseMatch || (!hasNumberTerm && termMatch));
+    });
+  });
+};
+
 const renderAppPage = () => {
   const mount = document.querySelector("[data-app-page]");
   if (!mount) {
@@ -644,6 +778,7 @@ const renderAppPage = () => {
   });
 
   initBookReader();
+  initLibrarySearch();
 };
 
 renderAppPage();
