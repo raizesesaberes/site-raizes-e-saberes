@@ -1,3 +1,25 @@
+const platformAuth = {
+  key: "raizes:demo-authenticated",
+  loginPage: "login.html",
+};
+
+const requirePlatformAuth = () => {
+  if (typeof window === "undefined") {
+    return;
+  }
+
+  const isAuthenticated = localStorage.getItem(platformAuth.key) === "true";
+  if (isAuthenticated) {
+    return;
+  }
+
+  const currentPath = `${window.location.pathname.split("/").pop() || "biblioteca.html"}${window.location.search}${window.location.hash}`;
+  document.documentElement.style.display = "none";
+  window.location.replace(`${platformAuth.loginPage}?next=${encodeURIComponent(currentPath)}`);
+};
+
+requirePlatformAuth();
+
 const ecosystemModules = [
   ["index.html", "🏠 Site"],
   ["biblioteca.html", "Biblioteca"],
@@ -92,6 +114,32 @@ const bookCatalog = [
       ["Certificado", 41],
     ],
   },
+  {
+    id: "livro-003",
+    title: "Educacao Infantil 3 anos",
+    subtitle: "Livro do Aluno - Volume 1",
+    catalogTitle: "Volume 1",
+    level: "Infantil 3",
+    type: "Livro do Aluno",
+    collection: "Colecao Raizes e Saberes",
+    totalPages: 151,
+    basePath: "assets",
+    cover: "assets/livro-003-page-001.jpg",
+    catalogCover: "assets/RAIZES_INFANTIL3_VOL1_BIBLIOTECA.webp",
+    href: "book-viewer.html?book=livro-003",
+    thumb: (page) => `assets/livro-003-thumb-${String(page).padStart(3, "0")}.jpg`,
+    page: (page) => `assets/livro-003-page-${String(page).padStart(3, "0")}.jpg`,
+    summary: [
+      ["Abertura", 1],
+      ["Campos de experiencia", 8],
+      ["Unidade 1 - Eu me comunico", 20],
+      ["Brincadeiras e imaginacao", 60],
+      ["Formas e descobertas", 100],
+      ["Unidade 1 - Eu e minha familia", 120],
+      ["Unidade 2 - Meu corpo e cuidados", 140],
+      ["Encerramento", 151],
+    ],
+  },
 ];
 
 const defaultBook = masterBook001;
@@ -153,10 +201,7 @@ const libraryBooks = [
   ["assets/RAIZES_INFANTIL2_VOL1_BIBLIOTECA.webp", "Infantil 2", "Volume 1", "Livro do Aluno", "book-viewer.html?book=livro-mestre-001"],
   ["assets/RAIZES_INFANTIL2_VOL2_BIBLIOTECA.webp", "Infantil 2", "Volume 2", "Livro do Aluno", "book-viewer.html?book=livro-002"],
   ["assets/RAIZES_LAB_SENSORIAL_INFANTIL2_BIBLIOTECA.webp", "Infantil 2", "Laboratorio Sensorial", "Material Sensorial", "book-viewer.html?book=laboratorio-sensorial-002"],
-  ["assets/RAIZES_INFANTIL3_VOL1_BIBLIOTECA.webp", "Infantil 3", "Volume 1", "Livro do Aluno"],
-  ["assets/RAIZES_INFANTIL3_VOL2_BIBLIOTECA.webp", "Infantil 3", "Volume 2", "Livro do Aluno"],
-  ["assets/RAIZES_LAB_SENSORIAL_INFANTIL3_BIBLIOTECA.webp", "Infantil 3", "Lab Sensorial", "Experiencias"],
-  ["assets/RAIZES_GUIA_ALFABETIZADOR_INFANTIL3_BIBLIOTECA.webp", "Infantil 3", "Guia do Alfabetizador", "Professor"],
+  ["assets/RAIZES_INFANTIL3_VOL1_BIBLIOTECA.webp", "Infantil 3", "Volume 1", "Livro do Aluno", "book-viewer.html?book=livro-003"],
   ["assets/RAIZES_INFANTIL4_VOL1_BIBLIOTECA.webp", "Infantil 4", "Volume 1", "Livro do Aluno"],
   ["assets/RAIZES_INFANTIL4_VOL2_BIBLIOTECA.webp", "Infantil 4", "Volume 2", "Livro do Aluno"],
   ["assets/RAIZES_LAB_SENSORIAL_INFANTIL4_BIBLIOTECA.webp", "Infantil 4", "Lab Sensorial", "Experiencias"],
