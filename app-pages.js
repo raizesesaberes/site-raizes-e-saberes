@@ -41,11 +41,11 @@ const masterBook001 = {
   collection: "Colecao Raizes e Saberes",
   totalPages: 126,
   basePath: "assets",
-  cover: "assets/livro-mestre-001-page-001.webp",
-  catalogCover: "assets/RAIZES_INFANTIL2_VOL1_BIBLIOTECA.webp",
+  cover: "assets/livro-mestre-001/pages/page-001.webp",
+  catalogCover: "assets/biblioteca/RAIZES_INFANTIL2_VOL1_BIBLIOTECA.webp",
   href: "book-viewer.html?book=livro-mestre-001",
-  thumb: (page) => `assets/livro-mestre-001-thumb-${String(page).padStart(3, "0")}.webp`,
-  page: (page) => `assets/livro-mestre-001-page-${String(page).padStart(3, "0")}.webp`,
+  thumb: (page) => `assets/livro-mestre-001/thumbs/page-${String(page).padStart(3, "0")}.webp`,
+  page: (page) => `assets/livro-mestre-001/pages/page-${String(page).padStart(3, "0")}.webp`,
   summary: [
     ["Abertura", 1],
     ["Sumario", 10],
@@ -72,11 +72,11 @@ const bookCatalog = [
     collection: "Colecao Raizes e Saberes",
     totalPages: 124,
     basePath: "assets",
-    cover: "assets/livro-002-page-001.jpg",
-    catalogCover: "assets/RAIZES_INFANTIL2_VOL2_BIBLIOTECA.webp",
+    cover: "assets/livro-002/pages/page-001.jpg",
+    catalogCover: "assets/biblioteca/RAIZES_INFANTIL2_VOL2_BIBLIOTECA.webp",
     href: "book-viewer.html?book=livro-002",
-    thumb: (page) => `assets/livro-002-thumb-${String(page).padStart(3, "0")}.jpg`,
-    page: (page) => `assets/livro-002-page-${String(page).padStart(3, "0")}.jpg`,
+    thumb: (page) => `assets/livro-002/thumbs/page-${String(page).padStart(3, "0")}.jpg`,
+    page: (page) => `assets/livro-002/pages/page-${String(page).padStart(3, "0")}.jpg`,
     summary: [
       ["Boas-vindas", 1],
       ["Volume 2 - 2o semestre", 2],
@@ -98,11 +98,11 @@ const bookCatalog = [
     collection: "Colecao Raizes e Saberes",
     totalPages: 41,
     basePath: "assets",
-    cover: "assets/laboratorio-sensorial-002-page-001.jpg",
-    catalogCover: "assets/RAIZES_LAB_SENSORIAL_INFANTIL2_BIBLIOTECA.webp",
+    cover: "assets/laboratorio-sensorial-002/pages/page-001.jpg",
+    catalogCover: "assets/biblioteca/RAIZES_LAB_SENSORIAL_INFANTIL2_BIBLIOTECA.webp",
     href: "book-viewer.html?book=laboratorio-sensorial-002",
-    thumb: (page) => `assets/laboratorio-sensorial-002-thumb-${String(page).padStart(3, "0")}.jpg`,
-    page: (page) => `assets/laboratorio-sensorial-002-page-${String(page).padStart(3, "0")}.jpg`,
+    thumb: (page) => `assets/laboratorio-sensorial-002/thumbs/page-${String(page).padStart(3, "0")}.jpg`,
+    page: (page) => `assets/laboratorio-sensorial-002/pages/page-${String(page).padStart(3, "0")}.jpg`,
     summary: [
       ["Apresentacao", 1],
       ["Missoes sensoriais", 2],
@@ -124,11 +124,11 @@ const bookCatalog = [
     collection: "Colecao Raizes e Saberes",
     totalPages: 151,
     basePath: "assets",
-    cover: "assets/livro-003-page-001.jpg",
-    catalogCover: "assets/RAIZES_INFANTIL3_VOL1_BIBLIOTECA.webp",
+    cover: "assets/livro-003/pages/page-001.jpg",
+    catalogCover: "assets/biblioteca/RAIZES_INFANTIL3_VOL1_BIBLIOTECA.webp",
     href: "book-viewer.html?book=livro-003",
-    thumb: (page) => `assets/livro-003-thumb-${String(page).padStart(3, "0")}.jpg`,
-    page: (page) => `assets/livro-003-page-${String(page).padStart(3, "0")}.jpg`,
+    thumb: (page) => `assets/livro-003/thumbs/page-${String(page).padStart(3, "0")}.jpg`,
+    page: (page) => `assets/livro-003/pages/page-${String(page).padStart(3, "0")}.jpg`,
     summary: [
       ["Abertura", 1],
       ["Campos de experiencia", 8],
@@ -138,6 +138,32 @@ const bookCatalog = [
       ["Unidade 1 - Eu e minha familia", 120],
       ["Unidade 2 - Meu corpo e cuidados", 140],
       ["Encerramento", 151],
+    ],
+  },
+  {
+    id: "livro-004",
+    title: "Educacao Infantil 3 anos",
+    subtitle: "Livro do Aluno - Volume 2",
+    catalogTitle: "Volume 2",
+    level: "Infantil 3",
+    type: "Livro do Aluno",
+    collection: "Colecao Raizes e Saberes",
+    totalPages: 126,
+    basePath: "assets",
+    cover: "assets/livro-004/pages/page-001.jpg",
+    catalogCover: "assets/biblioteca/RAIZES_INFANTIL3_VOL2_BIBLIOTECA.webp",
+    href: "book-viewer.html?book=livro-004",
+    thumb: (page) => `assets/livro-004/thumbs/page-${String(page).padStart(3, "0")}.jpg`,
+    page: (page) => `assets/livro-004/pages/page-${String(page).padStart(3, "0")}.jpg`,
+    summary: [
+      ["Abertura", 1],
+      ["Volume 2 - 2o semestre", 2],
+      ["Unidade 3", 10],
+      ["Atividades", 30],
+      ["Experiencias", 50],
+      ["Descobertas", 70],
+      ["Projetos", 90],
+      ["Encerramento", 126],
     ],
   },
 ];
@@ -198,18 +224,19 @@ const buildRecentReadingCards = () => {
 };
 
 const libraryBooks = [
-  ["assets/RAIZES_INFANTIL2_VOL1_BIBLIOTECA.webp", "Infantil 2", "Volume 1", "Livro do Aluno", "book-viewer.html?book=livro-mestre-001"],
-  ["assets/RAIZES_INFANTIL2_VOL2_BIBLIOTECA.webp", "Infantil 2", "Volume 2", "Livro do Aluno", "book-viewer.html?book=livro-002"],
-  ["assets/RAIZES_LAB_SENSORIAL_INFANTIL2_BIBLIOTECA.webp", "Infantil 2", "Laboratorio Sensorial", "Material Sensorial", "book-viewer.html?book=laboratorio-sensorial-002"],
-  ["assets/RAIZES_INFANTIL3_VOL1_BIBLIOTECA.webp", "Infantil 3", "Volume 1", "Livro do Aluno", "book-viewer.html?book=livro-003"],
-  ["assets/RAIZES_INFANTIL4_VOL1_BIBLIOTECA.webp", "Infantil 4", "Volume 1", "Livro do Aluno"],
-  ["assets/RAIZES_INFANTIL4_VOL2_BIBLIOTECA.webp", "Infantil 4", "Volume 2", "Livro do Aluno"],
-  ["assets/RAIZES_LAB_SENSORIAL_INFANTIL4_BIBLIOTECA.webp", "Infantil 4", "Lab Sensorial", "Experiencias"],
-  ["assets/RAIZES_GUIA_ALFABETIZADOR_INFANTIL4_BIBLIOTECA.webp", "Infantil 4", "Guia do Alfabetizador", "Professor"],
-  ["assets/RAIZES_INFANTIL5_VOL1_BIBLIOTECA.webp", "Infantil 5", "Volume 1", "Livro do Aluno"],
-  ["assets/RAIZES_INFANTIL5_VOL2_BIBLIOTECA.webp", "Infantil 5", "Volume 2", "Livro do Aluno"],
-  ["assets/RAIZES_LAB_SENSORIAL_INFANTIL5_BIBLIOTECA.webp", "Infantil 5", "Lab Sensorial", "Experiencias"],
-  ["assets/RAIZES_GUIA_ALFABETIZADOR_INFANTIL5_BIBLIOTECA.webp", "Infantil 5", "Guia do Alfabetizador", "Professor"],
+  ["assets/biblioteca/RAIZES_INFANTIL2_VOL1_BIBLIOTECA.webp", "Infantil 2", "Volume 1", "Livro do Aluno", "book-viewer.html?book=livro-mestre-001"],
+  ["assets/biblioteca/RAIZES_INFANTIL2_VOL2_BIBLIOTECA.webp", "Infantil 2", "Volume 2", "Livro do Aluno", "book-viewer.html?book=livro-002"],
+  ["assets/biblioteca/RAIZES_LAB_SENSORIAL_INFANTIL2_BIBLIOTECA.webp", "Infantil 2", "Laboratorio Sensorial", "Material Sensorial", "book-viewer.html?book=laboratorio-sensorial-002"],
+  ["assets/biblioteca/RAIZES_INFANTIL3_VOL1_BIBLIOTECA.webp", "Infantil 3", "Volume 1", "Livro do Aluno", "book-viewer.html?book=livro-003"],
+  ["assets/biblioteca/RAIZES_INFANTIL3_VOL2_BIBLIOTECA.webp", "Infantil 3", "Volume 2", "Livro do Aluno", "book-viewer.html?book=livro-004"],
+  ["assets/biblioteca/RAIZES_INFANTIL4_VOL1_BIBLIOTECA.webp", "Infantil 4", "Volume 1", "Livro do Aluno"],
+  ["assets/biblioteca/RAIZES_INFANTIL4_VOL2_BIBLIOTECA.webp", "Infantil 4", "Volume 2", "Livro do Aluno"],
+  ["assets/biblioteca/RAIZES_LAB_SENSORIAL_INFANTIL4_BIBLIOTECA.webp", "Infantil 4", "Lab Sensorial", "Experiencias"],
+  ["assets/biblioteca/RAIZES_GUIA_ALFABETIZADOR_INFANTIL4_BIBLIOTECA.webp", "Infantil 4", "Guia do Alfabetizador", "Professor"],
+  ["assets/biblioteca/RAIZES_INFANTIL5_VOL1_BIBLIOTECA.webp", "Infantil 5", "Volume 1", "Livro do Aluno"],
+  ["assets/biblioteca/RAIZES_INFANTIL5_VOL2_BIBLIOTECA.webp", "Infantil 5", "Volume 2", "Livro do Aluno"],
+  ["assets/biblioteca/RAIZES_LAB_SENSORIAL_INFANTIL5_BIBLIOTECA.webp", "Infantil 5", "Lab Sensorial", "Experiencias"],
+  ["assets/biblioteca/RAIZES_GUIA_ALFABETIZADOR_INFANTIL5_BIBLIOTECA.webp", "Infantil 5", "Guia do Alfabetizador", "Professor"],
 ];
 
 const libraryBookCards = libraryBooks
@@ -352,7 +379,7 @@ const modules = {
         <section class="panel"><h2>Proximas Aulas</h2><ul class="clean-list"><li>Geografia <span>Hoje - 8h00</span></li><li>Arte <span>Hoje - 10h00</span></li><li>Matematica <span>Amanha - 8h00</span></li></ul></section>
         <section class="panel"><h2>Atividades Pendentes</h2><ul class="clean-list"><li>Atividade de Matematica <span>15 entregas</span></li><li>Leitura e Interpretacao <span>8 entregas</span></li><li>Experimento: Ciclo da Agua <span>12 entregas</span></li></ul></section>
         <section class="panel chart-card"><h2>Correcoes</h2><div class="donut">68%</div><strong>24</strong><span>Atividades para corrigir</span></section>
-        <section class="panel book-mini"><h2>Biblioteca Integrada</h2><img src="assets/RAIZES_INFANTIL5_VOL1_BIBLIOTECA.webp" alt="" /><div><strong>Ciencias</strong><span>4º Ano</span><button>Continuar leitura</button></div></section>
+        <section class="panel book-mini"><h2>Biblioteca Integrada</h2><img src="assets/biblioteca/RAIZES_INFANTIL5_VOL1_BIBLIOTECA.webp" alt="" /><div><strong>Ciencias</strong><span>4º Ano</span><button>Continuar leitura</button></div></section>
       </div>
     `,
   },
@@ -401,7 +428,7 @@ const modules = {
         <section class="panel"><h2>Desempenho por Turma</h2><div class="bar-list"><p>6º Ano A<i style="--value:76%"></i></p><p>6º Ano B<i style="--value:72%"></i></p><p>7º Ano A<i style="--value:69%"></i></p><p>8º Ano A<i style="--value:74%"></i></p></div></section>
         <section class="panel chart-card"><h2>Frequencia por Turma</h2><div class="donut">94,1%</div></section>
         <section class="panel"><h2>Alertas Pedagogicos</h2><ul class="clean-list"><li>5 turmas com desempenho abaixo de 60%</li><li>12 estudantes com baixa frequencia</li><li>3 atividades atrasadas</li></ul></section>
-        <section class="panel span-2"><h2>Biblioteca Digital</h2><div class="book-strip small"><img src="assets/RAIZES_INFANTIL3_VOL1_BIBLIOTECA.webp" alt="" /><img src="assets/RAIZES_INFANTIL4_VOL1_BIBLIOTECA.webp" alt="" /><img src="assets/RAIZES_INFANTIL5_VOL1_BIBLIOTECA.webp" alt="" /></div></section>
+        <section class="panel span-2"><h2>Biblioteca Digital</h2><div class="book-strip small"><img src="assets/biblioteca/RAIZES_INFANTIL3_VOL1_BIBLIOTECA.webp" alt="" /><img src="assets/biblioteca/RAIZES_INFANTIL4_VOL1_BIBLIOTECA.webp" alt="" /><img src="assets/biblioteca/RAIZES_INFANTIL5_VOL1_BIBLIOTECA.webp" alt="" /></div></section>
         <section class="panel"><h2>Atalhos Rapidos</h2><div class="shortcut-grid"><button>Lancar Frequencia</button><button>Registrar Atividade</button><button>Plano de Aula</button><button>Relatorios</button></div></section>
       </div>
     `,
