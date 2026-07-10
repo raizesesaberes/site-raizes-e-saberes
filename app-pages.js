@@ -320,6 +320,31 @@ const bookCatalog = [
       ["Encerramento", 169],
     ],
   },
+  {
+    id: "laboratorio-sensorial-005",
+    title: "Educacao Infantil 5 anos",
+    subtitle: "Laboratorio Sensorial",
+    catalogTitle: "Laboratorio Sensorial",
+    level: "Infantil 5",
+    type: "Laboratorio Sensorial",
+    collection: "Colecao Raizes e Saberes",
+    totalPages: 63,
+    basePath: "assets",
+    cover: "assets/laboratorio-sensorial-005/pages/page-001.jpg",
+    catalogCover: "assets/biblioteca/RAIZES_LAB_SENSORIAL_INFANTIL5_BIBLIOTECA.webp",
+    href: "book-viewer.html?book=laboratorio-sensorial-005",
+    thumb: (page) => `assets/laboratorio-sensorial-005/thumbs/page-${String(page).padStart(3, "0")}.jpg`,
+    page: (page) => `assets/laboratorio-sensorial-005/pages/page-${String(page).padStart(3, "0")}.jpg`,
+    summary: [
+      ["Apresentacao", 1],
+      ["Missoes sensoriais", 2],
+      ["Explorando os sentidos", 8],
+      ["Experimentacoes", 20],
+      ["Criacoes", 36],
+      ["Registro final", 54],
+      ["Encerramento", 63],
+    ],
+  },
 ];
 
 const defaultBook = masterBook001;
@@ -390,7 +415,7 @@ const libraryBooks = [
   ["assets/biblioteca/RAIZES_GUIA_ALFABETIZADOR_INFANTIL4_BIBLIOTECA.webp", "Infantil 4", "Guia do Alfabetizador", "Professor"],
   ["assets/biblioteca/RAIZES_INFANTIL5_VOL1_BIBLIOTECA.webp", "Infantil 5", "Volume 1", "Livro do Aluno", "book-viewer.html?book=livro-007"],
   ["assets/biblioteca/RAIZES_INFANTIL5_VOL2_BIBLIOTECA.webp", "Infantil 5", "Volume 2", "Livro do Aluno", "book-viewer.html?book=livro-008"],
-  ["assets/biblioteca/RAIZES_LAB_SENSORIAL_INFANTIL5_BIBLIOTECA.webp", "Infantil 5", "Lab Sensorial", "Experiencias"],
+  ["assets/biblioteca/RAIZES_LAB_SENSORIAL_INFANTIL5_BIBLIOTECA.webp", "Infantil 5", "Lab Sensorial", "Experiencias", "book-viewer.html?book=laboratorio-sensorial-005"],
   ["assets/biblioteca/RAIZES_GUIA_ALFABETIZADOR_INFANTIL5_BIBLIOTECA.webp", "Infantil 5", "Guia do Alfabetizador", "Professor"],
 ];
 
