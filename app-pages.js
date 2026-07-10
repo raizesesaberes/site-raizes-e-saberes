@@ -465,12 +465,7 @@ const collectionShowcaseCards = [
     description: "Colecao alinhada a BNCC do 1o ao 9o ano, com trilhas integradas para ampliar repertorio e autonomia.",
     icon: "▣",
     href: "#acervo-completo",
-    covers: [
-      "assets/biblioteca/RAIZES_INFANTIL3_VOL1_BIBLIOTECA.webp",
-      "assets/biblioteca/RAIZES_INFANTIL4_VOL2_BIBLIOTECA.webp",
-      "assets/biblioteca/RAIZES_INFANTIL5_VOL1_BIBLIOTECA.webp",
-      "assets/biblioteca/RAIZES_INFANTIL5_VOL2_BIBLIOTECA.webp",
-    ],
+    coverGroup: "assets/colecoes/colecao-ensino-fundamental-provisorio.webp",
   },
   {
     title: "Avalia+",
@@ -478,12 +473,7 @@ const collectionShowcaseCards = [
     description: "Avaliacoes diagnosticas, formativas e somativas para acompanhar resultados e orientar intervencoes.",
     icon: "✓",
     href: "avalia.html",
-    covers: [
-      "assets/biblioteca/RAIZES_INFANTIL2_VOL2_BIBLIOTECA.webp",
-      "assets/biblioteca/RAIZES_INFANTIL3_VOL1_BIBLIOTECA.webp",
-      "assets/biblioteca/RAIZES_INFANTIL4_VOL1_BIBLIOTECA.webp",
-      "assets/biblioteca/RAIZES_INFANTIL5_VOL1_BIBLIOTECA.webp",
-    ],
+    coverGroup: "assets/colecoes/colecao-avalia-provisorio.webp",
   },
   {
     title: "Materiais Complementares",
@@ -491,12 +481,7 @@ const collectionShowcaseCards = [
     description: "Recursos adicionais para enriquecer o ensino: atividades, projetos, jogos, videos e sequencias de apoio.",
     icon: "▤",
     href: "#acervo-completo",
-    covers: [
-      "assets/biblioteca/RAIZES_LAB_SENSORIAL_INFANTIL3_BIBLIOTECA.webp",
-      "assets/biblioteca/RAIZES_GUIA_ALFABETIZADOR_INFANTIL3_BIBLIOTECA.webp",
-      "assets/biblioteca/RAIZES_LAB_SENSORIAL_INFANTIL4_BIBLIOTECA.webp",
-      "assets/biblioteca/RAIZES_GUIA_ALFABETIZADOR_INFANTIL5_BIBLIOTECA.webp",
-    ],
+    coverGroup: "assets/colecoes/colecao-materiais-complementares-provisorio.webp",
   },
 ];
 
@@ -505,9 +490,11 @@ const collectionShowcaseCardsHtml = collectionShowcaseCards
     (collection) => `
       <article class="collection-showcase-card">
         <div class="collection-cover-stack" aria-hidden="true">
-          ${collection.covers
-            .map((cover) => `<img src="${cover}" alt="" loading="lazy" />`)
-            .join("")}
+          ${
+            collection.coverGroup
+              ? `<img class="collection-cover-group" src="${collection.coverGroup}" alt="" loading="lazy" />`
+              : collection.covers.map((cover) => `<img src="${cover}" alt="" loading="lazy" />`).join("")
+          }
         </div>
         <div class="collection-card-body">
           <span class="collection-icon">${collection.icon}</span>

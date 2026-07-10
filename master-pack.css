@@ -600,6 +600,18 @@
   transform: rotate(-3deg);
 }
 
+.collection-cover-stack .collection-cover-group {
+  left: 0;
+  width: 100%;
+  max-width: none;
+  height: 132px;
+  aspect-ratio: auto;
+  border-radius: 0;
+  object-fit: contain;
+  box-shadow: none;
+  transform: none;
+}
+
 .collection-card-body {
   position: relative;
   z-index: 1;
