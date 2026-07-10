@@ -419,6 +419,110 @@ const libraryBooks = [
   ["assets/biblioteca/RAIZES_GUIA_ALFABETIZADOR_INFANTIL5_BIBLIOTECA.webp", "Infantil 5", "Guia do Alfabetizador", "Professor"],
 ];
 
+const collectionShowcaseCards = [
+  {
+    title: "Educacao Infantil",
+    count: `${libraryBooks.length} livros`,
+    description: "Colecao completa para a Educacao Infantil, com atividades ludicas, experiencias sensoriais e guias para cada etapa.",
+    icon: "⌂",
+    href: "#acervo-completo",
+    covers: [
+      "assets/biblioteca/RAIZES_INFANTIL2_VOL1_BIBLIOTECA.webp",
+      "assets/biblioteca/RAIZES_INFANTIL3_VOL2_BIBLIOTECA.webp",
+      "assets/biblioteca/RAIZES_INFANTIL4_VOL1_BIBLIOTECA.webp",
+      "assets/biblioteca/RAIZES_INFANTIL5_VOL2_BIBLIOTECA.webp",
+    ],
+  },
+  {
+    title: "Laboratorio Sensorial",
+    count: "4 livros",
+    description: "Experiencias praticas para explorar sentidos, natureza, materiais, criatividade e registros pedagogicos.",
+    icon: "◎",
+    href: "#acervo-completo",
+    covers: [
+      "assets/biblioteca/RAIZES_LAB_SENSORIAL_INFANTIL2_BIBLIOTECA.webp",
+      "assets/biblioteca/RAIZES_LAB_SENSORIAL_INFANTIL3_BIBLIOTECA.webp",
+      "assets/biblioteca/RAIZES_LAB_SENSORIAL_INFANTIL4_BIBLIOTECA.webp",
+      "assets/biblioteca/RAIZES_LAB_SENSORIAL_INFANTIL5_BIBLIOTECA.webp",
+    ],
+  },
+  {
+    title: "Guias do Professor",
+    count: "4 guias",
+    description: "Materiais de apoio para planejamento, mediacao das propostas e acompanhamento do desenvolvimento infantil.",
+    icon: "♙",
+    href: "#acervo-completo",
+    covers: [
+      "assets/biblioteca/RAIZES_GUIA_ALFABETIZADOR_INFANTIL2_BIBLIOTECA.webp",
+      "assets/biblioteca/RAIZES_GUIA_ALFABETIZADOR_INFANTIL3_BIBLIOTECA.webp",
+      "assets/biblioteca/RAIZES_GUIA_ALFABETIZADOR_INFANTIL4_BIBLIOTECA.webp",
+      "assets/biblioteca/RAIZES_GUIA_ALFABETIZADOR_INFANTIL5_BIBLIOTECA.webp",
+    ],
+  },
+  {
+    title: "Ensino Fundamental",
+    count: "36 livros",
+    description: "Colecao alinhada a BNCC do 1o ao 9o ano, com trilhas integradas para ampliar repertorio e autonomia.",
+    icon: "▣",
+    href: "#acervo-completo",
+    covers: [
+      "assets/biblioteca/RAIZES_INFANTIL3_VOL1_BIBLIOTECA.webp",
+      "assets/biblioteca/RAIZES_INFANTIL4_VOL2_BIBLIOTECA.webp",
+      "assets/biblioteca/RAIZES_INFANTIL5_VOL1_BIBLIOTECA.webp",
+      "assets/biblioteca/RAIZES_INFANTIL5_VOL2_BIBLIOTECA.webp",
+    ],
+  },
+  {
+    title: "Avalia+",
+    count: "18 livros",
+    description: "Avaliacoes diagnosticas, formativas e somativas para acompanhar resultados e orientar intervencoes.",
+    icon: "✓",
+    href: "avalia.html",
+    covers: [
+      "assets/biblioteca/RAIZES_INFANTIL2_VOL2_BIBLIOTECA.webp",
+      "assets/biblioteca/RAIZES_INFANTIL3_VOL1_BIBLIOTECA.webp",
+      "assets/biblioteca/RAIZES_INFANTIL4_VOL1_BIBLIOTECA.webp",
+      "assets/biblioteca/RAIZES_INFANTIL5_VOL1_BIBLIOTECA.webp",
+    ],
+  },
+  {
+    title: "Materiais Complementares",
+    count: "20+ materiais",
+    description: "Recursos adicionais para enriquecer o ensino: atividades, projetos, jogos, videos e sequencias de apoio.",
+    icon: "▤",
+    href: "#acervo-completo",
+    covers: [
+      "assets/biblioteca/RAIZES_LAB_SENSORIAL_INFANTIL3_BIBLIOTECA.webp",
+      "assets/biblioteca/RAIZES_GUIA_ALFABETIZADOR_INFANTIL3_BIBLIOTECA.webp",
+      "assets/biblioteca/RAIZES_LAB_SENSORIAL_INFANTIL4_BIBLIOTECA.webp",
+      "assets/biblioteca/RAIZES_GUIA_ALFABETIZADOR_INFANTIL5_BIBLIOTECA.webp",
+    ],
+  },
+];
+
+const collectionShowcaseCardsHtml = collectionShowcaseCards
+  .map(
+    (collection) => `
+      <article class="collection-showcase-card">
+        <div class="collection-cover-stack" aria-hidden="true">
+          ${collection.covers
+            .map((cover) => `<img src="${cover}" alt="" loading="lazy" />`)
+            .join("")}
+        </div>
+        <div class="collection-card-body">
+          <span class="collection-icon">${collection.icon}</span>
+          <div>
+            <h3>${collection.title}</h3>
+            <p class="collection-count">📖 ${collection.count}</p>
+            <p class="collection-description">${collection.description}</p>
+            <a class="collection-action" href="${collection.href}">Explorar Colecao <span>›</span></a>
+          </div>
+        </div>
+      </article>
+    `
+  )
+  .join("");
+
 const libraryBookCards = libraryBooks
   .map(
     ([src, year, title, type, href = "book-viewer.html"]) => `
@@ -474,13 +578,8 @@ const modules = {
         <aside class="quick-card"><h2>Navegacao Rapida</h2><a>Livros Recentes</a><a>Meus Favoritos</a><a>Leitura em Andamento</a><a>Novos Materiais</a></aside>
         <section class="wide-panel">
           <div class="panel-head"><h2>Colecoes</h2><a>Ver todos</a></div>
-          <div class="collection-strip">
-            <article><b>⌂</b><strong>Educacao Infantil</strong><span>48 livros</span></article>
-            <article><b>♙</b><strong>Ensino Fundamental</strong><span>256 livros</span></article>
-            <article><b>✓</b><strong>Avalia+</strong><span>32 livros</span></article>
-            <article><b>▣</b><strong>Literatura</strong><span>124 livros</span></article>
-            <article><b>♧</b><strong>Formacao Continuada</strong><span>67 livros</span></article>
-            <article><b>▤</b><strong>Materiais Complementares</strong><span>89 livros</span></article>
+          <div class="collection-showcase-grid">
+            ${collectionShowcaseCardsHtml}
           </div>
         </section>
         <aside class="ecosystem-video-card">
@@ -489,7 +588,7 @@ const modules = {
           <p>Assista ao video institucional e veja como os modulos se conectam em uma experiencia unica.</p>
           <a href="index.html#video-institucional">Assistir video</a>
         </aside>
-        <section class="wide-panel recent-books library-catalog-panel">
+        <section class="wide-panel recent-books library-catalog-panel" id="acervo-completo">
           <div class="panel-head"><h2>Acervo Completo</h2><a>${libraryBooks.length} materiais</a></div>
           <div class="library-catalog">${libraryBookCards}</div>
         </section>
