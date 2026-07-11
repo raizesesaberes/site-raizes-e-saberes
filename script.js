@@ -17,6 +17,81 @@ const videoFrame = document.querySelector("[data-video-frame]");
 const youtubeEmbedUrl =
   "https://www.youtube.com/embed/w4BPUg2x_O8?autoplay=1&rel=0&modestbranding=1";
 
+const universityCourses = [
+  {
+    id: "formacao-docente-essencial",
+    title: "Formacao Docente Essencial",
+    trail: "Trilha de Formacao Docente",
+    audience: "Professores",
+    hours: 12,
+    certificates: 186,
+    publishedAt: "2026-07-11",
+    status: "Publicado",
+    featured: true,
+    resources: {
+      video: null,
+      pdf: null,
+      assessment: null,
+      certificate: null,
+    },
+    lessons: [
+      { id: "planejamento-pedagogico", title: "Planejamento pedagogico com intencionalidade" },
+      { id: "rotinas-de-aula", title: "Rotinas de aula e organizacao do tempo" },
+      { id: "praticas-de-avaliacao", title: "Praticas de avaliacao formativa" },
+      { id: "recursos-digitais", title: "Recursos digitais em sala" },
+    ],
+  },
+  {
+    id: "gestao-pedagogica-em-rede",
+    title: "Gestao Pedagogica em Rede",
+    trail: "Trilha de Gestao",
+    audience: "Gestores",
+    hours: 10,
+    certificates: 94,
+    publishedAt: "2026-07-10",
+    status: "Em expansao",
+    resources: {
+      video: null,
+      pdf: null,
+      assessment: null,
+      certificate: null,
+    },
+    lessons: [
+      { id: "leitura-de-indicadores", title: "Leitura de indicadores educacionais" },
+      { id: "reunioes-pedagogicas", title: "Reunioes pedagogicas orientadas por dados" },
+      { id: "planos-de-intervencao", title: "Planos de intervencao e acompanhamento" },
+    ],
+  },
+  {
+    id: "avaliacao-para-aprendizagem",
+    title: "Avaliacao para Aprendizagem",
+    trail: "Trilha Avalia+",
+    audience: "Professores e coordenadores",
+    hours: 8,
+    certificates: 72,
+    publishedAt: "2026-07-09",
+    status: "Em expansao",
+    resources: {
+      video: null,
+      pdf: null,
+      assessment: null,
+      certificate: null,
+    },
+    lessons: [
+      { id: "diagnostico-inicial", title: "Diagnostico inicial e escuta pedagogica" },
+      { id: "rubricas", title: "Rubricas simples para acompanhar progresso" },
+      { id: "devolutivas", title: "Devolutivas que orientam novas aprendizagens" },
+    ],
+  },
+];
+
+const universityTrails = [
+  { title: "Formacao Docente", status: "Publicado" },
+  { title: "Gestao Pedagogica", status: "Em expansao" },
+  { title: "Avalia+", status: "Em expansao" },
+  { title: "Tecnologias Educacionais", status: "Em expansao" },
+];
+
 const syncHeader = () => {
   if (!header) {
     return;
@@ -251,6 +326,123 @@ if (videoModal) {
   });
 }
 
+const getFeaturedUniversityCourse = () =>
+  universityCourses.find((course) => course.featured) ||
+  [...universityCourses].sort((firstCourse, secondCourse) => secondCourse.publishedAt.localeCompare(firstCourse.publishedAt))[0];
+
+const getLatestUniversityCourses = () =>
+  [...universityCourses]
+    .sort((firstCourse, secondCourse) => secondCourse.publishedAt.localeCompare(firstCourse.publishedAt))
+    .slice(0, 3);
+
+const getUniversityLessonPosition = (lessonId) => {
+  for (const course of universityCourses) {
+    const lessonIndex = course.lessons.findIndex((lesson) => lesson.id === lessonId);
+    if (lessonIndex >= 0) {
+      return { course, lessonIndex };
+    }
+  }
+
+  return { course: getFeaturedUniversityCourse(), lessonIndex: -1 };
+};
+
+const getNextUniversityLesson = () => {
+  const lastCompletedLesson = localStorage.getItem("university:lastCompletedLesson");
+  const { course, lessonIndex } = getUniversityLessonPosition(lastCompletedLesson);
+  const nextLesson = course.lessons[lessonIndex + 1] || course.lessons[0];
+  return { course, lesson: nextLesson };
+};
+
+const renderUniversityLive = () => {
+  const courseWeekCard = document.querySelector("[data-university-course-week]");
+  if (!courseWeekCard) {
+    return;
+  }
+
+  const featuredCourse = getFeaturedUniversityCourse();
+  const latestCourses = getLatestUniversityCourses();
+  const totalHours = universityCourses.reduce((sum, course) => sum + course.hours, 0);
+  const totalCertificates = universityCourses.reduce((sum, course) => sum + course.certificates, 0);
+  const expansionTrails = universityTrails.filter((trail) => trail.status === "Em expansao").length;
+  const nextLesson = getNextUniversityLesson();
+
+  document.querySelector("[data-university-featured-title]").textContent = featuredCourse.trail;
+  document.querySelector("[data-university-featured-meta]").textContent =
+    `${featuredCourse.lessons.length} aulas - ${featuredCourse.hours}h de formacao`;
+  document.querySelector("[data-university-progress]").textContent = "68%";
+
+  const lessonList = document.querySelector("[data-university-lessons]");
+  if (lessonList) {
+    lessonList.innerHTML = featuredCourse.lessons
+      .slice(0, 3)
+      .map((lesson) => `<span>${lesson.title}</span>`)
+      .join("");
+  }
+
+  courseWeekCard.innerHTML = `
+    <span class="live-label">Destaque do Curso da Semana</span>
+    <h3>${featuredCourse.title}</h3>
+    <p>${featuredCourse.trail} - ${featuredCourse.hours}h - ${featuredCourse.audience}</p>
+    <div class="course-resource-row">
+      <span>Video</span>
+      <span>PDF</span>
+      <span>Avaliacao</span>
+      <span>Certificado</span>
+    </div>
+    <a href="#contato">Ver curso</a>
+  `;
+
+  const newCourseList = document.querySelector("[data-university-new-courses]");
+  if (newCourseList) {
+    newCourseList.innerHTML = latestCourses
+      .map(
+        (course) => `
+          <article>
+            <div>
+              <strong>${course.title}</strong>
+              <span>${course.trail} - ${course.hours}h</span>
+            </div>
+            ${course.status === "Em expansao" ? `<small>Em expansao</small>` : ""}
+          </article>
+        `
+      )
+      .join("");
+  }
+
+  const newCourseCount = document.querySelector("[data-university-new-count]");
+  if (newCourseCount) {
+    newCourseCount.textContent = `${latestCourses.length} publicados`;
+  }
+
+  const stats = document.querySelector("[data-university-stats]");
+  if (stats) {
+    stats.innerHTML = `
+      <span><strong>${universityCourses.length}</strong><small>cursos</small></span>
+      <span><strong>${totalHours}h</strong><small>formacao</small></span>
+      <span><strong>${totalCertificates}</strong><small>certificados</small></span>
+      <span><strong>${expansionTrails}</strong><small>trilhas em expansao</small></span>
+      <div class="trail-expansion-list">
+        ${universityTrails
+          .filter((trail) => trail.status === "Em expansao")
+          .map((trail) => `<small>${trail.title}<b>Em expansao</b></small>`)
+          .join("")}
+      </div>
+    `;
+  }
+
+  const continueCard = document.querySelector("[data-university-continue]");
+  if (continueCard) {
+    continueCard.querySelector("h3").textContent = nextLesson.lesson.title;
+    continueCard.querySelector("p").textContent = `${nextLesson.course.trail} - proxima aula sugerida automaticamente.`;
+  }
+};
+
+document.querySelector("[data-complete-university-lesson]")?.addEventListener("click", () => {
+  const nextLesson = getNextUniversityLesson();
+  localStorage.setItem("university:lastCompletedLesson", nextLesson.lesson.id);
+  renderUniversityLive();
+});
+
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape" && videoModal && !videoModal.hidden) {
     closeVideoModal();
@@ -258,5 +450,6 @@ document.addEventListener("keydown", (event) => {
 });
 
 syncHeader();
+renderUniversityLive();
 window.addEventListener("scroll", syncHeader, { passive: true });
 syncLibrary();

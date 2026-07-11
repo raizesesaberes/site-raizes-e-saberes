@@ -403,26 +403,67 @@ const buildRecentReadingCards = () => {
 };
 
 const libraryBooks = [
-  ["assets/biblioteca/RAIZES_INFANTIL2_VOL1_BIBLIOTECA.webp", "Infantil 2", "Volume 1", "Livro do Aluno", "book-viewer.html?book=livro-mestre-001"],
-  ["assets/biblioteca/RAIZES_INFANTIL2_VOL2_BIBLIOTECA.webp", "Infantil 2", "Volume 2", "Livro do Aluno", "book-viewer.html?book=livro-002"],
-  ["assets/biblioteca/RAIZES_LAB_SENSORIAL_INFANTIL2_BIBLIOTECA.webp", "Infantil 2", "Laboratorio Sensorial", "Material Sensorial", "book-viewer.html?book=laboratorio-sensorial-002"],
-  ["assets/biblioteca/RAIZES_INFANTIL3_VOL1_BIBLIOTECA.webp", "Infantil 3", "Volume 1", "Livro do Aluno", "book-viewer.html?book=livro-003"],
-  ["assets/biblioteca/RAIZES_INFANTIL3_VOL2_BIBLIOTECA.webp", "Infantil 3", "Volume 2", "Livro do Aluno", "book-viewer.html?book=livro-004"],
-  ["assets/biblioteca/RAIZES_LAB_SENSORIAL_INFANTIL3_BIBLIOTECA.webp", "Infantil 3", "Laboratorio Sensorial", "Material Sensorial", "book-viewer.html?book=laboratorio-sensorial-003"],
-  ["assets/biblioteca/RAIZES_INFANTIL4_VOL1_BIBLIOTECA.webp", "Infantil 4", "Volume 1", "Livro do Aluno", "book-viewer.html?book=livro-005"],
-  ["assets/biblioteca/RAIZES_INFANTIL4_VOL2_BIBLIOTECA.webp", "Infantil 4", "Volume 2", "Livro do Aluno", "book-viewer.html?book=livro-006"],
-  ["assets/biblioteca/RAIZES_LAB_SENSORIAL_INFANTIL4_BIBLIOTECA.webp", "Infantil 4", "Lab Sensorial", "Experiencias", "book-viewer.html?book=laboratorio-sensorial-004"],
-  ["assets/biblioteca/RAIZES_GUIA_ALFABETIZADOR_INFANTIL4_BIBLIOTECA.webp", "Infantil 4", "Guia do Alfabetizador", "Professor"],
-  ["assets/biblioteca/RAIZES_INFANTIL5_VOL1_BIBLIOTECA.webp", "Infantil 5", "Volume 1", "Livro do Aluno", "book-viewer.html?book=livro-007"],
-  ["assets/biblioteca/RAIZES_INFANTIL5_VOL2_BIBLIOTECA.webp", "Infantil 5", "Volume 2", "Livro do Aluno", "book-viewer.html?book=livro-008"],
-  ["assets/biblioteca/RAIZES_LAB_SENSORIAL_INFANTIL5_BIBLIOTECA.webp", "Infantil 5", "Lab Sensorial", "Experiencias", "book-viewer.html?book=laboratorio-sensorial-005"],
-  ["assets/biblioteca/RAIZES_GUIA_ALFABETIZADOR_INFANTIL5_BIBLIOTECA.webp", "Infantil 5", "Guia do Alfabetizador", "Professor"],
+  { src: "assets/biblioteca/RAIZES_INFANTIL2_VOL1_BIBLIOTECA.webp", year: "Infantil 2", title: "Volume 1", type: "Livro do Aluno", href: "book-viewer.html?book=livro-mestre-001", collection: "Educacao Infantil", publishedAt: "2026-07-01" },
+  { src: "assets/biblioteca/RAIZES_INFANTIL2_VOL2_BIBLIOTECA.webp", year: "Infantil 2", title: "Volume 2", type: "Livro do Aluno", href: "book-viewer.html?book=livro-002", collection: "Educacao Infantil", publishedAt: "2026-07-01" },
+  { src: "assets/biblioteca/RAIZES_LAB_SENSORIAL_INFANTIL2_BIBLIOTECA.webp", year: "Infantil 2", title: "Laboratorio Sensorial", type: "Material Sensorial", href: "book-viewer.html?book=laboratorio-sensorial-002", collection: "Laboratorio Sensorial", publishedAt: "2026-07-01" },
+  { src: "assets/biblioteca/RAIZES_GUIA_ALFABETIZADOR_INFANTIL2_BIBLIOTECA.webp", year: "Infantil 2", title: "Guia do Alfabetizador", type: "Professor", href: "professor.html", collection: "Guias do Professor", publishedAt: "2026-07-08" },
+  { src: "assets/biblioteca/RAIZES_INFANTIL3_VOL1_BIBLIOTECA.webp", year: "Infantil 3", title: "Volume 1", type: "Livro do Aluno", href: "book-viewer.html?book=livro-003", collection: "Educacao Infantil", publishedAt: "2026-07-09" },
+  { src: "assets/biblioteca/RAIZES_INFANTIL3_VOL2_BIBLIOTECA.webp", year: "Infantil 3", title: "Volume 2", type: "Livro do Aluno", href: "book-viewer.html?book=livro-004", collection: "Educacao Infantil", publishedAt: "2026-07-09" },
+  { src: "assets/biblioteca/RAIZES_LAB_SENSORIAL_INFANTIL3_BIBLIOTECA.webp", year: "Infantil 3", title: "Laboratorio Sensorial", type: "Material Sensorial", href: "book-viewer.html?book=laboratorio-sensorial-003", collection: "Laboratorio Sensorial", publishedAt: "2026-07-09" },
+  { src: "assets/biblioteca/RAIZES_GUIA_ALFABETIZADOR_INFANTIL3_BIBLIOTECA.webp", year: "Infantil 3", title: "Guia do Alfabetizador", type: "Professor", href: "professor.html", collection: "Guias do Professor", publishedAt: "2026-07-09" },
+  { src: "assets/biblioteca/RAIZES_INFANTIL4_VOL1_BIBLIOTECA.webp", year: "Infantil 4", title: "Volume 1", type: "Livro do Aluno", href: "book-viewer.html?book=livro-005", collection: "Educacao Infantil", publishedAt: "2026-07-10" },
+  { src: "assets/biblioteca/RAIZES_INFANTIL4_VOL2_BIBLIOTECA.webp", year: "Infantil 4", title: "Volume 2", type: "Livro do Aluno", href: "book-viewer.html?book=livro-006", collection: "Educacao Infantil", publishedAt: "2026-07-10" },
+  { src: "assets/biblioteca/RAIZES_LAB_SENSORIAL_INFANTIL4_BIBLIOTECA.webp", year: "Infantil 4", title: "Lab Sensorial", type: "Experiencias", href: "book-viewer.html?book=laboratorio-sensorial-004", collection: "Laboratorio Sensorial", publishedAt: "2026-07-10" },
+  { src: "assets/biblioteca/RAIZES_GUIA_ALFABETIZADOR_INFANTIL4_BIBLIOTECA.webp", year: "Infantil 4", title: "Guia do Alfabetizador", type: "Professor", href: "professor.html", collection: "Guias do Professor", publishedAt: "2026-07-10" },
+  { src: "assets/biblioteca/RAIZES_INFANTIL5_VOL1_BIBLIOTECA.webp", year: "Infantil 5", title: "Volume 1", type: "Livro do Aluno", href: "book-viewer.html?book=livro-007", collection: "Educacao Infantil", publishedAt: "2026-07-11" },
+  { src: "assets/biblioteca/RAIZES_INFANTIL5_VOL2_BIBLIOTECA.webp", year: "Infantil 5", title: "Volume 2", type: "Livro do Aluno", href: "book-viewer.html?book=livro-008", collection: "Educacao Infantil", publishedAt: "2026-07-11" },
+  { src: "assets/biblioteca/RAIZES_LAB_SENSORIAL_INFANTIL5_BIBLIOTECA.webp", year: "Infantil 5", title: "Lab Sensorial", type: "Experiencias", href: "book-viewer.html?book=laboratorio-sensorial-005", collection: "Laboratorio Sensorial", publishedAt: "2026-07-11" },
+  { src: "assets/biblioteca/RAIZES_GUIA_ALFABETIZADOR_INFANTIL5_BIBLIOTECA.webp", year: "Infantil 5", title: "Guia do Alfabetizador", type: "Professor", href: "professor.html", collection: "Guias do Professor", publishedAt: "2026-07-11" },
+  { src: "assets/colecoes/colecao-ensino-fundamental-provisorio.webp", year: "Fundamental", title: "Colecao Ensino Fundamental", type: "Acervo em expansao", href: "#acervo-completo", collection: "Ensino Fundamental", publishedAt: "2026-07-11", status: "Em expansao" },
+  { src: "assets/colecoes/colecao-avalia-provisorio.webp", year: "Avalia+", title: "Colecao Avalia+", type: "Avaliacoes", href: "avalia.html", collection: "Avalia+", publishedAt: "2026-07-11", status: "Em expansao" },
 ];
+
+const publishedMaterialsCount = libraryBooks.length;
+const sortedLibraryBooks = [...libraryBooks].sort((firstBook, secondBook) => secondBook.publishedAt.localeCompare(firstBook.publishedAt));
+const latestLibraryBooks = sortedLibraryBooks.slice(0, 4);
+const featuredLibraryBook = sortedLibraryBooks.find((book) => book.href.startsWith("book-viewer.html")) || sortedLibraryBooks[0];
+const countMaterialsByCollection = (collection) => libraryBooks.filter((book) => book.collection === collection).length;
+
+const getSuggestedBook = (book) =>
+  bookCatalog.find((candidate) => candidate.id !== book.id && candidate.level === book.level) ||
+  bookCatalog.find((candidate) => candidate.id !== book.id && candidate.collection === book.collection) ||
+  defaultBook;
+
+const buildLatestMaterialsCards = () =>
+  latestLibraryBooks
+    .map(
+      (book) => `
+        <a class="latest-material-card" href="${book.href}">
+          <img src="${book.src}" alt="${book.year} ${book.title}" loading="lazy" />
+          <span>${book.year}</span>
+          <strong>${book.title}</strong>
+          <small>${book.type}</small>
+        </a>
+      `
+    )
+    .join("");
+
+const buildFeaturedBookCard = () => `
+  <aside class="featured-book-card">
+    <span>Destaque da Semana</span>
+    <img src="${featuredLibraryBook.src}" alt="${featuredLibraryBook.year} ${featuredLibraryBook.title}" loading="lazy" />
+    <h2>${featuredLibraryBook.title}</h2>
+    <p>${featuredLibraryBook.year} &middot; ${featuredLibraryBook.type}</p>
+    <a href="${featuredLibraryBook.href}">Abrir destaque</a>
+  </aside>
+`;
+
+const suggestedBook = getSuggestedBook(activeBook);
 
 const collectionShowcaseCards = [
   {
     title: "Educacao Infantil",
-    count: `${libraryBooks.length} livros`,
+    count: `${countMaterialsByCollection("Educacao Infantil")} livros`,
     description: "Colecao completa para a Educacao Infantil, com atividades ludicas, experiencias sensoriais e guias para cada etapa.",
     icon: "⌂",
     href: "#acervo-completo",
@@ -435,7 +476,7 @@ const collectionShowcaseCards = [
   },
   {
     title: "Laboratorio Sensorial",
-    count: "4 livros",
+    count: `${countMaterialsByCollection("Laboratorio Sensorial")} livros`,
     description: "Experiencias praticas para explorar sentidos, natureza, materiais, criatividade e registros pedagogicos.",
     icon: "◎",
     href: "#acervo-completo",
@@ -448,7 +489,7 @@ const collectionShowcaseCards = [
   },
   {
     title: "Guias do Professor",
-    count: "4 guias",
+    count: `${countMaterialsByCollection("Guias do Professor")} guias`,
     description: "Materiais de apoio para planejamento, mediacao das propostas e acompanhamento do desenvolvimento infantil.",
     icon: "♙",
     href: "#acervo-completo",
@@ -461,27 +502,30 @@ const collectionShowcaseCards = [
   },
   {
     title: "Ensino Fundamental",
-    count: "36 livros",
+    count: `${countMaterialsByCollection("Ensino Fundamental")} colecao`,
     description: "Colecao alinhada a BNCC do 1o ao 9o ano, com trilhas integradas para ampliar repertorio e autonomia.",
     icon: "▣",
     href: "#acervo-completo",
     coverGroup: "assets/colecoes/colecao-ensino-fundamental-provisorio.webp",
+    status: "Em expansao",
   },
   {
     title: "Avalia+",
-    count: "18 livros",
+    count: `${countMaterialsByCollection("Avalia+")} colecao`,
     description: "Avaliacoes diagnosticas, formativas e somativas para acompanhar resultados e orientar intervencoes.",
     icon: "✓",
     href: "avalia.html",
     coverGroup: "assets/colecoes/colecao-avalia-provisorio.webp",
+    status: "Em expansao",
   },
   {
     title: "Materiais Complementares",
-    count: "20+ materiais",
+    count: "Em expansao",
     description: "Recursos adicionais para enriquecer o ensino: atividades, projetos, jogos, videos e sequencias de apoio.",
     icon: "▤",
     href: "#acervo-completo",
     coverGroup: "assets/colecoes/colecao-materiais-complementares-provisorio.webp",
+    status: "Em expansao",
   },
 ];
 
@@ -500,6 +544,7 @@ const collectionShowcaseCardsHtml = collectionShowcaseCards
           <span class="collection-icon">${collection.icon}</span>
           <div>
             <h3>${collection.title}</h3>
+            ${collection.status ? `<span class="collection-status">${collection.status}</span>` : ""}
             <p class="collection-count">📖 ${collection.count}</p>
             <p class="collection-description">${collection.description}</p>
             <a class="collection-action" href="${collection.href}">Explorar Colecao <span>›</span></a>
@@ -510,16 +555,16 @@ const collectionShowcaseCardsHtml = collectionShowcaseCards
   )
   .join("");
 
-const libraryBookCards = libraryBooks
+const libraryBookCards = sortedLibraryBooks
   .map(
-    ([src, year, title, type, href = "book-viewer.html"]) => `
+    (book) => `
       <article class="library-book-card">
-        <img src="${src}" alt="${year} ${title}" loading="lazy" />
+        <img src="${book.src}" alt="${book.year} ${book.title}" loading="lazy" />
         <div>
-          <span>${year}</span>
-          <strong>${title}</strong>
-          <small>${type}</small>
-          <a href="${href}">Abrir</a>
+          <span>${book.year}</span>
+          <strong>${book.title}</strong>
+          <small>${book.status || book.type}</small>
+          <a href="${book.href}">Abrir</a>
         </div>
       </article>
     `
@@ -562,7 +607,14 @@ const modules = {
             ${buildRecentReadingCards()}
           </div>
         </section>
-        <aside class="quick-card"><h2>Navegacao Rapida</h2><a>Livros Recentes</a><a>Meus Favoritos</a><a>Leitura em Andamento</a><a>Novos Materiais</a></aside>
+        <aside class="quick-card"><h2>Biblioteca Viva</h2><a>${publishedMaterialsCount} materiais publicados</a><a>Novidades da Semana</a><a>Destaque Curado</a><a>Colecoes em Expansao</a></aside>
+        <section class="wide-panel living-library-panel">
+          <div class="panel-head"><h2>Novidades da Semana</h2><a>${latestLibraryBooks.length} publicados</a></div>
+          <div class="latest-materials-grid">
+            ${buildLatestMaterialsCards()}
+          </div>
+        </section>
+        ${buildFeaturedBookCard()}
         <section class="wide-panel">
           <div class="panel-head"><h2>Colecoes</h2><a>Ver todos</a></div>
           <div class="collection-showcase-grid">
@@ -576,7 +628,7 @@ const modules = {
           <a href="index.html#video-institucional">Assistir video</a>
         </aside>
         <section class="wide-panel recent-books library-catalog-panel" id="acervo-completo">
-          <div class="panel-head"><h2>Acervo Completo</h2><a>${libraryBooks.length} materiais</a></div>
+          <div class="panel-head"><h2>Ultimos Materiais</h2><a>${publishedMaterialsCount} materiais</a></div>
           <div class="library-catalog">${libraryBookCards}</div>
         </section>
       </div>
@@ -630,6 +682,14 @@ const modules = {
           <button type="button" data-next-page aria-label="Proxima pagina">&rsaquo;</button>
           <button type="button" data-fullscreen-reader aria-label="Tela cheia">[]</button>
         </div>
+        <section class="continue-exploring-panel">
+          <div>
+            <span>Continue Explorando</span>
+            <h2>${suggestedBook.catalogTitle}</h2>
+            <p>${suggestedBook.level} &middot; ${suggestedBook.type}</p>
+          </div>
+          <a href="${suggestedBook.href}">Abrir sugestao</a>
+        </section>
       </div>
     `,
   },

@@ -295,21 +295,52 @@
             <div class="mockup-topbar" aria-hidden="true"><span></span><span></span><span></span></div>
             <div class="university-dashboard">
               <div class="course-hero">
-                <span>Universidade</span>
-                <strong>Trilha de Formacao Docente</strong>
-                <small>Modulo 03 de 08 em andamento</small>
+                <span data-university-featured-label>Universidade</span>
+                <strong data-university-featured-title>Trilha de Formacao Docente</strong>
+                <small data-university-featured-meta>Modulo 03 de 08 em andamento</small>
               </div>
               <div class="course-progress">
                 <span></span>
-                <strong>68%</strong>
+                <strong data-university-progress>68%</strong>
               </div>
-              <div class="course-list">
+              <div class="course-list" data-university-lessons>
                 <span>Planejamento pedagogico</span>
                 <span>Praticas de avaliacao</span>
                 <span>Recursos digitais em sala</span>
               </div>
             </div>
           </div>
+        </div>
+
+        <div class="university-live" aria-label="Universidade Viva">
+          <article class="university-live-card course-week-card" data-university-course-week>
+            <span class="live-label">Destaque do Curso da Semana</span>
+            <h3>Formacao Docente Essencial</h3>
+            <p>Curso recomendado para iniciar a jornada de formacao continuada.</p>
+            <a href="#contato">Ver curso</a>
+          </article>
+
+          <article class="university-live-card">
+            <div class="university-live-head">
+              <span class="live-label">Novos Cursos</span>
+              <strong data-university-new-count>0 publicados</strong>
+            </div>
+            <div class="new-course-list" data-university-new-courses></div>
+          </article>
+
+          <article class="university-live-card">
+            <div class="university-live-head">
+              <span class="live-label">Contador Inteligente</span>
+            </div>
+            <div class="university-stats" data-university-stats></div>
+          </article>
+
+          <article class="university-live-card continue-learning-card" data-university-continue>
+            <span class="live-label">Continue Aprendendo</span>
+            <h3>Proxima aula da trilha</h3>
+            <p>Ao concluir uma aula, a Universidade sugere automaticamente o proximo passo.</p>
+            <button type="button" data-complete-university-lesson>Concluir aula atual</button>
+          </article>
         </div>
 
         <div class="university-features">
