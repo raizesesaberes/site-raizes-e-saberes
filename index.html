@@ -279,91 +279,176 @@
         </div>
       </section>
 
-      <section class="section university-section" id="universidade">
-        <div class="university-content">
-          <p class="eyebrow">Universidade Raizes e Saberes</p>
-          <h2>Formacao continuada para fortalecer professores e equipes pedagogicas.</h2>
-          <p>
-            A Universidade Raizes e Saberes organiza trilhas, videoaulas, formacoes e certificacoes
-            em um ambiente preparado para apoiar o desenvolvimento profissional da educacao.
-          </p>
-          <a class="button primary university-cta" href="#contato">Conheca a Universidade Raizes e Saberes</a>
-        </div>
+      <section class="section university-section university-premium" id="universidade">
+        <div class="university-hero">
+          <div class="university-content">
+            <p class="eyebrow">Universidade Raizes e Saberes</p>
+            <h2>Formacao continuada premium para professores e gestores.</h2>
+            <p>
+              Trilhas, videoaulas, materiais, avaliacoes e certificados em uma experiencia viva,
+              preparada para receber cursos reais sem alterar o layout aprovado.
+            </p>
+            <div class="university-actions">
+              <a class="button primary university-cta" href="#contato">Conheca a Universidade</a>
+              <button class="button secondary" type="button" data-complete-university-lesson>Continuar Aprendendo</button>
+            </div>
+          </div>
 
-        <div class="university-visual" aria-label="UniversidadeMockup">
-          <div class="university-window">
-            <div class="mockup-topbar" aria-hidden="true"><span></span><span></span><span></span></div>
-            <div class="university-dashboard">
-              <div class="course-hero">
-                <span data-university-featured-label>Universidade</span>
-                <strong data-university-featured-title>Trilha de Formacao Docente</strong>
-                <small data-university-featured-meta>Modulo 03 de 08 em andamento</small>
-              </div>
-              <div class="course-progress">
-                <span></span>
-                <strong data-university-progress>68%</strong>
-              </div>
-              <div class="course-list" data-university-lessons>
-                <span>Planejamento pedagogico</span>
-                <span>Praticas de avaliacao</span>
-                <span>Recursos digitais em sala</span>
+          <div class="university-visual" aria-label="Home premium da Universidade Raizes e Saberes">
+            <div class="university-window">
+              <div class="mockup-topbar" aria-hidden="true"><span></span><span></span><span></span></div>
+              <div class="university-dashboard">
+                <div class="course-hero">
+                  <span data-university-featured-label>Curso da Semana</span>
+                  <strong data-university-featured-title>Trilha de Formacao Docente</strong>
+                  <small data-university-featured-meta>Modulo 03 de 08 em andamento</small>
+                  <a href="#contato">Abrir curso</a>
+                </div>
+                <div class="course-progress">
+                  <span></span>
+                  <strong data-university-progress>68%</strong>
+                  <small>progresso da trilha</small>
+                </div>
+                <div class="course-list" data-university-lessons>
+                  <span>Planejamento pedagogico</span>
+                  <span>Praticas de avaliacao</span>
+                  <span>Recursos digitais em sala</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="university-live" aria-label="Universidade Viva">
-          <article class="university-live-card course-week-card" data-university-course-week>
+        <div class="university-command">
+          <label class="university-search">
+            <span>Pesquisar</span>
+            <input type="search" placeholder="Buscar cursos, trilhas, videoaulas..." data-university-search />
+          </label>
+          <div class="university-categories" aria-label="Categorias da Universidade">
+            <button class="is-active" type="button" data-university-filter="all">Todos</button>
+            <button type="button" data-university-filter="docente">Docente</button>
+            <button type="button" data-university-filter="gestao">Gestao</button>
+            <button type="button" data-university-filter="avaliacao">Avaliacao</button>
+            <button type="button" data-university-filter="tecnologia">Tecnologia</button>
+          </div>
+        </div>
+
+        <div class="university-live" aria-label="Universidade Premium">
+          <article class="university-live-card course-week-card span-2" data-university-course-week>
             <span class="live-label">Destaque do Curso da Semana</span>
             <h3>Formacao Docente Essencial</h3>
             <p>Curso recomendado para iniciar a jornada de formacao continuada.</p>
             <a href="#contato">Ver curso</a>
           </article>
 
-          <article class="university-live-card">
-            <div class="university-live-head">
-              <span class="live-label">Novos Cursos</span>
-              <strong data-university-new-count>0 publicados</strong>
-            </div>
-            <div class="new-course-list" data-university-new-courses></div>
-          </article>
-
-          <article class="university-live-card">
-            <div class="university-live-head">
-              <span class="live-label">Contador Inteligente</span>
-            </div>
-            <div class="university-stats" data-university-stats></div>
-          </article>
-
           <article class="university-live-card continue-learning-card" data-university-continue>
             <span class="live-label">Continue Aprendendo</span>
             <h3>Proxima aula da trilha</h3>
             <p>Ao concluir uma aula, a Universidade sugere automaticamente o proximo passo.</p>
-            <button type="button" data-complete-university-lesson>Concluir aula atual</button>
+            <button type="button" data-complete-university-lesson>Continuar Aprendendo</button>
+          </article>
+
+          <article class="university-live-card teacher-highlight-card">
+            <span class="live-label">Professor em Destaque</span>
+            <h3>Profa. Helena Martins</h3>
+            <p>Formadora convidada em praticas de avaliacao e planejamento pedagogico.</p>
+            <small>32 videoaulas publicadas</small>
           </article>
         </div>
 
-        <div class="university-features">
-          <article>
-            <span class="feature-number">01</span>
-            <h3>Formacao Continuada</h3>
-            <p>Programas organizados para apoiar professores, coordenadores e equipes gestoras.</p>
-          </article>
-          <article>
-            <span class="feature-number">02</span>
-            <h3>Videoaulas</h3>
-            <p>Aulas em formato digital para estudo, revisao e aprofundamento pedagogico.</p>
-          </article>
-          <article>
-            <span class="feature-number">03</span>
-            <h3>Trilhas de Aprendizagem</h3>
-            <p>Percursos formativos estruturados por temas, etapas e objetivos educacionais.</p>
-          </article>
-          <article>
-            <span class="feature-number">04</span>
-            <h3>Certificacao</h3>
-            <p>Registro de progresso e certificacao para valorizar a evolucao profissional.</p>
-          </article>
+        <div class="university-board">
+          <section class="university-panel span-2">
+            <div class="university-panel-head">
+              <div>
+                <span>Trilhas de Aprendizagem</span>
+                <h3>Percursos formativos</h3>
+              </div>
+              <strong data-university-trail-count>0 trilhas</strong>
+            </div>
+            <div class="learning-trails" data-university-trails></div>
+          </section>
+
+          <section class="university-panel">
+            <div class="university-panel-head">
+              <div>
+                <span>Contador Inteligente</span>
+                <h3>Universidade em numeros</h3>
+              </div>
+            </div>
+            <div class="university-stats" data-university-stats></div>
+          </section>
+
+          <section class="university-panel span-2">
+            <div class="university-panel-head">
+              <div>
+                <span>Cursos em Andamento</span>
+                <h3>Formacoes ativas</h3>
+              </div>
+              <strong data-university-active-count>0 cursos</strong>
+            </div>
+            <div class="course-card-grid" data-university-active-courses></div>
+          </section>
+
+          <section class="university-panel">
+            <div class="university-panel-head">
+              <div>
+                <span>Proximos Cursos</span>
+                <h3>Publicacoes previstas</h3>
+              </div>
+            </div>
+            <div class="upcoming-course-list" data-university-upcoming></div>
+          </section>
+
+          <section class="university-panel span-2">
+            <div class="university-panel-head">
+              <div>
+                <span>Novos Cursos</span>
+                <h3>Ultimas publicacoes</h3>
+              </div>
+              <strong data-university-new-count>0 publicados</strong>
+            </div>
+            <div class="new-course-list" data-university-new-courses></div>
+          </section>
+
+          <section class="university-panel">
+            <div class="university-panel-head">
+              <div>
+                <span>Certificados</span>
+                <h3>Conquistas emitidas</h3>
+              </div>
+            </div>
+            <div class="certificate-card" data-university-certificates></div>
+          </section>
+
+          <section class="university-panel span-2">
+            <div class="university-panel-head">
+              <div>
+                <span>Videoaulas</span>
+                <h3>Aulas recentes</h3>
+              </div>
+            </div>
+            <div class="video-lesson-grid" data-university-videos></div>
+          </section>
+
+          <section class="university-panel">
+            <div class="university-panel-head">
+              <div>
+                <span>Materiais Complementares</span>
+                <h3>PDFs e apoio</h3>
+              </div>
+            </div>
+            <div class="resource-list" data-university-resources></div>
+          </section>
+
+          <section class="university-panel">
+            <div class="university-panel-head">
+              <div>
+                <span>Avaliacoes</span>
+                <h3>Atividades formativas</h3>
+              </div>
+            </div>
+            <div class="assessment-list" data-university-assessments></div>
+          </section>
         </div>
       </section>
 
